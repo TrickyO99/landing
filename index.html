@@ -5,462 +5,477 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Othmane Triki</title>
 <meta name="description" content="Othmane Triki — Data Analyst at Betclic Group. Side projects in movies, chess, travel and politics.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547e6'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='%23fbf6ec' text-anchor='middle'%3EO%3Ctspan fill='%23ff6a1f'%3ET%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B3D2E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='22' fill='%230B3D2E'/%3E%3Cpath d='M30 30H98L92 54H74L66 98H42L50 54H24Z' fill='%23C6F432'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-  :root {
-    color-scheme: dark;
-    --blue: #2547e6;
-    --blue-deep: #14257d;
-    --blue-bright: #5c7bff;
-    --orange: #ff6a1f;
-    --orange-bright: #ffb27a;
-    --cream: #fbf6ec;
-    --muted: #d2d9ff;
-    --ink: #10142c;
-    --card: rgba(255,255,255,0.07);
-    --card-hover: rgba(255,255,255,0.12);
-    --border: rgba(255,255,255,0.18);
-  }
+  /* Trikorporation brand tokens (brand/tokens/tokens.css), inlined: this page ships as a single file */
+  :root{--surface-100:#F7F5EC;--surface-200:#ECE8D6;--ink:#101614;--ink-muted:#46544D;--hairline:#CFCBB5;--brand:#11A24F;--on-brand:#FFFFFF;--brand-strong:#0C7F3E;--on-brand-strong:#FFFFFF;--forest:#0B3D2E;--on-forest:#F7F5EC;--lime:#C6F432;--on-lime:#0B3D2E;--kitchen:#CF3F1B;--on-kitchen:#FFFFFF;--focus:#0B3D2E;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--radius-sm:6px;--radius-md:12px;--radius-lg:24px;--radius-pill:999px;--font-display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--font-sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--surface-100:#0A1511;--surface-200:#12251D;--ink:#F7F5EC;--ink-muted:#A9B8AF;--hairline:#2A4034;--brand:#2FC26A;--on-brand:#08241B;--brand-strong:#2FC26A;--on-brand-strong:#08241B;--forest:#1B5E47;--on-forest:#F7F5EC;--lime:#C6F432;--on-lime:#08241B;--kitchen:#FF6B45;--on-kitchen:#101614;--focus:#C6F432;}}
+  :root[data-theme="dark"]{--surface-100:#0A1511;--surface-200:#12251D;--ink:#F7F5EC;--ink-muted:#A9B8AF;--hairline:#2A4034;--brand:#2FC26A;--on-brand:#08241B;--brand-strong:#2FC26A;--on-brand-strong:#08241B;--forest:#1B5E47;--on-forest:#F7F5EC;--lime:#C6F432;--on-lime:#08241B;--kitchen:#FF6B45;--on-kitchen:#101614;--focus:#C6F432;}
+
+  :root { color-scheme: light dark; }
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"] { color-scheme: dark; }
+
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--blue);
-    color: var(--cream);
-    font-family: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--surface-100);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
     line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, .serif { font-family: 'Fraunces', Georgia, serif; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 800; margin: 0; }
   a { color: inherit; }
-  img { max-width: 100%; display: block; }
+  svg { display: block; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-  .brandbar { height: 4px; background: var(--orange); }
+  .wrap { max-width: 72rem; margin: 0 auto; padding-inline: clamp(1rem, 5vw, 2rem); }
 
-  .wash {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    background:
-      radial-gradient(52rem 46rem at 92% -6%, rgba(255,106,31,0.42), transparent 52%),
-      radial-gradient(46rem 40rem at -8% 22%, rgba(92,123,255,0.45), transparent 58%),
-      radial-gradient(60rem 55rem at 50% 120%, var(--blue-deep), transparent 62%);
-    pointer-events: none;
-  }
-
-  header, main, footer { position: relative; z-index: 2; }
-
+  /* ---------- nav ---------- */
   nav {
     position: sticky;
     top: 0;
     z-index: 10;
-    display: flex;
+    background: var(--surface-100);
+    border-bottom: 1px solid var(--hairline);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+  nav .brand {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
-    background: rgba(20,37,125,0.55);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    gap: var(--space-3);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
   }
-  nav .brand { font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; font-size: 1.05rem; color: var(--cream); display: inline-flex; align-items: center; gap: 0.5rem; }
-  nav .brand .mark { width: 0.5rem; height: 0.5rem; border-radius: 2px; background: var(--orange); flex-shrink: 0; }
-  nav .links { display: flex; gap: 1.75rem; font-size: 0.9rem; }
-  nav a { color: var(--muted); text-decoration: none; position: relative; padding-bottom: 0.2rem; transition: color 0.15s ease; }
-  nav a::after {
-    content: '';
-    position: absolute; left: 0; right: 100%; bottom: 0;
-    height: 2px; background: var(--orange);
-    transition: right 0.2s ease;
-  }
-  nav a:hover { color: var(--cream); }
-  nav a:hover::after { right: 0; }
-
-  section {
-    max-width: 74rem;
-    margin: 0 auto;
-    padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 2rem);
-  }
+  nav .brand svg { width: 2.25rem; height: 2.25rem; }
+  nav .links { display: flex; gap: var(--space-6); font-size: 0.95rem; font-weight: 500; }
+  nav .links a { color: var(--ink-muted); text-decoration: none; padding: var(--space-1) 0; border-bottom: 2px solid transparent; }
+  nav .links a:hover { color: var(--ink); border-bottom-color: var(--brand-strong); }
 
   /* ---------- hero ---------- */
-  .hero { padding-top: clamp(3.5rem, 10vw, 6rem); padding-bottom: clamp(2rem, 5vw, 3rem); }
-  .hero-grid {
-    max-width: 40rem;
+  .hero { background: var(--forest); color: var(--on-forest); }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-12);
+    padding-block: clamp(3rem, 9vw, 6.5rem);
   }
   .hero .kicker {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--orange-bright);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.78rem;
-    font-weight: 700;
-    margin: 0 0 1.1rem;
-  }
-  .hero .kicker svg { width: 0.9rem; height: 0.9rem; color: var(--orange-bright); }
-  .hero h1 {
-    font-size: clamp(2.75rem, 7.5vw, 4.75rem);
+    gap: var(--space-2);
+    margin: 0 0 var(--space-4);
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 0.85rem;
-    line-height: 1.04;
-    color: var(--cream);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
-  .hero h1 .accent { color: var(--orange-bright); }
-  .hero .role {
-    color: var(--muted);
-    font-size: 1.08rem;
-    margin: 0 0 0.9rem;
+  .hero .kicker i { width: 0.6rem; height: 0.6rem; border-radius: 2px; background: var(--lime); }
+  .hero h1 {
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-4);
   }
-  .hero .role b { color: var(--cream); font-weight: 600; border-bottom: 2px solid var(--orange); }
-  .hero .role { margin-bottom: 1.75rem; }
+  .hero .role { font-size: 1.2rem; margin: 0 0 var(--space-8); max-width: 30rem; opacity: 0.88; }
+  .hero .role b { font-weight: 700; opacity: 1; }
 
-  .social-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .social-row a {
+  .hero-logo { width: clamp(7.5rem, 20vw, 13rem); aspect-ratio: 1; }
+  .hero-logo svg { width: 100%; height: 100%; }
+  .hero-logo .bar, .hero-logo .stem, .hero-logo .play .notch { transform-box: fill-box; }
+  @media (prefers-reduced-motion: no-preference) {
+    /* master logo assembles in 0.6s: crossbar slides in along the slant, stem drops, notch lands last */
+    .hero-logo .play .bar   { animation: bar .3s cubic-bezier(.2,.8,.2,1) both; }
+    .hero-logo .play .stem  { animation: stem .3s .15s cubic-bezier(.2,.8,.2,1) both; }
+    .hero-logo .play .notch { animation: notch .15s .45s ease-out both; }
+    @keyframes bar   { from { transform: translate(-14px, 4px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes stem  { from { transform: translateY(-16px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes notch { from { transform: scale(0); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+
+  .social-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+  .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--cream);
+    gap: var(--space-2);
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
-    border: 1.5px solid var(--orange);
-    padding: 0.55rem 1.15rem;
-    border-radius: 999px;
-    background: var(--card);
-    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    background: var(--brand-strong);
+    color: var(--on-brand-strong);
   }
-  .social-row a svg { width: 1rem; height: 1rem; flex-shrink: 0; }
-  .social-row a:hover {
-    transform: translateY(-1px);
-    background: var(--orange);
-    border-color: var(--orange);
-    color: var(--ink);
+  .btn svg { width: 1.1rem; height: 1.1rem; }
+  .btn:hover { background: color-mix(in srgb, var(--brand-strong) 82%, black); }
+  .hero :focus-visible { outline-color: var(--lime); }
+
+  @media (max-width: 40rem) {
+    .hero .wrap { grid-template-columns: 1fr; gap: var(--space-8); }
+    .hero-logo { order: -1; width: 6rem; }
+    nav .brand span { display: none; }
   }
 
   /* ---------- projects ---------- */
+  .projects-section { padding-block: clamp(3rem, 8vw, 5.5rem); }
   .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.75rem;
-    color: var(--orange-bright);
-    margin: 0 0 0.6rem;
+    margin: 0 0 var(--space-2);
+    font-size: 0.8rem;
     font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-strong);
   }
-  h2 { font-size: 1.9rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 1.75rem; color: var(--cream); }
+  h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: var(--space-8); }
 
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr)); gap: 1rem; }
+  .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: var(--space-4); }
   .pcard {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--card);
-    border-radius: 1rem;
-    padding: 1.5rem 1.5rem 1.5rem;
-    text-decoration: none;
-    color: var(--cream);
     display: flex;
     flex-direction: column;
-    transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-  }
-  .pcard::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--orange);
-  }
-  .pcard:hover {
-    border-color: var(--orange);
-    transform: translateY(-3px);
-    background: var(--card-hover);
-    box-shadow: 0 20px 40px -22px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,106,31,0.25);
-  }
-  .picon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.7rem;
-    background: var(--orange);
+    padding: var(--space-6);
+    background: var(--surface-100);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
     color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.95rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none;
+    transition: background .15s ease;
   }
-  .picon svg { width: 1.2rem; height: 1.2rem; }
-  .pcard:hover .picon { transform: scale(1.08); box-shadow: 0 6px 18px -4px rgba(255,106,31,0.6); }
-  .pcard .ptitle {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1.08rem;
+  .pcard:hover { background: var(--surface-200); }
+  .picon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--forest);
+    color: var(--on-forest);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .picon svg { width: 1.5rem; height: 1.5rem; }
+  .picon.sub { background: none; }
+  .picon.sub svg { width: 100%; height: 100%; }
+  .ptitle {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
-  .pcard .arrow { opacity: 0; transform: translate(-4px, 4px); transition: opacity 0.15s ease, transform 0.15s ease; color: var(--orange-bright); flex-shrink: 0; }
-  .pcard .arrow svg { width: 1rem; height: 1rem; }
-  .pcard:hover .arrow { opacity: 1; transform: translate(0,0); }
-  .pcard .pdesc { color: var(--muted); font-size: 0.88rem; margin-top: 0.5rem; flex-grow: 1; }
-  .pcard .ptag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 1rem;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--cream);
+  .arrow { flex-shrink: 0; color: var(--brand-strong); transition: transform .15s ease; }
+  .arrow svg { width: 1.1rem; height: 1.1rem; }
+  .pcard:hover .arrow { transform: translate(2px, -2px); }
+  .pdesc { margin-top: var(--space-2); color: var(--ink-muted); font-size: 0.95rem; flex-grow: 1; }
+  .ptag {
+    align-self: flex-start;
+    margin-top: var(--space-4);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-pill);
+    background: var(--surface-200);
+    border: 1px solid var(--hairline);
+    font-size: 0.78rem;
     font-weight: 600;
   }
-  .pcard .ptag svg { width: 0.85rem; height: 0.85rem; color: var(--orange-bright); flex-shrink: 0; }
+  .pcard:hover .ptag { background: var(--surface-100); }
+
+
+  /* ---------- motion ---------- */
+  .progress { position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%; background: var(--brand-strong); transform: scaleX(0); transform-origin: left; }
+
+  .hero h1 { display: flex; flex-wrap: wrap; column-gap: .25em; }
+  .hero h1 .ln { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+  .hero h1 .ln > span { display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 .ln > span { animation: rise .8s cubic-bezier(.2,.9,.2,1) both; }
+    .hero h1 .ln:nth-child(2) > span { animation-delay: .1s; }
+    .hero .kicker { animation: fade .6s .1s both; }
+    .hero .role { animation: fade .6s .5s both; }
+    .hero .social-row { animation: fade .6s .65s both; }
+    @keyframes rise { from { transform: translateY(105%) rotate(4deg); } to { transform: none; } }
+    @keyframes fade { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+
+    .hero-logo { cursor: pointer; transition: transform .25s ease-out; }
+    .hero-logo svg { animation: bob 5s 1.2s ease-in-out infinite; }
+    @keyframes bob { 50% { translate: 0 -8px; } }
+    .hero-logo:hover .notch { animation: wink .5s ease-in-out; }
+    @keyframes wink { 40% { transform: scale(1.7) translate(-2px, 2px); } }
+
+    .btn { transition: background .15s ease, translate .15s ease; }
+    .btn:hover { translate: 0 -2px; }
+    .btn svg { transition: transform .2s ease; }
+    .btn:hover svg { transform: rotate(-10deg) scale(1.15); }
+
+    .js .rv { opacity: 0; translate: 0 36px; transition: opacity .7s ease, translate .7s cubic-bezier(.2,.9,.2,1); transition-delay: calc(var(--i, 0) * 70ms); }
+    .js .rv.in { opacity: 1; translate: 0 0; }
+  }
+
+  /* marquee */
+  .marquee { background: var(--brand-strong); color: var(--on-brand-strong); overflow: hidden; padding-block: var(--space-4); transform: rotate(-1.2deg); margin: -0.9rem -1rem 0; position: relative; z-index: 2; }
+  .marquee .track { display: flex; width: max-content; }
+  .marquee .grp { display: flex; align-items: center; gap: var(--space-6); padding-right: var(--space-6); flex-shrink: 0; }
+  .marquee span { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 2.6vw, 1.6rem); letter-spacing: -.01em; text-transform: uppercase; white-space: nowrap; }
+  .marquee b { width: .7rem; height: .7rem; border-radius: 3px; background: currentColor; transform: rotate(18deg); flex-shrink: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee .track { animation: scroll 38s linear infinite; }
+    .marquee:hover .track { animation-play-state: paused; }
+    .marquee b { animation: spin 4s linear infinite; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+    @keyframes spin { to { transform: rotate(378deg); } }
+  }
+
+  /* cards: cursor-follow flat fill, tilt, icon pop */
+  .pcard { position: relative; overflow: hidden; isolation: isolate; }
+  .pcard::before {
+    content: ''; position: absolute; z-index: -1;
+    left: var(--mx, 50%); top: var(--my, 50%);
+    width: 40rem; height: 40rem; margin: -20rem 0 0 -20rem; border-radius: 50%;
+    background: var(--surface-200);
+    transform: scale(0); transition: transform .5s cubic-bezier(.2,.9,.2,1);
+  }
+  .pcard:hover { background: var(--surface-100); }
+  .pcard:hover::before { transform: scale(1); }
+  .pcard .picon { transition: transform .3s cubic-bezier(.3,1.6,.5,1), border-radius .3s ease; }
+  .pcard:hover .picon { transform: rotate(-8deg) scale(1.12); border-radius: 50%; }
+  .pcard:hover .picon.sub { border-radius: var(--radius-md); }
+  .pcard.tilt { transition: transform .15s ease-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .pcard::before, .pcard .picon { transition: none; }
+    .marquee { transform: none; margin: 0; }
+  }
+
 
   /* ---------- footer ---------- */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2.5rem clamp(1.25rem, 5vw, 2rem) 3rem;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.85rem;
-    background: rgba(15,25,90,0.35);
+  footer { background: var(--surface-200); border-top: 1px solid var(--hairline); }
+  footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding-block: var(--space-8);
   }
-  footer .social-row { justify-content: center; margin-bottom: 1.25rem; }
-  footer .sig { display: inline-flex; align-items: center; gap: 0.5rem; }
-  footer .sig .sep { width: 0.35rem; height: 0.35rem; border-radius: 2px; background: var(--orange); }
+  footer .endorse { display: inline-flex; align-items: center; gap: var(--space-2); font-size: 0.9rem; font-weight: 600; }
+  footer .endorse svg { width: 1.25rem; height: 1.25rem; }
+  footer .sig { font-size: 0.9rem; color: var(--ink-muted); margin-top: var(--space-1); }
+  footer .btn { background: var(--forest); color: var(--on-forest); }
+  footer .btn:hover { background: color-mix(in srgb, var(--forest) 80%, black); }
+  :root[data-theme="dark"] footer .btn:hover { background: color-mix(in srgb, var(--forest) 80%, white); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) footer .btn:hover { background: color-mix(in srgb, var(--forest) 80%, white); } }
 
   @media (prefers-reduced-motion: reduce) {
-    .pcard, .arrow, .social-row a { transition: none; }
+    html { scroll-behavior: auto; }
+    .pcard, .arrow { transition: none; }
   }
 </style>
 </head>
 <body>
-  <div class="brandbar"></div>
-  <div class="wash"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ext" viewBox="0 0 20 20"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
 
   <nav>
-    <span class="brand"><span class="mark"></span>Othmane Triki</span>
-    <span class="links">
-      <a href="#projects">Projects</a>
-      <a href="https://travel.odtriki.com">Map</a>
-    </span>
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Othmane Triki">
+        <!-- level 3 (compact): 28 to 63px -->
+        <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="22" fill="#0B3D2E"/><path d="M30 30H98L92 54H74L66 98H42L50 54H24Z" fill="#11A24F"/><path d="M80 30H98L94 46Z" fill="#C6F432"/></svg>
+        <span>Othmane Triki</span>
+      </a>
+      <span class="links">
+        <a href="#projects">Projects</a>
+        <a href="https://travel.odtriki.com">Map</a>
+      </span>
+    </div>
+    <i class="progress" aria-hidden="true"></i>
   </nav>
 
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="kicker"><i></i>Bordeaux, France</p>
+        <h1 aria-label="Othmane Triki"><span class="ln" aria-hidden="true"><span>Othmane</span></span> <span class="ln" aria-hidden="true"><span>Triki</span></span></h1>
+        <p class="role">Data Analyst at <b>Betclic Group</b>. Side projects in movies, chess, travel and politics.</p>
+        <div class="social-row">
+          <a class="btn" href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="9" width="3.4" height="11" rx="1"/><circle cx="5.7" cy="5.5" r="2"/><path d="M10 9h3.2v1.6c.6-1.1 1.9-1.9 3.5-1.9 3 0 3.8 2 3.8 4.7V20h-3.4v-5.6c0-1.4-.3-2.4-1.6-2.4s-1.9 1-1.9 2.4V20H10z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://www.instagram.com/odtriki/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 3h8a5 5 0 015 5v8a5 5 0 01-5 5H8a5 5 0 01-5-5V8a5 5 0 015-5zm4 5.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM17 6.2a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+      <!-- master logo, green-ground variant on forest -->
+      <div class="hero-logo" role="img" aria-label="Trikorporation">
+        <svg class="play" viewBox="0 0 120 120"><rect width="120" height="120" rx="22" fill="#11A24F"/><path class="bar" d="M30 32h66l-5 18H25z" fill="#0B3D2E"/><path class="stem" d="M72 49.5l-8 44.5H46l8-44.5z" fill="#0B3D2E"/><path class="notch" d="M78 32h18l-4 14z" fill="#C6F432"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><div class="grp"><span>Kino der RN</span><b></b><span>Scatterboxd</span><b></b><span>Letterboxd Compare</span><b></b><span>Streaming Checker</span><b></b><span>MonVote.ma</span><b></b><span>Roméo &amp; Jules</span><b></b><span>Chess</span><b></b><span>Everywhere I've been</span><b></b><span>Cooking</span><b></b><span>Où boire une pinte</span><b></b><span>Old school projects</span><b></b></div><div class="grp"><span>Kino der RN</span><b></b><span>Scatterboxd</span><b></b><span>Letterboxd Compare</span><b></b><span>Streaming Checker</span><b></b><span>MonVote.ma</span><b></b><span>Roméo &amp; Jules</span><b></b><span>Chess</span><b></b><span>Everywhere I've been</span><b></b><span>Cooking</span><b></b><span>Où boire une pinte</span><b></b><span>Old school projects</span><b></b></div></div></div>
+
   <main>
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <p class="kicker">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z"/><circle cx="11" cy="8" r="2.4"/></svg>
-            Bordeaux, France
-          </p>
-          <h1>Othmane <span class="accent">Triki</span></h1>
-          <p class="role">Data Analyst at <b>Betclic Group</b></p>
-          <div class="social-row">
-            <a href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8.5v10M6.5 5.2v.1M11 18.5v-6c0-1.6 1.2-2.7 2.7-2.7 1.6 0 2.8 1.1 2.8 2.7v6"/><path d="M11 12v6.5"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://www.instagram.com/odtriki/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.8" cy="7.2" r="0.6" fill="currentColor" stroke="none"/></svg>
-              Instagram
-            </a>
-          </div>
+    <section class="projects-section" id="projects">
+      <div class="wrap">
+        <p class="eyebrow rv">Projects</p>
+        <h2 class="rv">What I've built</h2>
+
+        <div class="projects">
+          <a class="pcard rv" href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M6 6h12a5 5 0 015 5v2a5 5 0 01-5 5H6a5 5 0 01-5-5v-2a5 5 0 015-5zM6 9.5v1.5H4.5v2H6v1.5h2V13h1.5v-2H8V9.5zM16 10.2a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2zM19 12.6a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/></svg></div>
+            <div class="ptitle">Kino der RN<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">A pixel-art arcade game: pick a tweet, survive waves of right-wing troll bots replying to it. Online high-score board.</div>
+          </a>
+
+          <a class="pcard rv" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="2.4" height="18" rx="1.2"/><rect x="3" y="18.6" width="18" height="2.4" rx="1.2"/><circle cx="10" cy="14" r="2"/><circle cx="14" cy="9" r="2"/><circle cx="18" cy="13" r="2"/><circle cx="19" cy="6" r="1.6"/></svg></div>
+            <div class="ptitle">Scatterboxd<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Visualize how your Letterboxd ratings compare to the crowd's, one scatter plot at a time.</div>
+          </a>
+
+          <a class="pcard rv" href="https://compare.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M9 5a7 7 0 100 14A7 7 0 009 5zM15 5a7 7 0 100 14 7 7 0 000-14z"/></svg></div>
+            <div class="ptitle">Letterboxd Compare<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Find the movies you and a friend both watched or have on your watchlists, and see how your ratings stack up.</div>
+          </a>
+
+          <a class="pcard rv" href="https://streaming.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M5 4h14a3 3 0 013 3v10a3 3 0 01-3 3H5a3 3 0 01-3-3V7a3 3 0 013-3zM10 8.5v7l6-3.5z"/></svg></div>
+            <div class="ptitle">Letterboxd Streaming Checker<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Check which streaming service actually has the film you're trying to watch.</div>
+          </a>
+
+          <a class="pcard rv" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M6 3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6a3 3 0 013-3zM7.2 12.4l4.4 4.4 6-6-1.4-1.4-4.6 4.6-3-3z"/></svg></div>
+            <div class="ptitle">MonVote.ma<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">A voter guide quiz matching your positions to Morocco's political parties.</div>
+          </a>
+
+          <a class="pcard rv" href="https://romeoetjules.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h18v7a3 3 0 01-3 3H6a3 3 0 01-3-3z"/><rect x="3" y="4" width="18" height="4.5" rx="1.5" transform="rotate(-6 12 6)"/></svg></div>
+            <div class="ptitle">Roméo &amp; Jules<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">A short film written and shot for the Cinéma et Audiovisuel option at Lycée Descartes.</div>
+            <span class="ptag">Best Film · Best Screenplay, 2017</span>
+          </a>
+
+          <a class="pcard rv" href="https://chess.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/></svg></div>
+            <div class="ptitle">Chess<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Live chess.com stats, plus two youth championship titles from Rabat.</div>
+          </a>
+
+          <a class="pcard rv" href="https://travel.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M12 22s7-7 7-12.5a7 7 0 10-14 0C5 15 12 22 12 22zM12 7.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6z"/></svg></div>
+            <div class="ptitle">Everywhere I've been<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">An interactive map of every country and city I've traveled to.</div>
+          </a>
+
+          <a class="pcard rv" href="https://cook.odtriki.com" target="_blank" rel="noopener">
+            <!-- Trikitchen mark: a subcompany keeps its own tile -->
+            <div class="picon sub"><svg viewBox="0 0 120 120"><rect width="120" height="120" rx="22" fill="var(--kitchen)"/><g fill="var(--on-kitchen)"><rect x="34" y="24" width="9" height="16" rx="4.5"/><rect x="50" y="18" width="9" height="22" rx="4.5"/><rect x="66" y="24" width="9" height="16" rx="4.5"/><rect x="20" y="48" width="68" height="9" rx="4.5"/><rect x="24" y="57" width="60" height="40" rx="12"/><rect x="84" y="68" width="16" height="10" rx="5"/></g></svg></div>
+            <div class="ptitle">Cooking<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Recipes and TikToks from @trikitchen_.</div>
+          </a>
+
+          <a class="pcard rv" href="https://beers.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M4 3h11v3H4zM4 7.5h11V19a2 2 0 01-2 2H6a2 2 0 01-2-2zM15 9.5h2.5a2.5 2.5 0 012.5 2.5v1.5a2.5 2.5 0 01-2.5 2.5H15v-2h2.5a.5.5 0 00.5-.5V12a.5.5 0 00-.5-.5H15z"/></svg></div>
+            <div class="ptitle">Où boire une pinte<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">Crowd-sourced map of bars and clubs in Bordeaux, with prices.</div>
+          </a>
+
+          <a class="pcard rv" href="https://archive.odtriki.com" target="_blank" rel="noopener">
+            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><rect x="2" y="4" width="20" height="5" rx="1.5"/><path d="M4 10.5h16V19a2 2 0 01-2 2H6a2 2 0 01-2-2zM9.5 13v2.2h5V13z"/></svg></div>
+            <div class="ptitle">Old school projects<span class="arrow"><svg><use href="#ext"/></svg></span></div>
+            <div class="pdesc">~30 coursework exercises from EPITECH's early years — C, Assembly, Python.</div>
+          </a>
         </div>
       </div>
     </section>
-
-    <section id="projects">
-      <p class="eyebrow">Projects</p>
-      <h2>What I've built</h2>
-
-      <div class="projects">
-        <a class="pcard" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="3,3 3,19 19,19"/>
-              <circle cx="7" cy="14" r="1.2" fill="currentColor" stroke="none"/>
-              <circle cx="11" cy="9" r="1.2" fill="currentColor" stroke="none"/>
-              <circle cx="14.5" cy="13" r="1.2" fill="currentColor" stroke="none"/>
-              <circle cx="17" cy="6" r="1.2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Scatterboxd
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Visualize how your Letterboxd ratings compare to the crowd's, one scatter plot at a time.</div>
-        </a>
-
-        <a class="pcard" href="https://scatterboxd-duo.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="3,3 3,19 19,19"/>
-              <line x1="4.5" y1="17.5" x2="17.5" y2="4.5" stroke-dasharray="2 2.2"/>
-              <circle cx="7.5" cy="11.5" r="1.2" fill="currentColor" stroke="none"/>
-              <circle cx="14.5" cy="7" r="1.2" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Scatterboxd Duo
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Same idea, but for two — plot your ratings against a friend's for every film you've both seen.</div>
-        </a>
-
-        <a class="pcard" href="https://crossover.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="11" r="6"/><circle cx="14" cy="11" r="6"/></svg>
-          </div>
-          <div class="ptitle">
-            Letterboxd Crossover
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Find the movies you and a friend both have sitting on your Letterboxd watchlists.</div>
-        </a>
-
-        <a class="pcard" href="https://streaming.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="18" height="13" rx="2"/>
-              <polygon points="9,7.5 9,13.5 14.5,10.5" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Letterboxd Streaming Checker
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Check which streaming service actually has the film you're trying to watch.</div>
-        </a>
-
-        <a class="pcard" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="16" height="16" rx="2"/>
-              <polyline points="7,11 10,14 15,7"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            MonVote.ma
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">A voter guide quiz matching your positions to Morocco's political parties.</div>
-        </a>
-
-        <a class="pcard" href="https://romeoetjules.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="16" height="16" rx="2"/>
-              <line x1="3" y1="8" x2="19" y2="8"/><line x1="3" y1="14" x2="19" y2="14"/>
-              <line x1="8" y1="3" x2="8" y2="8"/><line x1="14" y1="3" x2="14" y2="8"/>
-              <line x1="8" y1="14" x2="8" y2="19"/><line x1="14" y1="14" x2="14" y2="19"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Roméo &amp; Jules
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">A short film written and shot for the Cinéma et Audiovisuel option at Lycée Descartes.</div>
-          <span class="ptag">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l2.2 4.6 5 .7-3.6 3.6.9 5-4.5-2.4-4.5 2.4.9-5-3.6-3.6 5-.7z"/></svg>
-            Best Film · Best Screenplay, 2017
-          </span>
-        </a>
-
-        <a class="pcard" href="https://chess.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="currentColor">
-              <rect x="2" y="2" width="6" height="6" rx="1"/>
-              <rect x="14" y="2" width="6" height="6" rx="1"/>
-              <rect x="8" y="8" width="6" height="6" rx="1"/>
-              <rect x="2" y="14" width="6" height="6" rx="1"/>
-              <rect x="14" y="14" width="6" height="6" rx="1"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Chess
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Live chess.com stats, plus two youth championship titles from Rabat.</div>
-        </a>
-
-        <a class="pcard" href="https://travel.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 20s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z"/><circle cx="11" cy="8" r="2.4"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Everywhere I've been
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">An interactive map of every country and city I've traveled to.</div>
-        </a>
-
-        <a class="pcard" href="https://cook.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 10h14v5a4 4 0 01-4 4H8a4 4 0 01-4-4v-5z"/>
-              <line x1="2" y1="10" x2="20" y2="10"/>
-              <path d="M8 6c0-1 1-1 1-2s-1-1-1-2" stroke-width="1.4"/>
-              <path d="M13 6c0-1 1-1 1-2s-1-1-1-2" stroke-width="1.4"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Cooking
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Recipes and TikToks from @trikitchen_.</div>
-        </a>
-
-        <a class="pcard" href="https://beers.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="6" width="12" height="13" rx="1.5"/>
-              <path d="M15 9h2a2.5 2.5 0 010 5h-2"/>
-              <line x1="6" y1="3" x2="6" y2="6"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="12" y1="3" x2="12" y2="6"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Où boire une pinte
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">Crowd-sourced map of bars and clubs in Bordeaux, with prices.</div>
-        </a>
-
-        <a class="pcard" href="https://archive.odtriki.com" target="_blank" rel="noopener">
-          <div class="picon">
-            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="18" height="5" rx="1.2"/>
-              <path d="M4 9v8a2 2 0 002 2h10a2 2 0 002-2V9"/>
-              <line x1="9" y1="13" x2="13" y2="13"/>
-            </svg>
-          </div>
-          <div class="ptitle">
-            Old school projects
-            <span class="arrow"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg></span>
-          </div>
-          <div class="pdesc">~30 coursework exercises from EPITECH's early years — C, Assembly, Python.</div>
-        </a>
-      </div>
-    </section>
-
   </main>
 
-  <footer>
-    <div class="social-row">
-      <a href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8.5v10M6.5 5.2v.1M11 18.5v-6c0-1.6 1.2-2.7 2.7-2.7 1.6 0 2.8 1.1 2.8 2.7v6"/><path d="M11 12v6.5"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://www.instagram.com/odtriki/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.8" cy="7.2" r="0.6" fill="currentColor" stroke="none"/></svg>
-        Instagram
-      </a>
+  <footer class="rv">
+    <div class="wrap">
+      <div>
+        <span class="endorse">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="22" fill="#0B3D2E"/><path d="M30 30H98L92 54H74L66 98H42L50 54H24Z" fill="#11A24F"/><path d="M80 30H98L94 46Z" fill="#C6F432"/></svg>
+          a Trikorporation brand
+        </span>
+        <div class="sig">odtriki.com · Bordeaux, France</div>
+      </div>
+      <div class="social-row">
+        <a class="btn" href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://www.instagram.com/odtriki/" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
-    <span class="sig">odtriki.com <span class="sep"></span> Bordeaux, France</span>
   </footer>
+  <script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d = document, $ = function (q) { return d.querySelectorAll(q); };
+
+  // scroll progress
+  var bar = d.querySelector('.progress');
+  function prog() { var h = d.documentElement; bar.style.transform = 'scaleX(' + (h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)) + ')'; }
+  addEventListener('scroll', prog, { passive: true }); prog();
+
+  // staggered scroll reveal
+  var rv = $('.rv');
+  $('.pcard').forEach(function (c, i) { c.style.setProperty('--i', i % 3); });
+  if (reduce || !('IntersectionObserver' in window)) { rv.forEach(function (e) { e.classList.add('in'); }); }
+  else {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    rv.forEach(function (e) { io.observe(e); });
+  }
+
+  // cards: cursor-follow fill + tilt
+  var fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  $('.pcard').forEach(function (c) {
+    function at(e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }
+    c.addEventListener('pointerenter', at);
+    c.addEventListener('pointerleave', function (e) { at(e); c.style.transform = ''; });
+    if (!fine || reduce) return;
+    c.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      c.classList.add('tilt');
+      c.style.transform = 'perspective(700px) rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg) translateY(-3px)';
+    });
+  });
+
+  // hero logo: follows the pointer, click to replay the assemble animation
+  var logo = d.querySelector('.hero-logo');
+  if (logo && !reduce) {
+    var hero = d.querySelector('.hero');
+    if (fine) hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      logo.style.transform = 'translate(' + (x * 22).toFixed(1) + 'px,' + (y * 16).toFixed(1) + 'px) rotate(' + (x * 6).toFixed(2) + 'deg)';
+    });
+    hero.addEventListener('pointerleave', function () { logo.style.transform = ''; });
+    logo.addEventListener('click', function () {
+      var s = logo.querySelector('svg'); s.classList.remove('play'); void s.getBoundingClientRect(); s.classList.add('play');
+    });
+  }
+})();
+  </script>
 </body>
 </html>
