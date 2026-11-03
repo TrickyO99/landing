@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="alternate" type="application/json" href="resume.json" title="JSON Resume">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Othmane Triki","jobTitle":"Data Analyst","url":"https://odtriki.com/cv/","sameAs":["https://www.linkedin.com/in/trikio99/"],"address":{"@type":"PostalAddress","addressLocality":"Bordeaux","addressCountry":"FR"},"worksFor":{"@type":"Organization","name":"Betclic Group"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"EPITECH"}],"knowsLanguage":["French","Arabic","English","Spanish"]}</script>
 <script>document.documentElement.classList.add("js")</script>
 <style>
   /* Trikorporation brand tokens (brand/tokens/tokens.css), inlined */
@@ -145,6 +147,25 @@
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 
+  /* company logos sit on a light plate so every colour reads in light and dark */
+  .logo { display: inline-flex; align-items: center; background: #fff; border-radius: 8px; padding: 5px 11px; height: 38px; }
+  .logo img { height: 100%; width: auto; max-width: 118px; object-fit: contain; display: block; }
+  .job-head { align-items: center; }
+  .job-head .logo { margin-left: auto; }
+  .edu .logo { height: 44px; margin-bottom: var(--space-2); }
+  .edu .logo img { max-width: 150px; }
+
+  .navlink { font-size: .9rem; font-weight: 600; color: var(--ink-muted); text-decoration: none; padding: .3rem 0; border-bottom: 2px solid transparent; }
+  .navlink:hover { color: var(--ink); border-bottom-color: var(--brand-strong); }
+  @media (max-width: 40rem) { .navlink { display: none; } }
+
+  .steps small { font-size: .82rem; line-height: 1.3; opacity: .85; margin-top: 4px; font-weight: 500; }
+  .stat b span { display: inline; margin: 0; font-size: inherit; font-weight: inherit; color: inherit; }
+  .stat b.txt { font-size: clamp(1.3rem, 2.6vw, 1.9rem); padding-top: .55em; white-space: nowrap; }
+  .before { margin: var(--space-8) 0 var(--space-6) calc(-1 * var(--space-6)); padding-left: var(--space-6); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); display: flex; align-items: center; gap: var(--space-3); }
+  .before::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+  .before ~ .job h3 { font-size: 1.05rem; }
+
   /* ---------- extras ---------- */
   .theme { width: 2.4rem; height: 2.4rem; display: grid; place-items: center; border: 1px solid var(--hairline); border-radius: var(--radius-md); background: var(--surface-200); color: var(--ink); cursor: pointer; transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
   .theme svg { width: 1.15rem; height: 1.15rem; }
@@ -199,6 +220,9 @@
     nav, .contact, footer, .progress, .stats, .path, .bgT { display: none !important; }
     .chips li { opacity: 1 !important; scale: 1 !important; }
     .timeline::after { display: none; }
+    .before { margin: 3mm 0 2mm; }
+    .logo { height: 26px; padding: 3px 8px; border: 1px solid var(--hairline); }
+    .edu .logo { height: 30px; }
     .hero h1 .ch { animation: none !important; }
     .rv, .js .rv { opacity: 1 !important; translate: 0 0 !important; transition: none !important; animation: none !important; }
     .hero *, .chips li { animation: none !important; }
@@ -222,6 +246,7 @@
         <span>Trikorporation</span>
       </a>
       <div class="nav-right">
+        <a class="navlink" href="us/">US resume</a>
         <button type="button" class="theme" id="theme" aria-label="Thème / Theme"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 3a9 9 0 100 18V3z"/><path d="M12 3a9 9 0 010 18" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
         <div class="seg" role="group" aria-label="Langue / Language">
           <button type="button" data-lang="fr" aria-pressed="true">FR</button>
@@ -243,7 +268,7 @@
       <div>
         <p class="kicker"><i></i>Bordeaux, France</p>
         <h1>Othmane Triki</h1>
-        <p class="role"><span lang="fr">Data Analyst</span><span lang="en">Data Analyst</span> · Data × IT × Marketing</p>
+        <p class="role"><span lang="fr">Data Analyst</span><span lang="en">Data Analyst</span> · Betclic Group</p>
         <p class="about"><span lang="fr">Je fusionne mes compétences en Data, Informatique et Marketing pour offrir des insights puissants et des solutions optimisées. Avec une approche orientée résultats, je suis toujours DATAque pour transformer les défis en succès et propulser les projets vers de nouveaux sommets.</span><span lang="en">I blend Data, IT and Marketing skills to deliver powerful insights and optimised solutions. Results-driven, I’m always ready to DATAck challenges, turn them into wins and take projects to new heights.</span></p>
         <div class="meta">
           <a href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">
@@ -261,10 +286,10 @@
 
   <section class="stats" aria-label="Key figures">
     <div class="wrap">
-      <div class="stat rv"><b data-count="70" data-prefix="+" data-suffix="%">+70%</b><span><span lang="fr">de trafic web en 5 mois</span><span lang="en">web traffic in 5 months</span></span></div>
-      <div class="stat rv"><b data-count="4" data-suffix="+">4+</b><span><span lang="fr">ans en Growth &amp; Data</span><span lang="en">years in Growth &amp; Data</span></span></div>
-      <div class="stat rv"><b data-count="4">4</b><span><span lang="fr">rôles chez Betclic Group</span><span lang="en">roles at Betclic Group</span></span></div>
-      <div class="stat rv"><b data-count="7">7</b><span><span lang="fr">postes et stages</span><span lang="en">roles and internships</span></span></div>
+      <div class="stat rv"><b data-count="4" data-suffix="+">4+</b><span><span lang="fr">ans chez Betclic Group</span><span lang="en">years at Betclic Group</span></span></div>
+      <div class="stat rv"><b data-count="4">4</b><span><span lang="fr">rôles, de stagiaire à Data Analyst</span><span lang="en">roles, from intern to Data Analyst</span></span></div>
+      <div class="stat rv"><b data-count="3">3</b><span><span lang="fr">équipes coordonnées : Marketing, Acquisition, Data</span><span lang="en">teams coordinated: Marketing, Acquisition, Data</span></span></div>
+      <div class="stat rv"><b class="txt"><span lang="fr">Multi-marchés</span><span lang="en">Multi-market</span></b><span><span lang="fr">projets Growth pilotés</span><span lang="en">Growth projects led</span></span></div>
     </div>
   </section>
 
@@ -273,9 +298,9 @@
       <h2 id="pt"><span lang="fr">Parcours chez Betclic Group</span><span lang="en">Career at Betclic Group</span></h2>
       <ol class="steps">
         <li style="--h:1"><div class="bar"><span class="when"><span lang="fr">Mars 2022</span><span lang="en">Mar 2022</span></span><b>Growth Executive</b><i><span lang="fr">stage</span><span lang="en">internship</span></i></div></li>
-        <li style="--h:2"><div class="bar"><span class="when"><span lang="fr">Sept. 2022</span><span lang="en">Sep 2022</span></span><b>Growth Executive</b></div></li>
-        <li style="--h:3"><div class="bar"><span class="when"><span lang="fr">Janv. 2024</span><span lang="en">Jan 2024</span></span><b>Growth Project Manager</b></div></li>
-        <li style="--h:4" class="cur"><div class="bar"><span class="when"><span lang="fr">Avr. 2025</span><span lang="en">Apr 2025</span></span><b>Data Analyst</b></div></li>
+        <li style="--h:2"><div class="bar"><span class="when"><span lang="fr">Sept. 2022</span><span lang="en">Sep 2022</span></span><b>Growth Executive</b><small><span lang="fr">Reporting hebdo &amp; mensuel · analyse des canaux</span><span lang="en">Weekly &amp; monthly reporting · channel analysis</span></small></div></li>
+        <li style="--h:3"><div class="bar"><span class="when"><span lang="fr">Janv. 2024</span><span lang="en">Jan 2024</span></span><b>Growth Project Manager</b><small><span lang="fr">Projets Growth multi-marchés · coordination des équipes</span><span lang="en">Multi-market Growth projects · team coordination</span></small></div></li>
+        <li style="--h:4" class="cur"><div class="bar"><span class="when"><span lang="fr">Avr. 2025</span><span lang="en">Apr 2025</span></span><b>Data Analyst</b><small><span lang="fr">Dashboards · cohortes · reportings automatisés</span><span lang="en">Dashboards · cohorts · automated reporting</span></small></div></li>
       </ol>
     </div>
   </section>
@@ -284,13 +309,14 @@
     <section aria-labelledby="exp">
       <h2 id="exp"><span lang="fr">Expériences professionnelles</span><span lang="en">Professional experience</span></h2>
       <div class="timeline">
-<article class="job rv now"><div class="job-head"><h3><span lang="fr">Data Analyst</span><span lang="en">Data Analyst</span></h3><span class="org">Betclic Group</span></div><div class="date"><span lang="fr">Avr. 2025 – Aujourd’hui</span><span lang="en">Apr 2025 – Present</span></div><ul><li><span lang="fr">Dashboards marketing : funnel d’acquisition, conversion, rétention</span><span lang="en">Marketing dashboards: acquisition funnel, conversion, retention</span></li><li><span lang="fr">Datasets analytiques : transformation des données en insights business</span><span lang="en">Analytical datasets: turning data into business insights</span></li><li><span lang="fr">Analyses de campagnes : ROI, CTR, conversion, LTV, cohortes</span><span lang="en">Campaign analysis: ROI, CTR, conversion, LTV, cohorts</span></li><li><span lang="fr">Segmentation clients : âge, géographie, cycle de vie, canal</span><span lang="en">Customer segmentation: age, geography, lifecycle, channel</span></li><li><span lang="fr">Automatisation des reportings Growth et Direction</span><span lang="en">Automated Growth and Executive reporting</span></li></ul></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Project Manager</span><span lang="en">Growth Project Manager</span></h3><span class="org">Betclic Group</span></div><div class="date"><span lang="fr">Janv. 2024 – Mars 2025</span><span lang="en">Jan 2024 – Mar 2025</span></div><ul><li><span lang="fr">Pilotage de projets Growth multi-marchés</span><span lang="en">Led multi-market Growth projects</span></li><li><span lang="fr">Analyse de la performance business et identification des leviers de croissance</span><span lang="en">Business performance analysis and identification of growth levers</span></li><li><span lang="fr">Coordination des équipes Marketing, Acquisition et Data</span><span lang="en">Coordinated the Marketing, Acquisition and Data teams</span></li><li><span lang="fr">Suivi des KPI d’acquisition, de conversion et d’engagement</span><span lang="en">Tracked acquisition, conversion and engagement KPIs</span></li></ul></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Executive</span><span lang="en">Growth Executive</span></h3><span class="org">Betclic Group</span></div><div class="date"><span lang="fr">Sept. 2022 – Déc. 2023</span><span lang="en">Sep 2022 – Dec 2023</span></div><ul><li><span lang="fr">Reporting de performance hebdomadaire et mensuel</span><span lang="en">Weekly and monthly performance reporting</span></li><li><span lang="fr">Analyse des canaux d’acquisition et recommandations d’optimisation</span><span lang="en">Acquisition channel analysis and optimisation recommendations</span></li><li><span lang="fr">Suivi des KPI : CAC, conversion, inscriptions, activité utilisateurs</span><span lang="en">KPI tracking: CAC, conversion, sign-ups, user activity</span></li><li><span lang="fr">Optimisation des campagnes marketing digitales</span><span lang="en">Digital marketing campaign optimisation</span></li></ul></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Executive (stage)</span><span lang="en">Growth Executive (internship)</span></h3><span class="org">Betclic Group</span></div><div class="date"><span lang="fr">Mars 2022 – Août 2022</span><span lang="en">Mar 2022 – Aug 2022</span></div></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Hacker (stage)</span><span lang="en">Growth Hacker (internship)</span></h3><span class="org">Échoppe</span></div><div class="date"><span lang="fr">Avr. 2021 – Févr. 2022</span><span lang="en">Apr 2021 – Feb 2022</span></div><ul><li><span lang="fr">Suivi et analyse des KPI</span><span lang="en">KPI tracking and analysis</span></li><li><span lang="fr">Création de contenu multimédia</span><span lang="en">Multimedia content creation</span></li><li><span lang="fr">Refonte de l’UX/UI du site web</span><span lang="en">Website UX/UI redesign</span></li><li><span lang="fr">Optimisation du contenu SEO</span><span lang="en">SEO content optimisation</span></li><li><span lang="fr"><b>+70 % de trafic web en 5 mois</b></span><span lang="en"><b>+70% web traffic in 5 months</b></span></li></ul></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Développeur ECM (stage)</span><span lang="en">ECM Developer (internship)</span></h3><span class="org">Amexio</span></div><div class="date"><span lang="fr">Avr. 2020 – Juil. 2020</span><span lang="en">Apr 2020 – Jul 2020</span></div><ul><li><span lang="fr">Développement d’une application ECM</span><span lang="en">Built an ECM application</span></li><li><span lang="fr">Amélioration graphique des outils front-end</span><span lang="en">Visual improvements to front-end tools</span></li><li><span lang="fr">Adaptation au télétravail</span><span lang="en">Adapted to remote work</span></li></ul></article>
-<article class="job rv"><div class="job-head"><h3><span lang="fr">Développeur front-end (stage)</span><span lang="en">Front-end Developer (internship)</span></h3><span class="org">SQLI</span></div><div class="date"><span lang="fr">Juil. 2018 – Déc. 2018</span><span lang="en">Jul 2018 – Dec 2018</span></div><ul><li><span lang="fr">Création d’une application de questionnaire web et mobile</span><span lang="en">Built a web and mobile questionnaire application</span></li><li><span lang="fr">Développement de supports de présentation et de documentation</span><span lang="en">Produced presentation materials and documentation</span></li><li><span lang="fr">Respect des pratiques de méthodologie agile</span><span lang="en">Followed agile methodology practices</span></li></ul></article>
+<article class="job rv now"><div class="job-head"><h3><span lang="fr">Data Analyst</span><span lang="en">Data Analyst</span></h3><span class="org">Betclic Group</span><span class="logo"><img src="logos/betclic.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Avr. 2025 – Aujourd’hui</span><span lang="en">Apr 2025 – Present</span></div><ul><li><span lang="fr">Dashboards marketing : funnel d’acquisition, conversion, rétention</span><span lang="en">Marketing dashboards: acquisition funnel, conversion, retention</span></li><li><span lang="fr">Datasets analytiques : transformation des données en insights business</span><span lang="en">Analytical datasets: turning data into business insights</span></li><li><span lang="fr">Analyses de campagnes : ROI, CTR, conversion, LTV, cohortes</span><span lang="en">Campaign analysis: ROI, CTR, conversion, LTV, cohorts</span></li><li><span lang="fr">Segmentation clients : âge, géographie, cycle de vie, canal</span><span lang="en">Customer segmentation: age, geography, lifecycle, channel</span></li><li><span lang="fr">Automatisation des reportings Growth et Direction</span><span lang="en">Automated Growth and Executive reporting</span></li></ul></article>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Project Manager</span><span lang="en">Growth Project Manager</span></h3><span class="org">Betclic Group</span><span class="logo"><img src="logos/betclic.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Janv. 2024 – Mars 2025</span><span lang="en">Jan 2024 – Mar 2025</span></div><ul><li><span lang="fr">Pilotage de projets Growth multi-marchés</span><span lang="en">Led multi-market Growth projects</span></li><li><span lang="fr">Analyse de la performance business et identification des leviers de croissance</span><span lang="en">Business performance analysis and identification of growth levers</span></li><li><span lang="fr">Coordination des équipes Marketing, Acquisition et Data</span><span lang="en">Coordinated the Marketing, Acquisition and Data teams</span></li><li><span lang="fr">Suivi des KPI d’acquisition, de conversion et d’engagement</span><span lang="en">Tracked acquisition, conversion and engagement KPIs</span></li></ul></article>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Executive</span><span lang="en">Growth Executive</span></h3><span class="org">Betclic Group</span><span class="logo"><img src="logos/betclic.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Sept. 2022 – Déc. 2023</span><span lang="en">Sep 2022 – Dec 2023</span></div><ul><li><span lang="fr">Reporting de performance hebdomadaire et mensuel</span><span lang="en">Weekly and monthly performance reporting</span></li><li><span lang="fr">Analyse des canaux d’acquisition et recommandations d’optimisation</span><span lang="en">Acquisition channel analysis and optimisation recommendations</span></li><li><span lang="fr">Suivi des KPI : CAC, conversion, inscriptions, activité utilisateurs</span><span lang="en">KPI tracking: CAC, conversion, sign-ups, user activity</span></li><li><span lang="fr">Optimisation des campagnes marketing digitales</span><span lang="en">Digital marketing campaign optimisation</span></li></ul></article>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Executive (stage)</span><span lang="en">Growth Executive (internship)</span></h3><span class="org">Betclic Group</span><span class="logo"><img src="logos/betclic.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Mars 2022 – Août 2022</span><span lang="en">Mar 2022 – Aug 2022</span></div></article>
+<div class="before rv"><span lang="fr">Avant Betclic Group</span><span lang="en">Before Betclic Group</span></div>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Growth Hacker (stage)</span><span lang="en">Growth Hacker (internship)</span></h3><span class="org">Échoppe</span><span class="logo"><img src="logos/echoppe.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Avr. 2021 – Févr. 2022</span><span lang="en">Apr 2021 – Feb 2022</span></div><ul><li><span lang="fr">Suivi et analyse des KPI</span><span lang="en">KPI tracking and analysis</span></li><li><span lang="fr">Création de contenu multimédia</span><span lang="en">Multimedia content creation</span></li><li><span lang="fr">Refonte de l’UX/UI du site web</span><span lang="en">Website UX/UI redesign</span></li><li><span lang="fr">Optimisation du contenu SEO</span><span lang="en">SEO content optimisation</span></li></ul></article>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Développeur ECM (stage)</span><span lang="en">ECM Developer (internship)</span></h3><span class="org">Amexio</span><span class="logo"><img src="logos/amexio.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Avr. 2020 – Juil. 2020</span><span lang="en">Apr 2020 – Jul 2020</span></div><ul><li><span lang="fr">Développement d’une application ECM</span><span lang="en">Built an ECM application</span></li><li><span lang="fr">Amélioration graphique des outils front-end</span><span lang="en">Visual improvements to front-end tools</span></li><li><span lang="fr">Adaptation au télétravail</span><span lang="en">Adapted to remote work</span></li></ul></article>
+<article class="job rv"><div class="job-head"><h3><span lang="fr">Développeur front-end (stage)</span><span lang="en">Front-end Developer (internship)</span></h3><span class="org">SQLI</span><span class="logo"><img src="logos/sqli.png" alt="" loading="lazy"></span></div><div class="date"><span lang="fr">Juil. 2018 – Déc. 2018</span><span lang="en">Jul 2018 – Dec 2018</span></div><ul><li><span lang="fr">Création d’une application de questionnaire web et mobile</span><span lang="en">Built a web and mobile questionnaire application</span></li><li><span lang="fr">Développement de supports de présentation et de documentation</span><span lang="en">Produced presentation materials and documentation</span></li><li><span lang="fr">Respect des pratiques de méthodologie agile</span><span lang="en">Followed agile methodology practices</span></li></ul></article>
       </div>
     </section>
 
@@ -304,8 +330,8 @@
       </section>
       <section class="rv" aria-labelledby="ed">
         <h2 id="ed"><span lang="fr">Formation</span><span lang="en">Education</span></h2>
-        <div class="edu"><b><span lang="fr">Titre d’Expert en Technologies de l’Information</span><span lang="en">Expert in Information Technology</span></b><span class="school">EPITECH</span><p><span lang="fr">RNCP Niveau 1 · Promotion 2022</span><span lang="en">RNCP Level 1 · Class of 2022</span></p></div>
-        <div class="edu"><b><span lang="fr">Baccalauréat Scientifique</span><span lang="en">Scientific Baccalauréat</span></b><span class="school">Lycée Descartes</span><p><span lang="fr">Spécialité Informatique et Sciences du Numérique · Option Cinéma et Audiovisuel · LV3 Espagnol · Promotion 2017</span><span lang="en">Computer Science & Digital Sciences specialty · Cinema & Audiovisual option · Spanish as third language · Class of 2017</span></p></div>
+        <div class="edu"><span class="logo"><img src="logos/epitech.png" alt="" loading="lazy"></span><b><span lang="fr">Titre d’Expert en Technologies de l’Information</span><span lang="en">Expert in Information Technology</span></b><span class="school">EPITECH</span><p><span lang="fr">RNCP Niveau 1 · Promotion 2022</span><span lang="en">RNCP Level 1 · Class of 2022</span></p></div>
+        <div class="edu"><span class="logo"><img src="logos/descartes.png" alt="" loading="lazy"></span><b><span lang="fr">Baccalauréat Scientifique</span><span lang="en">Scientific Baccalauréat</span></b><span class="school">Lycée Descartes</span><p><span lang="fr">Spécialité Informatique et Sciences du Numérique · Option Cinéma et Audiovisuel · LV3 Espagnol · Promotion 2017</span><span lang="en">Computer Science & Digital Sciences specialty · Cinema & Audiovisual option · Spanish as third language · Class of 2017</span></p></div>
       </section>
       <section class="rv" aria-labelledby="lg">
         <h2 id="lg"><span lang="fr">Langues</span><span lang="en">Languages</span></h2>
@@ -422,7 +448,7 @@
       });
     }, { threshold: .35 });
     io2.observe(path);
-    d.querySelectorAll('.stat b').forEach(function (b) { b.textContent = (b.dataset.prefix || '') + '0' + (b.dataset.suffix || ''); io2.observe(b); });
+    d.querySelectorAll('.stat b[data-count]').forEach(function (b) { b.textContent = (b.dataset.prefix || '') + '0' + (b.dataset.suffix || ''); io2.observe(b); });
   } else { path.classList.add('in'); }
 
   // ---- timeline fill + hero parallax + photo tilt + magnetic buttons

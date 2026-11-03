@@ -1,0 +1,214 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Othmane Triki",
+    "label": "Data Analyst",
+    "url": "https://odtriki.com/cv/",
+    "summary": "Data Analyst at Betclic Group, with 4+ years at the company and four roles since 2022 (Growth Executive, Growth Project Manager, Data Analyst). Builds marketing dashboards, analytical datasets and automated reporting that turn campaign and customer data into growth decisions, and coordinates Marketing, Acquisition and Data teams across markets. Software development background (EPITECH, Master’s-level) with SQL, Python, Snowflake and Excel.",
+    "location": {
+      "city": "Bordeaux",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "trikio99",
+        "url": "https://www.linkedin.com/in/trikio99/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Betclic Group",
+      "position": "Data Analyst",
+      "startDate": "2025-04",
+      "highlights": [
+        "Built marketing dashboards covering the acquisition funnel, conversion and retention",
+        "Developed analytical datasets that turn raw data into business insights",
+        "Analyzed campaign performance using ROI, CTR, conversion, LTV and cohort analysis",
+        "Segmented customers by age, geography, lifecycle stage and acquisition channel",
+        "Automated Growth and Executive reporting"
+      ]
+    },
+    {
+      "name": "Betclic Group",
+      "position": "Growth Project Manager",
+      "startDate": "2024-01",
+      "highlights": [
+        "Led Growth projects across multiple markets",
+        "Analyzed business performance and identified growth levers",
+        "Coordinated the Marketing, Acquisition and Data teams",
+        "Tracked acquisition, conversion and engagement KPIs"
+      ],
+      "endDate": "2025-03"
+    },
+    {
+      "name": "Betclic Group",
+      "position": "Growth Executive",
+      "startDate": "2022-09",
+      "highlights": [
+        "Produced weekly and monthly performance reports",
+        "Analyzed acquisition channels and recommended optimizations",
+        "Tracked CAC, conversion, sign-ups and user activity KPIs",
+        "Optimized digital marketing campaigns"
+      ],
+      "endDate": "2023-12"
+    },
+    {
+      "name": "Betclic Group",
+      "position": "Growth Executive (Intern)",
+      "startDate": "2022-03",
+      "highlights": [],
+      "endDate": "2022-08"
+    },
+    {
+      "name": "Échoppe",
+      "position": "Growth Hacker (Intern)",
+      "startDate": "2021-04",
+      "highlights": [
+        "Tracked and analyzed KPIs",
+        "Redesigned the website UX/UI and optimized SEO content",
+        "Created multimedia content"
+      ],
+      "endDate": "2022-02"
+    },
+    {
+      "name": "Amexio",
+      "position": "ECM Developer (Intern)",
+      "startDate": "2020-04",
+      "highlights": [
+        "Developed an Enterprise Content Management (ECM) application",
+        "Improved the graphical design of front-end tools",
+        "Adapted to fully remote work"
+      ],
+      "endDate": "2020-07"
+    },
+    {
+      "name": "SQLI",
+      "position": "Front-End Developer (Intern)",
+      "startDate": "2018-07",
+      "highlights": [
+        "Built a web and mobile questionnaire application",
+        "Produced presentation materials and technical documentation",
+        "Worked in an Agile environment"
+      ],
+      "endDate": "2018-12"
+    }
+  ],
+  "education": [
+    {
+      "institution": "EPITECH",
+      "studyType": "Expert in Information Technology (RNCP Level I / EQF 7, Master’s-level)",
+      "endDate": "2022"
+    },
+    {
+      "institution": "Lycée Descartes",
+      "studyType": "Scientific Baccalauréat",
+      "area": "Computer Science; Cinema & Audiovisual option",
+      "endDate": "2017"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Data & Analytics",
+      "keywords": [
+        "SQL",
+        "Python",
+        "Excel",
+        "Snowflake",
+        "Data Visualization",
+        "Campaign Analysis",
+        "Customer Segmentation",
+        "Cohort Analysis",
+        "KPI Reporting",
+        "Generative AI"
+      ]
+    },
+    {
+      "name": "Marketing & Growth",
+      "keywords": [
+        "Growth Marketing",
+        "SEO",
+        "Google Ads",
+        "Digital Campaign Optimization",
+        "Funnel Analysis",
+        "CAC",
+        "LTV",
+        "ROI",
+        "CTR"
+      ]
+    },
+    {
+      "name": "Software & Tools",
+      "keywords": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Vue",
+        "React",
+        "C",
+        "Git",
+        "Microsoft Word",
+        "Microsoft PowerPoint"
+      ]
+    },
+    {
+      "name": "Professional",
+      "keywords": [
+        "Project Management",
+        "Cross-functional Coordination",
+        "Problem Solving",
+        "Leadership",
+        "Adaptability"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French"
+    },
+    {
+      "language": "Arabic"
+    },
+    {
+      "language": "English"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "B1"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Football"
+    },
+    {
+      "name": "Cinema"
+    },
+    {
+      "name": "Cooking"
+    },
+    {
+      "name": "Video games"
+    },
+    {
+      "name": "Travel"
+    },
+    {
+      "name": "Chess"
+    },
+    {
+      "name": "Music"
+    },
+    {
+      "name": "Statistics"
+    },
+    {
+      "name": "Social media"
+    }
+  ],
+  "meta": {
+    "canonical": "https://odtriki.com/cv/us/",
+    "version": "v1.0.0"
+  }
+}
