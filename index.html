@@ -126,7 +126,7 @@
   @media (max-width: 40rem) {
     .hero .wrap { grid-template-columns: 1fr; gap: var(--space-8); }
     .hero-logo { order: -1; width: 6rem; }
-    nav .brand span { display: none; }
+    
   }
 
   /* ---------- projects ---------- */
@@ -226,20 +226,6 @@
     .js .rv.in { opacity: 1; translate: 0 0; }
   }
 
-  /* marquee */
-  .marquee { background: var(--brand-strong); color: var(--on-brand-strong); overflow: hidden; padding-block: var(--space-4); transform: rotate(-1.2deg); margin: -0.9rem -1rem 0; position: relative; z-index: 2; }
-  .marquee .track { display: flex; width: max-content; }
-  .marquee .grp { display: flex; align-items: center; gap: var(--space-6); padding-right: var(--space-6); flex-shrink: 0; }
-  .marquee span { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 2.6vw, 1.6rem); letter-spacing: -.01em; text-transform: uppercase; white-space: nowrap; }
-  .marquee b { width: .7rem; height: .7rem; border-radius: 3px; background: currentColor; transform: rotate(18deg); flex-shrink: 0; }
-  @media (prefers-reduced-motion: no-preference) {
-    .marquee .track { animation: scroll 38s linear infinite; }
-    .marquee:hover .track { animation-play-state: paused; }
-    .marquee b { animation: spin 4s linear infinite; }
-    @keyframes scroll { to { transform: translateX(-50%); } }
-    @keyframes spin { to { transform: rotate(378deg); } }
-  }
-
   /* cards: cursor-follow flat fill, tilt, icon pop */
   .pcard { position: relative; overflow: hidden; isolation: isolate; }
   .pcard::before {
@@ -257,7 +243,6 @@
   .pcard.tilt { transition: transform .15s ease-out; }
   @media (prefers-reduced-motion: reduce) {
     .pcard::before, .pcard .picon { transition: none; }
-    .marquee { transform: none; margin: 0; }
   }
 
 
@@ -294,10 +279,10 @@
 
   <nav>
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Othmane Triki">
+      <a class="brand" href="#top" aria-label="Trikorporation">
         <!-- level 3 (compact): 28 to 63px -->
         <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" rx="22" fill="#0B3D2E"/><path d="M30 30H98L92 54H74L66 98H42L50 54H24Z" fill="#11A24F"/><path d="M80 30H98L94 46Z" fill="#C6F432"/></svg>
-        <span>Othmane Triki</span>
+        <span>Trikorporation</span>
       </a>
       <span class="links">
         <a href="#projects">Projects</a>
@@ -330,8 +315,6 @@
       </div>
     </div>
   </header>
-
-  <div class="marquee" aria-hidden="true"><div class="track"><div class="grp"><span>Kino der RN</span><b></b><span>Scatterboxd</span><b></b><span>Letterboxd Compare</span><b></b><span>Streaming Checker</span><b></b><span>MonVote.ma</span><b></b><span>Roméo &amp; Jules</span><b></b><span>Chess</span><b></b><span>Everywhere I've been</span><b></b><span>Cooking</span><b></b><span>Où boire une pinte</span><b></b><span>Old school projects</span><b></b></div><div class="grp"><span>Kino der RN</span><b></b><span>Scatterboxd</span><b></b><span>Letterboxd Compare</span><b></b><span>Streaming Checker</span><b></b><span>MonVote.ma</span><b></b><span>Roméo &amp; Jules</span><b></b><span>Chess</span><b></b><span>Everywhere I've been</span><b></b><span>Cooking</span><b></b><span>Où boire une pinte</span><b></b><span>Old school projects</span><b></b></div></div></div>
 
   <main>
     <section class="projects-section" id="projects">
