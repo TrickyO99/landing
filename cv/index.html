@@ -50,7 +50,8 @@
   @media (max-width: 34rem) { nav .brand span { display: none; } .btn .lbl { display: none; } }
 
   /* ---------- header ---------- */
-  .hero { background: var(--forest); color: var(--on-forest); }
+  .hero { background: var(--forest); color: var(--on-forest); position: relative; overflow: hidden; }
+  .hero .wrap { position: relative; z-index: 1; }
   .hero .wrap { display: grid; grid-template-columns: auto 1fr; gap: var(--space-12); align-items: center; padding-block: clamp(2.5rem, 7vw, 4.5rem); }
   .photo { width: clamp(8rem, 19vw, 12.5rem); aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; background: var(--brand); }
   .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; }
@@ -143,6 +144,51 @@
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+
+  /* ---------- extras ---------- */
+  .theme { width: 2.4rem; height: 2.4rem; display: grid; place-items: center; border: 1px solid var(--hairline); border-radius: var(--radius-md); background: var(--surface-200); color: var(--ink); cursor: pointer; transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
+  .theme svg { width: 1.15rem; height: 1.15rem; }
+  .theme:hover { transform: rotate(180deg); }
+
+  .bgT { position: absolute; right: -6%; top: -30%; width: min(62rem, 90vw); height: auto; fill: var(--on-forest); opacity: .05; pointer-events: none; transform: translate3d(var(--bx, 0px), var(--by, 0px), 0) rotate(var(--br, 0deg)); will-change: transform; }
+  .hero h1 .ch { display: inline-block; }
+  .photo { transition: transform .25s ease-out; }
+
+  .stats { background: var(--surface-200); border-bottom: 1px solid var(--hairline); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: var(--space-8) var(--space-4); border-left: 1px solid var(--hairline); }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat b { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1; letter-spacing: -.03em; color: var(--brand-strong); font-variant-numeric: tabular-nums; }
+  .stat span { display: block; margin-top: var(--space-2); font-size: .9rem; color: var(--ink-muted); font-weight: 500; }
+  @media (max-width: 40rem) { .stats .wrap { grid-template-columns: 1fr 1fr; } .stat:nth-child(3) { border-left: 0; padding-left: 0; } .stat { border-top: 1px solid var(--hairline); } .stat:nth-child(-n+2) { border-top: 0; } }
+
+  .path { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); align-items: end; gap: var(--space-3); }
+  .steps .bar { height: calc(5rem + var(--h) * 3.1rem); display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; padding: var(--space-4); border-radius: var(--radius-lg); background: var(--forest); color: var(--on-forest); }
+  .steps li.cur .bar { background: var(--brand-strong); color: var(--on-brand-strong); }
+  .steps .when { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+  .steps b { font-family: var(--font-display); font-weight: 800; font-size: clamp(1rem, 1.9vw, 1.35rem); line-height: 1.1; letter-spacing: -.01em; }
+  .steps i { font-style: normal; font-size: .8rem; opacity: .8; }
+  @media (max-width: 40rem) { .steps { grid-template-columns: 1fr 1fr; } .steps .bar { height: auto; min-height: calc(3.5rem + var(--h) * 1.4rem); } }
+
+  .timeline::after { content: ''; position: absolute; left: 4px; top: .6rem; width: 2px; height: var(--fill, 0px); background: var(--brand-strong); max-height: calc(100% - 1.2rem); }
+  .job.passed::before { background: var(--brand-strong); }
+  .job { transition: opacity .6s ease, translate .6s cubic-bezier(.2,.9,.2,1); }
+  .job::before { transition: background .3s ease, scale .3s cubic-bezier(.3,1.8,.5,1); }
+  .job.passed::before { scale: 1.35; }
+
+  .chips li { display: inline-block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 .ch { animation: rise .7s cubic-bezier(.2,.9,.2,1) both; animation-delay: calc(.12s + var(--c) * 28ms); }
+    .hero h1 { animation: none; }
+    .js .steps li .bar { clip-path: inset(100% 0 0 0); transition: clip-path .9s cubic-bezier(.2,.9,.2,1); transition-delay: calc(var(--n) * 140ms); }
+    .js .path.in .steps li .bar { clip-path: inset(0 0 0 0 round 24px); }
+    .js .rv .chips li { opacity: 0; scale: .7; transition: opacity .4s ease, scale .4s cubic-bezier(.3,1.6,.5,1), translate .15s ease, background .15s ease; transition-delay: calc(var(--i, 0) * 22ms), calc(var(--i, 0) * 22ms), 0s, 0s; }
+    .js .rv.in .chips li { opacity: 1; scale: 1; }
+    .stat b { transition: color .3s ease; }
+  }
+  @media (prefers-reduced-motion: reduce) { .bgT { transform: none !important; } .theme:hover { transform: none; } }
+
   /* ---------- print: one A4 page, same content ---------- */
   @page { size: A4; margin: 0; }
   @media print {
@@ -150,7 +196,10 @@
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     html { font-size: 8.3px; }
     body { background: #fff; }
-    nav, .contact, footer, .progress { display: none !important; }
+    nav, .contact, footer, .progress, .stats, .path, .bgT { display: none !important; }
+    .chips li { opacity: 1 !important; scale: 1 !important; }
+    .timeline::after { display: none; }
+    .hero h1 .ch { animation: none !important; }
     .rv, .js .rv { opacity: 1 !important; translate: 0 0 !important; transition: none !important; animation: none !important; }
     .hero *, .chips li { animation: none !important; }
     .wrap { max-width: none; padding-inline: 12mm; }
@@ -173,6 +222,7 @@
         <span>Trikorporation</span>
       </a>
       <div class="nav-right">
+        <button type="button" class="theme" id="theme" aria-label="Thème / Theme"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 3a9 9 0 100 18V3z"/><path d="M12 3a9 9 0 010 18" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
         <div class="seg" role="group" aria-label="Langue / Language">
           <button type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -187,6 +237,7 @@
   </nav>
 
   <header class="hero">
+    <svg class="bgT" viewBox="0 0 120 120" aria-hidden="true"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/></svg>
     <div class="wrap">
       <div class="photo"><img src="photo.png" alt="Othmane Triki" width="400" height="400"></div>
       <div>
@@ -207,6 +258,27 @@
       </div>
     </div>
   </header>
+
+  <section class="stats" aria-label="Key figures">
+    <div class="wrap">
+      <div class="stat rv"><b data-count="70" data-prefix="+" data-suffix="%">+70%</b><span><span lang="fr">de trafic web en 5 mois</span><span lang="en">web traffic in 5 months</span></span></div>
+      <div class="stat rv"><b data-count="4" data-suffix="+">4+</b><span><span lang="fr">ans en Growth &amp; Data</span><span lang="en">years in Growth &amp; Data</span></span></div>
+      <div class="stat rv"><b data-count="4">4</b><span><span lang="fr">rôles chez Betclic Group</span><span lang="en">roles at Betclic Group</span></span></div>
+      <div class="stat rv"><b data-count="7">7</b><span><span lang="fr">postes et stages</span><span lang="en">roles and internships</span></span></div>
+    </div>
+  </section>
+
+  <section class="path" aria-labelledby="pt">
+    <div class="wrap">
+      <h2 id="pt"><span lang="fr">Parcours chez Betclic Group</span><span lang="en">Career at Betclic Group</span></h2>
+      <ol class="steps">
+        <li style="--h:1"><div class="bar"><span class="when"><span lang="fr">Mars 2022</span><span lang="en">Mar 2022</span></span><b>Growth Executive</b><i><span lang="fr">stage</span><span lang="en">internship</span></i></div></li>
+        <li style="--h:2"><div class="bar"><span class="when"><span lang="fr">Sept. 2022</span><span lang="en">Sep 2022</span></span><b>Growth Executive</b></div></li>
+        <li style="--h:3"><div class="bar"><span class="when"><span lang="fr">Janv. 2024</span><span lang="en">Jan 2024</span></span><b>Growth Project Manager</b></div></li>
+        <li style="--h:4" class="cur"><div class="bar"><span class="when"><span lang="fr">Avr. 2025</span><span lang="en">Apr 2025</span></span><b>Data Analyst</b></div></li>
+      </ol>
+    </div>
+  </section>
 
   <main class="wrap cols">
     <section aria-labelledby="exp">
@@ -241,7 +313,7 @@
       </section>
       <section class="rv" aria-labelledby="it">
         <h2 id="it"><span lang="fr">Centres d’intérêt</span><span lang="en">Interests</span></h2>
-        <ul class="chips"><li><span lang="fr">Football</span><span lang="en">Football</span></li><li><span lang="fr">Cinéma</span><span lang="en">Cinema</span></li><li><span lang="fr">Cuisine</span><span lang="en">Cooking</span></li><li><span lang="fr">Jeux vidéo</span><span lang="en">Video games</span></li><li><span lang="fr">Voyages</span><span lang="en">Travel</span></li><li><span lang="fr">Échecs</span><span lang="en">Chess</span></li><li><span lang="fr">Musique</span><span lang="en">Music</span></li></ul>
+        <ul class="chips"><li><span lang="fr">Football</span><span lang="en">Football</span></li><li><span lang="fr">Cinéma</span><span lang="en">Cinema</span></li><li><span lang="fr">Cuisine</span><span lang="en">Cooking</span></li><li><span lang="fr">Jeux vidéo</span><span lang="en">Video games</span></li><li><span lang="fr">Voyages</span><span lang="en">Travel</span></li><li><span lang="fr">Échecs</span><span lang="en">Chess</span></li><li><span lang="fr">Musique</span><span lang="en">Music</span></li><li><span lang="fr">Statistiques</span><span lang="en">Statistics</span></li><li><span lang="fr">Réseaux sociaux</span><span lang="en">Social media</span></li></ul>
       </section>
     </aside>
   </main>
@@ -302,6 +374,80 @@
   else {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .1, rootMargin: '0px 0px -5% 0px' });
     rv.forEach(function (e) { io.observe(e); });
+  }
+
+
+  // ---- theme toggle
+  var themeBtn = d.getElementById('theme');
+  try { var th = localStorage.getItem('cv-theme'); if (th) root.setAttribute('data-theme', th); } catch (e) {}
+  themeBtn.addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('cv-theme', next); } catch (e) {}
+  });
+
+  // ---- name: letters rise one by one
+  var h1 = d.querySelector('.hero h1');
+  if (!reduce) {
+    var txt = h1.textContent; h1.setAttribute('aria-label', txt); h1.textContent = '';
+    for (var i = 0; i < txt.length; i++) {
+      var sp = d.createElement('span'); sp.className = 'ch'; sp.setAttribute('aria-hidden', 'true');
+      sp.style.setProperty('--c', i); sp.textContent = txt[i] === ' ' ? '\u00a0' : txt[i]; h1.appendChild(sp);
+    }
+  }
+
+  // ---- stagger indexes
+  d.querySelectorAll('.chips').forEach(function (ul) { ul.querySelectorAll('li').forEach(function (li, i) { li.style.setProperty('--i', i); }); });
+  d.querySelectorAll('.steps li').forEach(function (li, i) { li.style.setProperty('--n', i); });
+
+  // ---- staircase + count-up
+  var path = d.querySelector('.path');
+  function countUp(el) {
+    var n = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    if (reduce) { el.textContent = pre + n + suf; return; }
+    var t0 = performance.now(), dur = 1300;
+    (function tick(t) {
+      var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = pre + Math.round(n * e) + suf;
+      if (k < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  if ('IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        if (e.target === path) path.classList.add('in'); else countUp(e.target);
+        io2.unobserve(e.target);
+      });
+    }, { threshold: .35 });
+    io2.observe(path);
+    d.querySelectorAll('.stat b').forEach(function (b) { b.textContent = (b.dataset.prefix || '') + '0' + (b.dataset.suffix || ''); io2.observe(b); });
+  } else { path.classList.add('in'); }
+
+  // ---- timeline fill + hero parallax + photo tilt + magnetic buttons
+  var tl = d.querySelector('.timeline'), jobs = d.querySelectorAll('.job'), bgT = d.querySelector('.bgT');
+  function onScroll() {
+    var r = tl.getBoundingClientRect(), mid = innerHeight * .55;
+    tl.style.setProperty('--fill', Math.max(0, Math.min(r.height, mid - r.top)) + 'px');
+    jobs.forEach(function (j) { j.classList.toggle('passed', j.getBoundingClientRect().top < mid); });
+    if (!reduce) { var y = scrollY; bgT.style.setProperty('--by', (y * .18) + 'px'); bgT.style.setProperty('--br', (y * .01) + 'deg'); }
+  }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  var fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (fine && !reduce) {
+    var hero = d.querySelector('.hero'), photo = d.querySelector('.photo');
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      bgT.style.setProperty('--bx', (-x * 40) + 'px');
+      photo.style.transform = 'perspective(600px) rotateY(' + (x * 12).toFixed(2) + 'deg) rotateX(' + (-y * 10).toFixed(2) + 'deg)';
+    });
+    hero.addEventListener('pointerleave', function () { photo.style.transform = ''; bgT.style.setProperty('--bx', '0px'); });
+    d.querySelectorAll('nav .btn, .meta a, .contact .btn').forEach(function (b) {
+      b.addEventListener('pointermove', function (e) { var r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .18).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * .28).toFixed(1) + 'px)'; });
+      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
+    });
   }
 
   // ---- contact form (Web3Forms delivers to the inbox the access key was created for;
