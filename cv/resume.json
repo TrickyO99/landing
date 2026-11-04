@@ -4,7 +4,7 @@
     "name": "Othmane Triki",
     "label": "Data Analyst",
     "url": "https://odtriki.com/cv/",
-    "summary": "Data Analyst at Betclic Group, with 4+ years at the company and four roles since 2022 (Growth Executive, Growth Project Manager, Data Analyst). Builds marketing dashboards, analytical datasets and automated reporting that turn campaign and customer data into growth decisions, and coordinates Marketing, Acquisition and Data teams across 10+ countries. Software development background (EPITECH, Master’s-level) with SQL, Python, Snowflake and Excel.",
+    "summary": "Data Analyst at Betclic Group, promoted twice since joining in 2022 (Growth Executive, Growth Project Manager, Data Analyst). Combines deep marketing and data business knowledge: paid acquisition across Social, Display, Search and Partnerships in 10+ countries, and dashboards used by ~80 business stakeholders. Expert in Excel, now building dashboards and automations with generative AI. Seeking AI-focused roles at the intersection of marketing, data and business.",
     "location": {
       "city": "Bordeaux",
       "countryCode": "FR"
@@ -23,11 +23,10 @@
       "position": "Data Analyst",
       "startDate": "2025-04",
       "highlights": [
-        "Built marketing dashboards covering the acquisition funnel, conversion and retention",
+        "Built market-value and socio-demographic dashboards used by ~80 business stakeholders and senior management",
+        "Analyzed campaign performance (ROI, CTR, conversion, LTV, cohorts) and segmented customers by age, geography, lifecycle and channel",
         "Developed analytical datasets that turn raw data into business insights",
-        "Analyzed campaign performance using ROI, CTR, conversion, LTV and cohort analysis",
-        "Segmented customers by age, geography, lifecycle stage and acquisition channel",
-        "Automated Growth and Executive reporting"
+        "Ran internal workshops and training on internal tools and Excel"
       ]
     },
     {
@@ -35,10 +34,10 @@
       "position": "Growth Project Manager",
       "startDate": "2024-01",
       "highlights": [
-        "Led Growth projects across 10+ countries",
-        "Analyzed business performance and identified growth levers",
-        "Coordinated the Marketing, Acquisition and Data teams",
-        "Tracked acquisition, conversion and engagement KPIs"
+        "Led Growth projects across 10+ countries in Europe and Africa (France, Portugal, Poland, Italy, Switzerland, Malta, Hungary, Côte d’Ivoire, Senegal, Benin, Cameroon and more)",
+        "Managed budget allocation across acquisition channels and monitored acquisition bonus costs",
+        "Coordinated Marketing, Acquisition and Data teams (direct and cross-functional); supervised one work-study apprentice",
+        "Analyzed business performance, identified growth levers and tracked acquisition, conversion and engagement KPIs"
       ],
       "endDate": "2025-03"
     },
@@ -47,10 +46,9 @@
       "position": "Growth Executive",
       "startDate": "2022-09",
       "highlights": [
-        "Produced weekly and monthly performance reports",
-        "Analyzed acquisition channels and recommended optimizations",
-        "Tracked CAC, conversion, sign-ups and user activity KPIs",
-        "Optimized digital marketing campaigns"
+        "Analyzed acquisition performance across Social (Meta, Snapchat, X, Google), Display (programmatic), Digital Partnerships (affiliation, influence) and Search (Google, Apple Search Ads, Bing)",
+        "Produced weekly and monthly performance reports tracking CAC, conversion, sign-ups and user activity",
+        "Recommended channel optimizations and optimized digital marketing campaigns"
       ],
       "endDate": "2023-12"
     },
@@ -66,9 +64,7 @@
       "position": "Growth Hacker (Intern)",
       "startDate": "2021-04",
       "highlights": [
-        "Tracked and analyzed KPIs",
-        "Redesigned the website UX/UI and optimized SEO content",
-        "Created multimedia content"
+        "Tracked and analyzed KPIs; redesigned the website UX/UI; optimized SEO content; created multimedia content"
       ],
       "endDate": "2022-02"
     },
@@ -77,9 +73,7 @@
       "position": "ECM Developer (Intern)",
       "startDate": "2020-04",
       "highlights": [
-        "Developed an Enterprise Content Management (ECM) application",
-        "Improved the graphical design of front-end tools",
-        "Adapted to fully remote work"
+        "Developed an Enterprise Content Management (ECM) application and improved front-end tool design"
       ],
       "endDate": "2020-07"
     },
@@ -88,9 +82,7 @@
       "position": "Front-End Developer (Intern)",
       "startDate": "2018-07",
       "highlights": [
-        "Built a web and mobile questionnaire application",
-        "Produced presentation materials and technical documentation",
-        "Worked in an Agile environment"
+        "Built a web and mobile questionnaire application with documentation, in an Agile environment"
       ],
       "endDate": "2018-12"
     }
@@ -114,28 +106,33 @@
       "keywords": [
         "SQL",
         "Python",
-        "Excel",
+        "Advanced Excel",
         "Snowflake",
         "Data Visualization",
+        "Generative AI",
+        "AI-Assisted Automation",
         "Campaign Analysis",
         "Customer Segmentation",
         "Cohort Analysis",
-        "KPI Reporting",
-        "Generative AI"
+        "KPI Reporting"
       ]
     },
     {
       "name": "Marketing & Growth",
       "keywords": [
         "Growth Marketing",
-        "SEO",
+        "Paid Social",
+        "Programmatic Display",
+        "Paid Search (SEM)",
+        "Affiliate & Influencer Marketing",
         "Google Ads",
-        "Digital Campaign Optimization",
-        "Funnel Analysis",
+        "Apple Search Ads",
+        "SEO",
         "CAC",
         "LTV",
         "ROI",
-        "CTR"
+        "CTR",
+        "Budget Allocation"
       ]
     },
     {
@@ -157,21 +154,25 @@
       "keywords": [
         "Project Management",
         "Cross-functional Coordination",
+        "Training & Workshop Facilitation",
+        "Mentoring",
         "Problem Solving",
-        "Leadership",
-        "Adaptability"
+        "Leadership"
       ]
     }
   ],
   "languages": [
     {
-      "language": "French"
+      "language": "French",
+      "fluency": "Native"
     },
     {
-      "language": "Arabic"
+      "language": "Arabic",
+      "fluency": "Native"
     },
     {
-      "language": "English"
+      "language": "English",
+      "fluency": "Fluent"
     },
     {
       "language": "Spanish",
