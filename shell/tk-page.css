@@ -1,0 +1,63 @@
+/* Trikorporation brand for the small static project pages (chess, cook, travel, Romeo & Jules, archive).
+ * Tokens come from brand/tokens/tokens.css. Hosted once at odtriki.com/shell/tk-page.css.
+ * The bar and footer come from tk.js; this file styles the page body. */
+:root{--surface-100:#F7F5EC;--surface-200:#ECE8D6;--ink:#101614;--ink-muted:#46544D;--hairline:#CFCBB5;--brand:#11A24F;--on-brand:#FFFFFF;--brand-strong:#0C7F3E;--on-brand-strong:#FFFFFF;--forest:#0B3D2E;--on-forest:#F7F5EC;--lime:#C6F432;--focus:#0B3D2E;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--radius-sm:6px;--radius-md:12px;--radius-lg:24px;--radius-pill:999px;--font-display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--font-sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--surface-100:#0A1511;--surface-200:#12251D;--ink:#F7F5EC;--ink-muted:#A9B8AF;--hairline:#2A4034;--brand:#2FC26A;--on-brand:#08241B;--brand-strong:#2FC26A;--on-brand-strong:#08241B;--forest:#1B5E47;--on-forest:#F7F5EC;--focus:#C6F432}}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--surface-100);color:var(--ink);font-family:var(--font-sans);line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+body>main{flex:1}
+a{color:var(--brand-strong);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;margin:0}
+
+main{width:100%;max-width:56rem;margin:0 auto;padding:clamp(2.5rem,7vw,4.5rem) clamp(1rem,5vw,2rem) 5rem}
+main.wide{max-width:72rem}
+
+.eyebrow,.kicker{display:inline-flex;align-items:center;gap:var(--space-2);margin:0 0 var(--space-3);color:var(--brand-strong);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.kicker svg{width:14px;height:14px}
+h1{font-size:clamp(2.4rem,7vw,4rem);line-height:1;letter-spacing:-.03em;margin:0 0 var(--space-3)}
+h2{font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em}
+.subtitle,.meta,.status,.lead{color:var(--ink-muted)}
+.subtitle{margin:0 0 var(--space-8)}
+.meta{font-size:.95rem;margin:0 0 var(--space-8)}
+.lead{font-size:1.05rem;max-width:40rem}
+
+/* chips (awards, tags) */
+.award,.chip{display:inline-flex;align-items:center;gap:var(--space-2);padding:.4rem 1rem;border-radius:var(--radius-pill);background:var(--surface-200);border:1px solid var(--hairline);font-size:.85rem;font-weight:600;color:var(--ink);margin:0 var(--space-2) var(--space-2) 0}
+.awards{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-8)}
+.awards .award{margin:0}
+
+/* cards */
+.card,.embed-card,.stat,.profile{background:var(--surface-100);border:1px solid var(--hairline);border-radius:var(--radius-lg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:var(--space-4)}
+.embed-card{padding:var(--space-4);overflow:hidden;display:flex;justify-content:center;background:var(--surface-200)}
+.embed-card blockquote{margin:0}
+
+/* video */
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--hairline);background:#000;margin-bottom:var(--space-8)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.synopsis{color:var(--ink-muted);max-width:40rem}
+.synopsis p{margin:0 0 var(--space-4)}
+
+/* buttons */
+.btn,a.cta{display:inline-flex;align-items:center;gap:var(--space-2);padding:.6rem 1.1rem;border-radius:var(--radius-md);background:var(--brand-strong);color:var(--on-brand-strong);font-weight:600;font-size:.92rem;text-decoration:none;border:0;cursor:pointer;transition:background .15s ease,translate .15s ease}
+.btn:hover,a.cta:hover{background:color-mix(in srgb,var(--brand-strong) 82%,black);translate:0 -2px;text-decoration:none}
+
+/* chess.com profile + stats */
+.profile{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-6);margin-bottom:var(--space-6)}
+.profile img{width:64px;height:64px;border-radius:var(--radius-md);object-fit:cover}
+.profile .uname{font-family:var(--font-display);font-weight:800;font-size:1.3rem}
+.profile .meta{margin:2px 0 0;font-size:.88rem}
+.profile a.cta{margin-left:auto}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:var(--space-3);margin-bottom:var(--space-12)}
+.stat{padding:var(--space-4) var(--space-6)}
+.stat .num{font-family:var(--font-display);font-weight:800;font-size:1.9rem;line-height:1;color:var(--brand-strong);letter-spacing:-.02em}
+.stat .label{color:var(--ink-muted);font-size:.82rem;margin-top:var(--space-1);font-weight:500}
+.history{color:var(--ink-muted)}
+.history .eyebrow{margin-top:var(--space-4)}
+.history p{margin:0 0 var(--space-3)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,a.cta{transition:none}}
