@@ -64,7 +64,7 @@
       "position": "Growth Hacker (Intern)",
       "startDate": "2021-04",
       "highlights": [
-        "Tracked and analyzed KPIs; redesigned the website UX/UI; optimized SEO content; created multimedia content"
+        "Tracked and analyzed KPIs; redesigned the website UX/UI (PHP, React); optimized SEO content; created multimedia content"
       ],
       "endDate": "2022-02"
     },
@@ -73,7 +73,7 @@
       "position": "ECM Developer (Intern)",
       "startDate": "2020-04",
       "highlights": [
-        "Developed an Enterprise Content Management (ECM) application and improved front-end tool design"
+        "Developed an Enterprise Content Management (ECM) application on Nuxeo using Polymer, React and Java; earned Nuxeo certification"
       ],
       "endDate": "2020-07"
     },
@@ -82,7 +82,7 @@
       "position": "Front-End Developer (Intern)",
       "startDate": "2018-07",
       "highlights": [
-        "Built a web and mobile questionnaire application with documentation, in an Agile environment"
+        "Built a web and mobile questionnaire application connected to a blockchain (Vue.js, Java); documented in an Agile environment"
       ],
       "endDate": "2018-12"
     }
@@ -138,11 +138,16 @@
     {
       "name": "Software & Tools",
       "keywords": [
+        "Java",
+        "PHP",
         "JavaScript",
         "HTML5",
         "CSS3",
-        "Vue",
+        "Vue.js",
         "React",
+        "Polymer",
+        "Nuxeo (certified)",
+        "Blockchain integration",
         "C",
         "Git",
         "Microsoft Word",
