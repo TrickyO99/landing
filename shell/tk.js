@@ -64,7 +64,7 @@
   define('tk-bar', BAR_CSS,
     '<div class="w"><div class="in">' +
       '<div class="l"><a class="logo" href="' + HOME + '" aria-label="Trikorporation">' + TILE + '<span class="t">Trikorporation</span></a>' +
-      (name ? '<span class="crumb">' + name.replace(/[<>&]/g, '') + '</span>' : '') + '</div>' +
+      (name ? '<span class="crumb">' + name.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>' : '') + '</div>' +
       '<nav aria-label="Trikorporation"><a href="' + HOME + '/#projects">Projects</a><a href="' + HOME + '/cv/">CV</a></nav>' +
     '</div></div>');
 
