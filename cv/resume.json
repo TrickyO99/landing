@@ -189,6 +189,9 @@
       "name": "Football"
     },
     {
+      "name": "Sports"
+    },
+    {
       "name": "Cinema"
     },
     {
@@ -196,6 +199,9 @@
     },
     {
       "name": "Video games"
+    },
+    {
+      "name": "General culture"
     },
     {
       "name": "Travel"
@@ -207,7 +213,10 @@
       "name": "Music"
     },
     {
-      "name": "Statistics"
+      "name": "Data"
+    },
+    {
+      "name": "AI"
     },
     {
       "name": "Social media"
