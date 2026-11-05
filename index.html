@@ -129,72 +129,61 @@
     
   }
 
-  /* ---------- projects ---------- */
+  /* ---------- projects: horizontal showcase ---------- */
   .projects-section { padding-block: clamp(3rem, 8vw, 5.5rem); }
-  .eyebrow {
-    margin: 0 0 var(--space-2);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--brand-strong);
-  }
-  h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: var(--space-8); }
+  .eyebrow { margin: 0 0 var(--space-2); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand-strong); }
+  h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: var(--space-6); }
+  .showcase-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4); }
+  .showcase-head h2 { margin-bottom: var(--space-6); }
+  .rail-ctl { display: flex; gap: var(--space-2); margin-bottom: var(--space-6); }
+  .arrow-btn { width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid var(--hairline); background: var(--surface-100); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: background .15s ease, color .15s ease, translate .15s ease; }
+  .arrow-btn svg { width: 1.2rem; height: 1.2rem; }
+  .arrow-btn:hover { background: var(--forest); color: var(--on-forest); border-color: var(--forest); }
+  .arrow-btn:disabled { opacity: .35; cursor: default; pointer-events: none; }
 
-  .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: var(--space-4); }
-  .pcard {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-6);
-    background: var(--surface-100);
-    border: 1px solid var(--hairline);
-    border-radius: var(--radius-lg);
-    color: var(--ink);
-    text-decoration: none;
-    transition: background .15s ease;
-  }
-  .pcard:hover { background: var(--surface-200); }
-  .picon {
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: var(--space-4);
-    border-radius: var(--radius-md);
-    background: var(--forest);
-    color: var(--on-forest);
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-  }
-  .picon svg { width: 1.5rem; height: 1.5rem; }
-  .picon.sub { background: none; }
-  .picon.sub svg { width: 100%; height: 100%; }
-  .ptitle {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-2);
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-  .arrow { flex-shrink: 0; color: var(--brand-strong); transition: transform .15s ease; }
-  .arrow svg { width: 1.1rem; height: 1.1rem; }
-  .pcard:hover .arrow { transform: translate(2px, -2px); }
-  .pdesc { margin-top: var(--space-2); color: var(--ink-muted); font-size: 0.95rem; flex-grow: 1; }
-  .ptag {
-    align-self: flex-start;
-    margin-top: var(--space-4);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-pill);
-    background: var(--surface-200);
-    border: 1px solid var(--hairline);
-    font-size: 0.78rem;
-    font-weight: 600;
-  }
-  .pcard:hover .ptag { background: var(--surface-100); }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-8); }
+  .chip { font: inherit; font-size: .88rem; font-weight: 600; padding: .45rem 1.1rem; border-radius: var(--radius-pill); border: 1px solid var(--hairline); background: transparent; color: var(--ink-muted); cursor: pointer; transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .chip:hover { background: var(--surface-200); color: var(--ink); }
+  .chip.on { background: var(--forest); border-color: var(--forest); color: var(--on-forest); }
 
+  .rail { --gutter: max(1rem, calc((100vw - 72rem) / 2 + 2rem)); overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter); scrollbar-width: none; cursor: grab; outline-offset: -2px; overscroll-behavior-x: contain; }
+  .rail::-webkit-scrollbar { display: none; }
+  .rail.drag { cursor: grabbing; scroll-snap-type: none; }
+  .track { display: flex; gap: var(--space-6); padding: var(--space-2) var(--gutter) var(--space-6); width: max-content; }
+  .slide { flex: none; width: min(84vw, 34rem); display: flex; flex-direction: column; gap: var(--space-4); text-decoration: none; color: var(--ink); scroll-snap-align: start; transform-origin: 50% 100%; scale: var(--s, 1); transition: scale .25s ease-out; user-select: none; -webkit-user-drag: none; }
+  .slide[hidden] { display: none; }
+  .shot { position: relative; aspect-ratio: 16 / 10; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--hairline); background: var(--surface-200); }
+  .shot img { width: 112%; height: 100%; max-width: none; object-fit: cover; object-position: top left; translate: calc(var(--p, 0) * -5%) 0; transition: scale .5s cubic-bezier(.2,.9,.2,1); }
+  .slide:hover .shot img { scale: 1.04; }
+  .go { position: absolute; right: var(--space-4); top: var(--space-4); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--forest); color: var(--on-forest); display: grid; place-items: center; opacity: 0; translate: 0 6px; transition: opacity .2s ease, translate .2s ease; }
+  .go svg { width: 1.2rem; height: 1.2rem; }
+  .slide:hover .go, .slide:focus-visible .go { opacity: 1; translate: 0 0; }
+  .sbody .cat { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-strong); margin-bottom: var(--space-1); }
+  .sbody h3 { font-size: clamp(1.4rem, 2.4vw, 1.85rem); letter-spacing: -.02em; line-height: 1.1; }
+  .sbody p { margin: var(--space-2) 0 0; color: var(--ink-muted); max-width: 30rem; }
+  .ptag { display: inline-block; margin-top: var(--space-3); padding: var(--space-1) var(--space-3); border-radius: var(--radius-pill); background: var(--surface-200); border: 1px solid var(--hairline); font-size: .78rem; font-weight: 600; }
+
+  .meter { height: 3px; background: var(--hairline); border-radius: 2px; margin: var(--space-2) 0 var(--space-2); overflow: hidden; }
+  .meter i { display: block; height: 100%; width: 100%; background: var(--brand-strong); transform: scaleX(0); transform-origin: left; }
+  .count { margin: 0 0 var(--space-12); font-size: .85rem; font-weight: 600; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+  .index { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
+  .index li[hidden] { display: none; }
+  .index a { display: grid; grid-template-columns: 3rem 1fr auto 2rem; gap: var(--space-4); align-items: center; padding: var(--space-4) var(--space-2); border-bottom: 1px solid var(--hairline); text-decoration: none; color: var(--ink); transition: background .15s ease, padding .2s ease; }
+  .index a:hover { background: var(--surface-200); padding-inline: var(--space-4); }
+  .index .n { font-family: var(--font-display); font-weight: 800; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .index .t { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 2.2vw, 1.5rem); letter-spacing: -.01em; }
+  .index .c { font-size: .85rem; font-weight: 600; color: var(--ink-muted); }
+  .index .a { color: var(--brand-strong); display: grid; place-items: center; transition: translate .15s ease; }
+  .index a:hover .a { translate: 3px -3px; }
+  .index .a svg { width: 1.1rem; height: 1.1rem; }
+  @media (max-width: 40rem) { .index a { grid-template-columns: 2rem 1fr 1.5rem; } .index .c { display: none; } .rail-ctl { display: none; } }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .js .slide { opacity: 0; translate: 40px 0; transition: scale .25s ease-out, opacity .6s ease, translate .6s cubic-bezier(.2,.9,.2,1); transition-delay: 0s, calc(var(--i, 0) * 70ms), calc(var(--i, 0) * 70ms); }
+    .js .slide.in { opacity: 1; translate: 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .slide, .shot img, .go { transition: none; } }
 
   /* ---------- motion ---------- */
   .progress { position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%; background: var(--brand-strong); transform: scaleX(0); transform-origin: left; }
@@ -226,26 +215,6 @@
     .js .rv.in { opacity: 1; translate: 0 0; }
   }
 
-  /* cards: cursor-follow flat fill, tilt, icon pop */
-  .pcard { position: relative; overflow: hidden; isolation: isolate; }
-  .pcard::before {
-    content: ''; position: absolute; z-index: -1;
-    left: var(--mx, 50%); top: var(--my, 50%);
-    width: 40rem; height: 40rem; margin: -20rem 0 0 -20rem; border-radius: 50%;
-    background: var(--surface-200);
-    transform: scale(0); transition: transform .5s cubic-bezier(.2,.9,.2,1);
-  }
-  .pcard:hover { background: var(--surface-100); }
-  .pcard:hover::before { transform: scale(1); }
-  .pcard .picon { transition: transform .3s cubic-bezier(.3,1.6,.5,1), border-radius .3s ease; }
-  .pcard:hover .picon { transform: rotate(-8deg) scale(1.12); border-radius: 50%; }
-  .pcard:hover .picon.sub { border-radius: var(--radius-md); }
-  .pcard.tilt { transition: transform .15s ease-out; }
-  @media (prefers-reduced-motion: reduce) {
-    .pcard::before, .pcard .picon { transition: none; }
-  }
-
-
   /* ---------- footer ---------- */
   footer { background: var(--surface-200); border-top: 1px solid var(--hairline); }
   footer .wrap {
@@ -266,7 +235,6 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .pcard, .arrow { transition: none; }
   }
 </style>
 </head>
@@ -287,7 +255,6 @@
       <span class="links">
         <a href="/cv/">CV</a>
         <a href="#projects">Projects</a>
-        <a href="https://travel.odtriki.com">Map</a>
       </span>
     </div>
     <i class="progress" aria-hidden="true"></i>
@@ -322,80 +289,84 @@
   </header>
 
   <main>
-    <section class="projects-section" id="projects">
-      <div class="wrap">
-        <p class="eyebrow rv">Projects</p>
-        <h2 class="rv">What I've built</h2>
-
-        <div class="projects">
-          <a class="pcard rv" href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M6 6h12a5 5 0 015 5v2a5 5 0 01-5 5H6a5 5 0 01-5-5v-2a5 5 0 015-5zM6 9.5v1.5H4.5v2H6v1.5h2V13h1.5v-2H8V9.5zM16 10.2a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2zM19 12.6a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/></svg></div>
-            <div class="ptitle">Kino der RN<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">A pixel-art arcade game: pick a tweet, survive waves of right-wing troll bots replying to it. Online high-score board.</div>
-          </a>
-
-          <a class="pcard rv" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="2.4" height="18" rx="1.2"/><rect x="3" y="18.6" width="18" height="2.4" rx="1.2"/><circle cx="10" cy="14" r="2"/><circle cx="14" cy="9" r="2"/><circle cx="18" cy="13" r="2"/><circle cx="19" cy="6" r="1.6"/></svg></div>
-            <div class="ptitle">Scatterboxd<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Visualize how your Letterboxd ratings compare to the crowd's, one scatter plot at a time.</div>
-          </a>
-
-          <a class="pcard rv" href="https://compare.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M9 5a7 7 0 100 14A7 7 0 009 5zM15 5a7 7 0 100 14 7 7 0 000-14z"/></svg></div>
-            <div class="ptitle">Letterboxd Compare<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Find the movies you and a friend both watched or have on your watchlists, and see how your ratings stack up.</div>
-          </a>
-
-          <a class="pcard rv" href="https://streaming.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M5 4h14a3 3 0 013 3v10a3 3 0 01-3 3H5a3 3 0 01-3-3V7a3 3 0 013-3zM10 8.5v7l6-3.5z"/></svg></div>
-            <div class="ptitle">Letterboxd Streaming Checker<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Check which streaming service actually has the film you're trying to watch.</div>
-          </a>
-
-          <a class="pcard rv" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M6 3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6a3 3 0 013-3zM7.2 12.4l4.4 4.4 6-6-1.4-1.4-4.6 4.6-3-3z"/></svg></div>
-            <div class="ptitle">MonVote.ma<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">A voter guide quiz matching your positions to Morocco's political parties.</div>
-          </a>
-
-          <a class="pcard rv" href="https://romeoetjules.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h18v7a3 3 0 01-3 3H6a3 3 0 01-3-3z"/><rect x="3" y="4" width="18" height="4.5" rx="1.5" transform="rotate(-6 12 6)"/></svg></div>
-            <div class="ptitle">Roméo &amp; Jules<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">A short film written and shot for the Cinéma et Audiovisuel option at Lycée Descartes.</div>
-            <span class="ptag">Best Film · Best Screenplay, 2017</span>
-          </a>
-
-          <a class="pcard rv" href="https://chess.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="3" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><rect x="3" y="15" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/></svg></div>
-            <div class="ptitle">Chess<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Live chess.com stats, plus two youth championship titles from Rabat.</div>
-          </a>
-
-          <a class="pcard rv" href="https://travel.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M12 22s7-7 7-12.5a7 7 0 10-14 0C5 15 12 22 12 22zM12 7.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6z"/></svg></div>
-            <div class="ptitle">Everywhere I've been<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">An interactive map of every country and city I've traveled to.</div>
-          </a>
-
-          <a class="pcard rv" href="https://cook.odtriki.com" target="_blank" rel="noopener">
-            <!-- Trikitchen mark: a subcompany keeps its own tile -->
-            <div class="picon sub"><svg viewBox="0 0 120 120"><rect width="120" height="120" rx="22" fill="var(--kitchen)"/><g fill="var(--on-kitchen)"><rect x="34" y="24" width="9" height="16" rx="4.5"/><rect x="50" y="18" width="9" height="22" rx="4.5"/><rect x="66" y="24" width="9" height="16" rx="4.5"/><rect x="20" y="48" width="68" height="9" rx="4.5"/><rect x="24" y="57" width="60" height="40" rx="12"/><rect x="84" y="68" width="16" height="10" rx="5"/></g></svg></div>
-            <div class="ptitle">Cooking<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Recipes and TikToks from @trikitchen_.</div>
-          </a>
-
-          <a class="pcard rv" href="https://beers.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><path d="M4 3h11v3H4zM4 7.5h11V19a2 2 0 01-2 2H6a2 2 0 01-2-2zM15 9.5h2.5a2.5 2.5 0 012.5 2.5v1.5a2.5 2.5 0 01-2.5 2.5H15v-2h2.5a.5.5 0 00.5-.5V12a.5.5 0 00-.5-.5H15z"/></svg></div>
-            <div class="ptitle">Où boire une pinte<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">Crowd-sourced map of bars and clubs in Bordeaux, with prices.</div>
-          </a>
-
-          <a class="pcard rv" href="https://archive.odtriki.com" target="_blank" rel="noopener">
-            <div class="picon"><svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd"><rect x="2" y="4" width="20" height="5" rx="1.5"/><path d="M4 10.5h16V19a2 2 0 01-2 2H6a2 2 0 01-2-2zM9.5 13v2.2h5V13z"/></svg></div>
-            <div class="ptitle">Old school projects<span class="arrow"><svg><use href="#ext"/></svg></span></div>
-            <div class="pdesc">~30 coursework exercises from EPITECH's early years — C, Assembly, Python.</div>
-          </a>
+    <section class="projects-section" id="projects" aria-labelledby="ph">
+      <div class="wrap showcase-head">
+        <div>
+          <p class="eyebrow rv">Projects</p>
+          <h2 class="rv" id="ph">What I&rsquo;ve built</h2>
         </div>
+        <div class="rail-ctl rv">
+          <button type="button" class="arrow-btn" id="prev" aria-label="Previous projects"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4L6 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="arrow-btn" id="next" aria-label="Next projects"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="wrap"><div class="chips" role="group" aria-label="Filter projects"><button type="button" class="chip on" data-f="all">All</button><button type="button" class="chip" data-f="Movies">Movies</button><button type="button" class="chip" data-f="Politics">Politics</button><button type="button" class="chip" data-f="Games">Games</button><button type="button" class="chip" data-f="Life">Life</button><button type="button" class="chip" data-f="Archive">Archive</button></div></div>
+
+      <div class="rail" id="rail" tabindex="0" aria-label="Project previews, scroll sideways">
+        <div class="track" id="track">
+        <a class="slide" data-cat="Games" href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/kino.jpg" alt="Preview of Kino der RN" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">01 · Games</span><h3>Kino der RN</h3><p>A pixel-art arcade game: pick a tweet, survive waves of right-wing troll bots replying to it. Online high-score board.</p></div>
+        </a>
+        <a class="slide" data-cat="Movies" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/scatterboxd.jpg" alt="Preview of Scatterboxd" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">02 · Movies</span><h3>Scatterboxd</h3><p>Visualize how your Letterboxd ratings compare to the crowd’s, one scatter plot at a time.</p></div>
+        </a>
+        <a class="slide" data-cat="Movies" href="https://scatterboxd-duo.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/compare.jpg" alt="Preview of Letterboxd Compare" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">03 · Movies</span><h3>Letterboxd Compare</h3><p>Find the movies you and a friend both watched or have on your watchlists, and see how your ratings stack up.</p></div>
+        </a>
+        <a class="slide" data-cat="Movies" href="https://streaming.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/streaming.jpg" alt="Preview of Streaming Checker" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">04 · Movies</span><h3>Streaming Checker</h3><p>Check which streaming service actually has the film you’re trying to watch.</p></div>
+        </a>
+        <a class="slide" data-cat="Politics" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/monvote.jpg" alt="Preview of MonVote.ma" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">05 · Politics</span><h3>MonVote.ma</h3><p>A voter guide quiz matching your positions to Morocco’s political parties.</p></div>
+        </a>
+        <a class="slide" data-cat="Movies" href="https://romeoetjules.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/romeo.jpg" alt="Preview of Roméo &amp; Jules" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">06 · Movies</span><h3>Roméo &amp; Jules</h3><p>A short film written and shot for the Cinéma et Audiovisuel option at Lycée Descartes.</p><span class="ptag">Best Film · Best Screenplay, 2017</span></div>
+        </a>
+        <a class="slide" data-cat="Life" href="https://chess.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/chess.jpg" alt="Preview of Chess" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">07 · Life</span><h3>Chess</h3><p>Live chess.com stats, plus two youth championship titles from Rabat.</p></div>
+        </a>
+        <a class="slide" data-cat="Life" href="https://travel.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/travel.jpg" alt="Preview of Everywhere I’ve been" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">08 · Life</span><h3>Everywhere I’ve been</h3><p>An interactive map of every country and city I’ve traveled to.</p></div>
+        </a>
+        <a class="slide" data-cat="Life" href="https://cook.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/cook.jpg" alt="Preview of Cooking" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">09 · Life</span><h3>Cooking</h3><p>Recipes and TikToks from @trikitchen_.</p></div>
+        </a>
+        <a class="slide" data-cat="Life" href="https://beers.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/beers.jpg" alt="Preview of Où boire une pinte" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">10 · Life</span><h3>Où boire une pinte</h3><p>Crowd-sourced map of bars and clubs in Bordeaux, with prices.</p></div>
+        </a>
+        <a class="slide" data-cat="Archive" href="https://archive.odtriki.com" target="_blank" rel="noopener">
+          <div class="shot"><img src="img/projects/archive.jpg" alt="Preview of Old school projects" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sbody"><span class="cat">11 · Archive</span><h3>Old school projects</h3><p>~30 coursework exercises from EPITECH’s early years: C, Assembly, Python.</p></div>
+        </a>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="meter"><i id="meter"></i></div>
+        <p class="count" id="count" aria-live="polite"></p>
+        <ol class="index" aria-label="All projects">
+        <li><a href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener" data-cat="Games"><span class="n">01</span><span class="t">Kino der RN</span><span class="c">Games</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener" data-cat="Movies"><span class="n">02</span><span class="t">Scatterboxd</span><span class="c">Movies</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://scatterboxd-duo.odtriki.com" target="_blank" rel="noopener" data-cat="Movies"><span class="n">03</span><span class="t">Letterboxd Compare</span><span class="c">Movies</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://streaming.odtriki.com" target="_blank" rel="noopener" data-cat="Movies"><span class="n">04</span><span class="t">Streaming Checker</span><span class="c">Movies</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener" data-cat="Politics"><span class="n">05</span><span class="t">MonVote.ma</span><span class="c">Politics</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://romeoetjules.odtriki.com" target="_blank" rel="noopener" data-cat="Movies"><span class="n">06</span><span class="t">Roméo &amp; Jules</span><span class="c">Movies</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://chess.odtriki.com" target="_blank" rel="noopener" data-cat="Life"><span class="n">07</span><span class="t">Chess</span><span class="c">Life</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://travel.odtriki.com" target="_blank" rel="noopener" data-cat="Life"><span class="n">08</span><span class="t">Everywhere I’ve been</span><span class="c">Life</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://cook.odtriki.com" target="_blank" rel="noopener" data-cat="Life"><span class="n">09</span><span class="t">Cooking</span><span class="c">Life</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://beers.odtriki.com" target="_blank" rel="noopener" data-cat="Life"><span class="n">10</span><span class="t">Où boire une pinte</span><span class="c">Life</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        <li><a href="https://archive.odtriki.com" target="_blank" rel="noopener" data-cat="Archive"><span class="n">11</span><span class="t">Old school projects</span><span class="c">Archive</span><span class="a"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></li>
+        </ol>
       </div>
     </section>
   </main>
@@ -427,7 +398,6 @@
 
   // staggered scroll reveal
   var rv = $('.rv');
-  $('.pcard').forEach(function (c, i) { c.style.setProperty('--i', i % 3); });
   if (reduce || !('IntersectionObserver' in window)) { rv.forEach(function (e) { e.classList.add('in'); }); }
   else {
     var io = new IntersectionObserver(function (es) {
@@ -436,19 +406,64 @@
     rv.forEach(function (e) { io.observe(e); });
   }
 
-  // cards: cursor-follow fill + tilt
   var fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
-  $('.pcard').forEach(function (c) {
-    function at(e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }
-    c.addEventListener('pointerenter', at);
-    c.addEventListener('pointerleave', function (e) { at(e); c.style.transform = ''; });
-    if (!fine || reduce) return;
-    c.addEventListener('pointermove', function (e) {
-      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      c.classList.add('tilt');
-      c.style.transform = 'perspective(700px) rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg) translateY(-3px)';
+
+  // ---- projects showcase: filters, arrows, drag, progress, parallax
+  var rail = d.getElementById('rail'), track = d.getElementById('track');
+  if (rail) {
+    var slides = [].slice.call(track.querySelectorAll('.slide')), idx = [].slice.call(d.querySelectorAll('.index li'));
+    var meter = d.getElementById('meter'), count = d.getElementById('count'), prev = d.getElementById('prev'), next = d.getElementById('next');
+    function visible() { return slides.filter(function (s) { return !s.hidden; }); }
+    function step() { var s = visible()[0]; return s ? s.getBoundingClientRect().width + 24 : 400; }
+    function update() {
+      var max = Math.max(1, rail.scrollWidth - rail.clientWidth), x = rail.scrollLeft;
+      meter.style.transform = 'scaleX(' + Math.min(1, Math.max(0.04, x / max)) + ')';
+      prev.disabled = x < 8; next.disabled = x > max - 8;
+      var mid = rail.getBoundingClientRect().left + rail.clientWidth / 2, vis = visible(), cur = 0, best = 1e9;
+      vis.forEach(function (s, i) {
+        var r = s.getBoundingClientRect(), c = r.left + r.width / 2, dist = Math.abs(c - mid);
+        if (dist < best) { best = dist; cur = i; }
+        if (!reduce) { s.style.setProperty('--p', Math.max(-1, Math.min(1, (c - mid) / rail.clientWidth)).toFixed(3)); s.style.setProperty('--s', (1 - Math.min(.04, dist / rail.clientWidth * .05)).toFixed(3)); }
+      });
+      count.textContent = vis.length ? ('0' + (cur + 1)).slice(-2) + ' / ' + ('0' + vis.length).slice(-2) : '';
+    }
+    rail.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    addEventListener('resize', update);
+    prev.addEventListener('click', function () { rail.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    next.addEventListener('click', function () { rail.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }); });
+    rail.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); } else if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
     });
-  });
+
+    // drag to scroll (mouse); touch and trackpads scroll natively
+    var down = false, sx = 0, sl = 0, moved = false;
+    rail.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = rail.scrollLeft; });
+    addEventListener('pointermove', function (e) {
+      if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 5) { moved = true; rail.classList.add('drag'); } rail.scrollLeft = sl - dx;
+    });
+    addEventListener('pointerup', function () { if (!down) return; down = false; rail.classList.remove('drag'); });
+    rail.addEventListener('click', function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+
+    // category filter
+    d.querySelectorAll('.chip').forEach(function (b) {
+      b.addEventListener('click', function () {
+        d.querySelectorAll('.chip').forEach(function (x) { x.classList.toggle('on', x === b); });
+        var f = b.getAttribute('data-f');
+        slides.forEach(function (s) { s.hidden = !(f === 'all' || s.getAttribute('data-cat') === f); s.classList.add('in'); });
+        idx.forEach(function (li) { var a = li.querySelector('a'); li.hidden = !(f === 'all' || a.getAttribute('data-cat') === f); });
+        rail.scrollTo({ left: 0, behavior: 'auto' }); update();
+      });
+    });
+
+    // reveal slides as they come into the viewport
+    slides.forEach(function (s, i) { s.style.setProperty('--i', i % 4); });
+    if (reduce || !('IntersectionObserver' in window)) { slides.forEach(function (s) { s.classList.add('in'); }); }
+    else {
+      var io3 = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io3.unobserve(e.target); } }); }, { root: rail, threshold: .15 });
+      slides.forEach(function (s) { io3.observe(s); });
+    }
+    update();
+  }
 
   // hero logo: follows the pointer, click to replay the assemble animation
   var logo = d.querySelector('.hero-logo');
