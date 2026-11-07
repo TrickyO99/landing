@@ -1,6 +1,6 @@
 # Othmane Triki — Landing Page
 
-Personal portfolio homepage: Data Analyst at Betclic Group, with links out to side projects in movies (the Letterboxd tools), chess, travel, and politics (the Moroccan/legislative voting-advice sites).
+Personal portfolio homepage: Data Analyst at Betclic Group, with links out to projects on very diverse topics.
 
 **Live:** [odtriki.com](https://odtriki.com)
 
