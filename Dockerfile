@@ -5,4 +5,5 @@ COPY index.html /usr/share/nginx/html/index.html
 COPY cv /usr/share/nginx/html/cv
 COPY shell /usr/share/nginx/html/shell
 COPY img /usr/share/nginx/html/img
+COPY favicon.ico favicon.svg favicon-48.png favicon-192.png apple-touch-icon.png icon-512.png robots.txt sitemap.xml /usr/share/nginx/html/
 EXPOSE 80
