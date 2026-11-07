@@ -4,7 +4,7 @@
     "name": "Othmane Triki",
     "label": "Data Analyst",
     "url": "https://odtriki.com/cv/",
-    "summary": "Data Analyst at Betclic Group, promoted twice since joining in 2022 (Growth Executive, Growth Project Manager, Data Analyst). Combines deep marketing and data business knowledge: paid acquisition across Social, Display, Search and Partnerships in 10+ countries, and dashboards used by ~80 business stakeholders. Expert in Excel, now building dashboards and automations with generative AI. Seeking AI-focused roles at the intersection of marketing, data and business.",
+    "summary": "Data Analyst at Betclic, promoted twice since joining in 2022 (Growth Executive, Growth Project Manager, Data Analyst). Combines deep marketing and data business knowledge: paid acquisition across Social, Display, Search and Partnerships in 10+ countries, and dashboards used by ~80 business stakeholders. Expert in Excel, now building dashboards and automations with generative AI. Seeking AI-focused roles at the intersection of marketing, data and business.",
     "location": {
       "city": "Bordeaux",
       "countryCode": "FR"
@@ -19,7 +19,7 @@
   },
   "work": [
     {
-      "name": "Betclic Group",
+      "name": "Betclic",
       "position": "Data Analyst",
       "startDate": "2025-04",
       "highlights": [
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "name": "Betclic Group",
+      "name": "Betclic",
       "position": "Growth Project Manager",
       "startDate": "2024-01",
       "highlights": [
@@ -42,7 +42,7 @@
       "endDate": "2025-03"
     },
     {
-      "name": "Betclic Group",
+      "name": "Betclic",
       "position": "Growth Executive",
       "startDate": "2022-09",
       "highlights": [
@@ -53,7 +53,7 @@
       "endDate": "2023-12"
     },
     {
-      "name": "Betclic Group",
+      "name": "Betclic",
       "position": "Growth Executive (Intern)",
       "startDate": "2022-03",
       "highlights": [],

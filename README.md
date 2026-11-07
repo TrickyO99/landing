@@ -1,6 +1,6 @@
 # Othmane Triki — Landing Page
 
-Personal portfolio homepage: Data Analyst at Betclic Group, with links out to projects on very diverse topics.
+Personal portfolio homepage: Data Analyst at Betclic, with links out to projects on very diverse topics.
 
 **Live:** [odtriki.com](https://odtriki.com)
 
