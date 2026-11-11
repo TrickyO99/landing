@@ -31,6 +31,10 @@
   .ex { margin: 0 0 3rem; max-width: 34rem; }
   .ex img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--hairline); box-shadow: none; display: block; }
   .ex figcaption { margin-top: .6rem; font-size: .9rem; opacity: .75; }
+  .lede-sm { font-size: 1.1rem; max-width: 40rem; opacity: .85; margin: 0 0 1rem; }
+  .code { max-width: 40rem; margin: 0 0 1.5rem; padding: 1rem 1.2rem; background: var(--surface-200); border-radius: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; line-height: 1.6; overflow-x: auto; }
+  .dl { margin: 0 0 5rem; }
+  .dl .note { font-size: .9rem; opacity: .75; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .wm { --trik: var(--brand-strong); --flag: var(--brand); }
   .wm-t { display: inline-block; height: .76em; width: auto; vertical-align: baseline; margin-right: -.01em; }
@@ -67,6 +71,17 @@
     <li>One page, always.</li>
     <li>Each offer gets its own folder: CV, letter, source offer.</li>
   </ul>
+  <h2>Use it yourself</h2>
+  <p class="lede-sm">The tool behind this page is open. Give it your CV once, then one offer at a time. You get a one-page CV, a cover letter, and a list of what the offer wants that you can't show.</p>
+<pre class="code">pip install .
+resume-tailor init my-cv.pdf
+resume-tailor tailor offer.txt</pre>
+  <ul class="rules" style="margin-bottom:1.5rem">
+    <li>It checks every number, tool and year count against your own profile, and flags what you can't back up.</li>
+    <li>It runs on your machine with your own Anthropic API key. Only your profile and the offer text go to the API.</li>
+    <li>Needs Python 3.10+ and Chrome, Chromium or Edge to print the PDFs. MIT licence.</li>
+  </ul>
+  <p class="dl"><a class="cta" href="resume-tailor.zip" download>Download the tool</a> <span class="note">Source, examples and tests. The README explains the rest.</span></p>
 </main>
 </body>
 </html>
