@@ -23,6 +23,7 @@
   .pill { display: inline-block; background: var(--lime); color: #0B3D2E; font-weight: 700; padding: .5rem 1.1rem; border-radius: 999px; }
   .stories { list-style: none; margin: 2rem 0 5rem; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
   .story { display: flex; flex-direction: column; gap: .6rem; }
+  .story a { display: flex; flex-direction: column; gap: .6rem; color: inherit; text-decoration: none; }
   .story img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; border: 1px solid var(--hairline); background: var(--surface-200); }
   .story span { font-family: var(--font-display); font-weight: 800; font-size: .98rem; letter-spacing: -.01em; line-height: 1.2; }
   @media (prefers-reduced-motion: no-preference) { .story { transition: translate .2s ease; } .story:hover { translate: 0 -4px; } }
@@ -36,6 +37,9 @@
   .tone-brand .wm { --trik: #FFFFFF; --flag: var(--lime); }
   .tone-lime .wm { --trik: #0C7F3E; --flag: #0B3D2E; }
   .tone-paper .wm { --trik: var(--brand-strong); --flag: var(--lime); }
+  .cta { display: inline-block; background: var(--forest); color: var(--on-forest); font-weight: 700; padding: .5rem 1.1rem; border-radius: 999px; text-decoration: none; margin-right: .5rem; }
+  .cta:hover { background: var(--brand-strong); color: #fff; }
+  @media (prefers-color-scheme: dark) { .cta { background: var(--lime); color: #0B3D2E; } .cta:hover { background: #fff; } }
 </style>
 <script src="https://odtriki.com/shell/tk.js?v=3" data-name="Trikids" defer></script>
 </head>
@@ -45,39 +49,39 @@
     <p class="eyebrow">Trikids</p>
     <h1><span class="sr-only">Trikistoires</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>istoires</span>.</h1>
     <p class="lede">Des contes classiques racontés en français, en vidéos courtes, avec des illustrations dessinées à la main. Une histoire, une étoile.</p>
-    <span class="pill">30 histoires</span>
+    <a class="cta" href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener">Watch on TikTok</a> <span class="pill">30 histoires</span>
   </section>
   <ul class="stories">
-<li class="story"><img src="covers/ali-baba-et-les-quarante-voleurs.jpg" alt="Cover of Ali Baba et les Quarante Voleurs" width="360" height="640" loading="lazy"><span>Ali Baba et les Quarante Voleurs</span></li>
-<li class="story"><img src="covers/boucle-d-or-et-les-trois-ours.jpg" alt="Cover of Boucle d&#x27;or et les trois ours" width="360" height="640" loading="lazy"><span>Boucle d&#x27;or et les trois ours</span></li>
-<li class="story"><img src="covers/corbeau-renard.jpg" alt="Cover of Le Corbeau et le Renard" width="360" height="640" loading="lazy"><span>Le Corbeau et le Renard</span></li>
-<li class="story"><img src="covers/hansel-et-gretel.jpg" alt="Cover of Hansel et Gretel" width="360" height="640" loading="lazy"><span>Hansel et Gretel</span></li>
-<li class="story"><img src="covers/jack-et-le-haricot-magique.jpg" alt="Cover of Jack et le haricot magique" width="360" height="640" loading="lazy"><span>Jack et le haricot magique</span></li>
-<li class="story"><img src="covers/la-belle-au-bois-dormant.jpg" alt="Cover of La Belle au bois dormant" width="360" height="640" loading="lazy"><span>La Belle au bois dormant</span></li>
-<li class="story"><img src="covers/la-princesse-au-petit-pois.jpg" alt="Cover of La Princesse au petit pois" width="360" height="640" loading="lazy"><span>La Princesse au petit pois</span></li>
-<li class="story"><img src="covers/le-chat-botte.jpg" alt="Cover of Le Chat botté" width="360" height="640" loading="lazy"><span>Le Chat botté</span></li>
-<li class="story"><img src="covers/le-joueur-de-flute-de-hamelin.jpg" alt="Cover of Le Joueur de flûte de Hamelin" width="360" height="640" loading="lazy"><span>Le Joueur de flûte de Hamelin</span></li>
-<li class="story"><img src="covers/le-loup-et-les-sept-chevreaux.jpg" alt="Cover of Le Loup et les sept chevreaux" width="360" height="640" loading="lazy"><span>Le Loup et les sept chevreaux</span></li>
-<li class="story"><img src="covers/le-petit-bonhomme-de-pain-depice.jpg" alt="Cover of Le Petit Bonhomme de pain d&#x27;épice" width="360" height="640" loading="lazy"><span>Le Petit Bonhomme de pain d&#x27;épice</span></li>
-<li class="story"><img src="covers/le-petit-chaperon-rouge.jpg" alt="Cover of Le Petit Chaperon rouge" width="360" height="640" loading="lazy"><span>Le Petit Chaperon rouge</span></li>
-<li class="story"><img src="covers/le-petit-poucet.jpg" alt="Cover of Le Petit Poucet" width="360" height="640" loading="lazy"><span>Le Petit Poucet</span></li>
-<li class="story"><img src="covers/le-prince-grenouille.jpg" alt="Cover of Le Prince grenouille" width="360" height="640" loading="lazy"><span>Le Prince grenouille</span></li>
-<li class="story"><img src="covers/le-soldat-de-plomb.jpg" alt="Cover of Le Soldat de plomb" width="360" height="640" loading="lazy"><span>Le Soldat de plomb</span></li>
-<li class="story"><img src="covers/le-vaillant-petit-tailleur.jpg" alt="Cover of Le Vaillant Petit Tailleur" width="360" height="640" loading="lazy"><span>Le Vaillant Petit Tailleur</span></li>
-<li class="story"><img src="covers/le-vilain-petit-canard.jpg" alt="Cover of Le Vilain Petit Canard" width="360" height="640" loading="lazy"><span>Le Vilain Petit Canard</span></li>
-<li class="story"><img src="covers/les-douze-princesses-dansantes.jpg" alt="Cover of Les Douze Princesses dansantes" width="360" height="640" loading="lazy"><span>Les Douze Princesses dansantes</span></li>
-<li class="story"><img src="covers/les-fees.jpg" alt="Cover of Les Fées" width="360" height="640" loading="lazy"><span>Les Fées</span></li>
-<li class="story"><img src="covers/les-habits-neufs-de-lempereur.jpg" alt="Cover of Les Habits neufs de l&#x27;empereur" width="360" height="640" loading="lazy"><span>Les Habits neufs de l&#x27;empereur</span></li>
-<li class="story"><img src="covers/les-lutins-et-le-cordonnier.jpg" alt="Cover of Les Lutins et le Cordonnier" width="360" height="640" loading="lazy"><span>Les Lutins et le Cordonnier</span></li>
-<li class="story"><img src="covers/les-musiciens-de-breme.jpg" alt="Cover of Les Musiciens de Brême" width="360" height="640" loading="lazy"><span>Les Musiciens de Brême</span></li>
-<li class="story"><img src="covers/les-souhaits-ridicules.jpg" alt="Cover of Les Souhaits ridicules" width="360" height="640" loading="lazy"><span>Les Souhaits ridicules</span></li>
-<li class="story"><img src="covers/les-trois-boucs-bourrus.jpg" alt="Cover of Les Trois Boucs bourrus" width="360" height="640" loading="lazy"><span>Les Trois Boucs bourrus</span></li>
-<li class="story"><img src="covers/loie-dor.jpg" alt="Cover of L&#x27;Oie d&#x27;or" width="360" height="640" loading="lazy"><span>L&#x27;Oie d&#x27;or</span></li>
-<li class="story"><img src="covers/madame-hiver.jpg" alt="Cover of Madame Hiver" width="360" height="640" loading="lazy"><span>Madame Hiver</span></li>
-<li class="story"><img src="covers/poucette.jpg" alt="Cover of Poucette" width="360" height="640" loading="lazy"><span>Poucette</span></li>
-<li class="story"><img src="covers/riquet-a-la-houppe.jpg" alt="Cover of Riquet à la houppe" width="360" height="640" loading="lazy"><span>Riquet à la houppe</span></li>
-<li class="story"><img src="covers/rumpelstilzchen.jpg" alt="Cover of Rumpelstilzchen" width="360" height="640" loading="lazy"><span>Rumpelstilzchen</span></li>
-<li class="story"><img src="covers/trois-petits-cochons.jpg" alt="Cover of Les Trois Petits Cochons" width="360" height="640" loading="lazy"><span>Les Trois Petits Cochons</span></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/ali-baba-et-les-quarante-voleurs.jpg" alt="Cover of Ali Baba et les Quarante Voleurs" width="360" height="640" loading="lazy"><span>Ali Baba et les Quarante Voleurs</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/boucle-d-or-et-les-trois-ours.jpg" alt="Cover of Boucle d&#x27;or et les trois ours" width="360" height="640" loading="lazy"><span>Boucle d&#x27;or et les trois ours</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/corbeau-renard.jpg" alt="Cover of Le Corbeau et le Renard" width="360" height="640" loading="lazy"><span>Le Corbeau et le Renard</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/hansel-et-gretel.jpg" alt="Cover of Hansel et Gretel" width="360" height="640" loading="lazy"><span>Hansel et Gretel</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/jack-et-le-haricot-magique.jpg" alt="Cover of Jack et le haricot magique" width="360" height="640" loading="lazy"><span>Jack et le haricot magique</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/la-belle-au-bois-dormant.jpg" alt="Cover of La Belle au bois dormant" width="360" height="640" loading="lazy"><span>La Belle au bois dormant</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/la-princesse-au-petit-pois.jpg" alt="Cover of La Princesse au petit pois" width="360" height="640" loading="lazy"><span>La Princesse au petit pois</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-chat-botte.jpg" alt="Cover of Le Chat botté" width="360" height="640" loading="lazy"><span>Le Chat botté</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-joueur-de-flute-de-hamelin.jpg" alt="Cover of Le Joueur de flûte de Hamelin" width="360" height="640" loading="lazy"><span>Le Joueur de flûte de Hamelin</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-loup-et-les-sept-chevreaux.jpg" alt="Cover of Le Loup et les sept chevreaux" width="360" height="640" loading="lazy"><span>Le Loup et les sept chevreaux</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-petit-bonhomme-de-pain-depice.jpg" alt="Cover of Le Petit Bonhomme de pain d&#x27;épice" width="360" height="640" loading="lazy"><span>Le Petit Bonhomme de pain d&#x27;épice</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-petit-chaperon-rouge.jpg" alt="Cover of Le Petit Chaperon rouge" width="360" height="640" loading="lazy"><span>Le Petit Chaperon rouge</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-petit-poucet.jpg" alt="Cover of Le Petit Poucet" width="360" height="640" loading="lazy"><span>Le Petit Poucet</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-prince-grenouille.jpg" alt="Cover of Le Prince grenouille" width="360" height="640" loading="lazy"><span>Le Prince grenouille</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-soldat-de-plomb.jpg" alt="Cover of Le Soldat de plomb" width="360" height="640" loading="lazy"><span>Le Soldat de plomb</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-vaillant-petit-tailleur.jpg" alt="Cover of Le Vaillant Petit Tailleur" width="360" height="640" loading="lazy"><span>Le Vaillant Petit Tailleur</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/le-vilain-petit-canard.jpg" alt="Cover of Le Vilain Petit Canard" width="360" height="640" loading="lazy"><span>Le Vilain Petit Canard</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-douze-princesses-dansantes.jpg" alt="Cover of Les Douze Princesses dansantes" width="360" height="640" loading="lazy"><span>Les Douze Princesses dansantes</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-fees.jpg" alt="Cover of Les Fées" width="360" height="640" loading="lazy"><span>Les Fées</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-habits-neufs-de-lempereur.jpg" alt="Cover of Les Habits neufs de l&#x27;empereur" width="360" height="640" loading="lazy"><span>Les Habits neufs de l&#x27;empereur</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-lutins-et-le-cordonnier.jpg" alt="Cover of Les Lutins et le Cordonnier" width="360" height="640" loading="lazy"><span>Les Lutins et le Cordonnier</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-musiciens-de-breme.jpg" alt="Cover of Les Musiciens de Brême" width="360" height="640" loading="lazy"><span>Les Musiciens de Brême</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-souhaits-ridicules.jpg" alt="Cover of Les Souhaits ridicules" width="360" height="640" loading="lazy"><span>Les Souhaits ridicules</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/les-trois-boucs-bourrus.jpg" alt="Cover of Les Trois Boucs bourrus" width="360" height="640" loading="lazy"><span>Les Trois Boucs bourrus</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/loie-dor.jpg" alt="Cover of L&#x27;Oie d&#x27;or" width="360" height="640" loading="lazy"><span>L&#x27;Oie d&#x27;or</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/madame-hiver.jpg" alt="Cover of Madame Hiver" width="360" height="640" loading="lazy"><span>Madame Hiver</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/poucette.jpg" alt="Cover of Poucette" width="360" height="640" loading="lazy"><span>Poucette</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/riquet-a-la-houppe.jpg" alt="Cover of Riquet à la houppe" width="360" height="640" loading="lazy"><span>Riquet à la houppe</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/rumpelstilzchen.jpg" alt="Cover of Rumpelstilzchen" width="360" height="640" loading="lazy"><span>Rumpelstilzchen</span></a></li>
+<li class="story"><a href="https://www.tiktok.com/@trikistoires" target="_blank" rel="noopener"><img src="covers/trois-petits-cochons.jpg" alt="Cover of Les Trois Petits Cochons" width="360" height="640" loading="lazy"><span>Les Trois Petits Cochons</span></a></li>
   </ul>
 </main>
 </body>
