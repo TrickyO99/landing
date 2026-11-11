@@ -292,6 +292,9 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
+  .legal-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; font-size: .85rem; font-weight: 600; }
+  .legal-links a { color: inherit; opacity: .8; text-underline-offset: 3px; }
+  .legal-links a:hover { opacity: 1; text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -518,6 +521,7 @@
           a Trikorporation brand
         </span>
         <div class="sig">odtriki.com</div>
+        <nav class="legal-links" aria-label="Legal"><a href="/legal/">Mentions légales</a><a href="/privacy/">Confidentialité</a><a href="/terms/">CGU</a></nav>
       </div>
       <div class="social-row">
         <a class="btn" href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">LinkedIn</a>

@@ -71,7 +71,7 @@
   define('tk-foot', FOOT_CSS,
     '<div class="w"><div class="in">' +
       '<span class="end">' + TILE + 'a Trikorporation brand</span>' +
-      '<div class="r"><a href="' + HOME + '">odtriki.com</a><a href="' + HOME + '/cv/">CV</a><span>Bordeaux, France</span></div>' +
+      '<div class="r"><a href="' + HOME + '">odtriki.com</a><a href="' + HOME + '/cv/">CV</a><a href="' + HOME + '/legal/">Mentions légales</a><a href="' + HOME + '/privacy/">Confidentialité</a><a href="' + HOME + '/terms/">CGU</a></div>' +
     '</div></div>');
 
   function mount() {

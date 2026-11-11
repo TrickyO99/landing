@@ -6,5 +6,8 @@ COPY cv /usr/share/nginx/html/cv
 COPY shell /usr/share/nginx/html/shell
 COPY img /usr/share/nginx/html/img
 COPY trikids /usr/share/nginx/html/trikids
+COPY legal /usr/share/nginx/html/legal
+COPY privacy /usr/share/nginx/html/privacy
+COPY terms /usr/share/nginx/html/terms
 COPY favicon.ico favicon.svg favicon-48.png favicon-192.png apple-touch-icon.png icon-512.png robots.txt sitemap.xml /usr/share/nginx/html/
 EXPOSE 80
