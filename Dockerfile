@@ -6,6 +6,7 @@ COPY cv /usr/share/nginx/html/cv
 COPY shell /usr/share/nginx/html/shell
 COPY img /usr/share/nginx/html/img
 COPY trikids /usr/share/nginx/html/trikids
+COPY trikentretiens /usr/share/nginx/html/trikentretiens
 COPY legal /usr/share/nginx/html/legal
 COPY privacy /usr/share/nginx/html/privacy
 COPY terms /usr/share/nginx/html/terms

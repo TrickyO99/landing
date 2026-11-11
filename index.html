@@ -153,6 +153,7 @@
   .panels { display: grid; gap: var(--space-6); grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 40rem) { .panels { grid-template-columns: 1fr; } }
   .panel { font: inherit; text-align: left; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-2); min-height: clamp(13rem, 24vw, 18rem); padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-lg); position: relative; overflow: hidden; transition: translate .25s cubic-bezier(.2,.9,.2,1); }
+  .panels > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .panel:hover { translate: 0 -6px; }
   .panel:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
   .panel .pn { font-family: var(--font-display); font-weight: 800; letter-spacing: -.035em; line-height: .95; font-size: clamp(2.4rem, 6.5vw, 4.6rem); }
@@ -404,6 +405,12 @@
           <span class="pt">School projects from the early years.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
+        <button type="button" class="panel tone-forest rv" data-open="trikentretiens" aria-haspopup="dialog">
+          <img class="plogo" src="img/logos/trikentretiens.svg?v=1" alt="" width="76" height="76">
+          <span class="pn"><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span></span>
+          <span class="pt">Job hunting, automated: one offer in, one tailored CV out.</span>
+          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
         </div>
       </div>
     <dialog class="cat-dialog" id="trikinema" aria-labelledby="trikinema-h">
@@ -506,6 +513,17 @@
             <a class="slide" href="https://archive.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/archive.jpg" alt="Preview of Old school projects" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
               <div class="sbody"><h3>Old school projects</h3><p>~30 coursework exercises from EPITECH’s early years: C, Assembly, Python.</p></div>
+            </a>
+        </div>
+      </div>
+    </dialog>
+    <dialog class="cat-dialog" id="trikentretiens" aria-labelledby="trikentretiens-h">
+      <div class="dlg-in">
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikentretiens.svg?v=1" alt="" width="72" height="72"><div><h3 id="trikentretiens-h"><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span></h3><p>Finding the offers, tailoring the CV.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <div class="cards">
+            <a class="slide" href="/trikentretiens/">
+              <div class="shot"><img src="img/projects/trikentretiens.jpg?v=1" alt="Preview of Trikentretiens" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+              <div class="sbody"><h3>Trikentretiens</h3><p>Reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.</p></div>
             </a>
         </div>
       </div>
