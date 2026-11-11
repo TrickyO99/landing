@@ -163,6 +163,16 @@
   .plogo { width: clamp(3.4rem, 7vw, 4.75rem); height: auto; border-radius: 22%; margin-bottom: auto; align-self: flex-start; }
   .dlg-title { display: flex; align-items: center; gap: var(--space-4); }
   .dlogo { width: clamp(3.2rem, 7vw, 4.5rem); height: auto; border-radius: 22%; flex: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .wm { --trik: var(--brand-strong); --flag: var(--brand); }
+  .wm-t { display: inline-block; height: .76em; width: auto; vertical-align: baseline; margin-right: -.01em; }
+  .wm-t path { fill: var(--trik); }
+  .wm-t .flag { fill: var(--flag); }
+  .wm-k { color: var(--trik); }
+  .tone-forest .wm { --trik: var(--lime); --flag: #FFFFFF; }
+  .tone-brand .wm { --trik: #FFFFFF; --flag: var(--lime); }
+  .tone-lime .wm { --trik: #0C7F3E; --flag: #0B3D2E; }
+  .tone-paper .wm { --trik: var(--brand-strong); --flag: var(--lime); }
   .tone-forest { background: var(--forest); color: var(--on-forest); }
   .tone-brand { background: var(--brand); color: var(--on-brand); }
   .tone-lime { background: var(--lime); color: #0B3D2E; }
@@ -345,49 +355,49 @@
         <div class="panels">
         <button type="button" class="panel tone-forest rv" data-open="trikinema" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikinema.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikinema</span>
+          <span class="pn"><span class="sr-only">Trikinema</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>inema</span></span>
           <span class="pt">Movies, ratings, and one short film.</span>
           <span class="pc">4 projects <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-brand rv" data-open="trikids" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikids.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikids</span>
+          <span class="pn"><span class="sr-only">Trikids</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ids</span></span>
           <span class="pt">Classic tales for kids, told in French.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-lime rv" data-open="trikarcade" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikarcade.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikarcade</span>
+          <span class="pn"><span class="sr-only">Trikarcade</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>arcade</span></span>
           <span class="pt">Pixels and the chess board.</span>
           <span class="pc">2 projects <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-paper rv" data-open="trikolitics" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikolitics.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikolitics</span>
+          <span class="pn"><span class="sr-only">Trikolitics</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>olitics</span></span>
           <span class="pt">Voter guides for people who want to know.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-forest rv" data-open="trikoyage" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikoyage.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikoyage</span>
+          <span class="pn"><span class="sr-only">Trikoyage</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>oyage</span></span>
           <span class="pt">Everywhere I’ve been.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-brand rv" data-open="trikitchen" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikitchen.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikitchen</span>
+          <span class="pn"><span class="sr-only">Trikitchen</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>itchen</span></span>
           <span class="pt">Recipes and TikToks.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-lime rv" data-open="trikivre" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikivre.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikivre</span>
+          <span class="pn"><span class="sr-only">Trikivre</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ivre</span></span>
           <span class="pt">Where to drink a pint in Bordeaux.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <button type="button" class="panel tone-paper rv" data-open="trikarchive" aria-haspopup="dialog">
           <img class="plogo" src="img/logos/trikarchive.svg?v=3" alt="" width="76" height="76">
-          <span class="pn">Trikarchive</span>
+          <span class="pn"><span class="sr-only">Trikarchive</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>archive</span></span>
           <span class="pt">School projects from the early years.</span>
           <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
@@ -395,7 +405,7 @@
       </div>
     <dialog class="cat-dialog" id="trikinema" aria-labelledby="trikinema-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikinema.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikinema-h">Trikinema</h3><p>Movies, ratings, and one short film.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikinema.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikinema-h"><span class="sr-only">Trikinema</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>inema</span></h3><p>Movies, ratings, and one short film.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/scatterboxd.jpg" alt="Preview of Scatterboxd" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -418,7 +428,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikids" aria-labelledby="trikids-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikids.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikids-h">Trikids</h3><p>Classic tales for kids, told in French.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikids.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikids-h"><span class="sr-only">Trikids</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ids</span></h3><p>Classic tales for kids, told in French.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="/trikids/">
               <div class="shot"><img src="img/projects/trikids.jpg" alt="Preview of Trikistoires" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -429,7 +439,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikarcade" aria-labelledby="trikarcade-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarcade.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarcade-h">Trikarcade</h3><p>Pixels and the chess board.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarcade.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarcade-h"><span class="sr-only">Trikarcade</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>arcade</span></h3><p>Pixels and the chess board.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/kino.jpg" alt="Preview of Kino der RN" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -444,7 +454,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikolitics" aria-labelledby="trikolitics-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikolitics.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikolitics-h">Trikolitics</h3><p>Voter guides for people who want to know.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikolitics.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikolitics-h"><span class="sr-only">Trikolitics</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>olitics</span></h3><p>Voter guides for people who want to know.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/monvote.jpg" alt="Preview of MonVote.ma" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -455,7 +465,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikoyage" aria-labelledby="trikoyage-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikoyage.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikoyage-h">Trikoyage</h3><p>Everywhere I’ve been.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikoyage.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikoyage-h"><span class="sr-only">Trikoyage</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>oyage</span></h3><p>Everywhere I’ve been.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://travel.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/travel.jpg" alt="Preview of Travel map" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -466,7 +476,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikitchen" aria-labelledby="trikitchen-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikitchen.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikitchen-h">Trikitchen</h3><p>Recipes and TikToks.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikitchen.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikitchen-h"><span class="sr-only">Trikitchen</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>itchen</span></h3><p>Recipes and TikToks.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://cook.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/cook.jpg" alt="Preview of Trikitchen" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -477,7 +487,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikivre" aria-labelledby="trikivre-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikivre.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikivre-h">Trikivre</h3><p>Where to drink a pint in Bordeaux.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikivre.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikivre-h"><span class="sr-only">Trikivre</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ivre</span></h3><p>Where to drink a pint in Bordeaux.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://beers.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/beers.jpg" alt="Preview of Où boire une pinte" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
@@ -488,7 +498,7 @@
     </dialog>
     <dialog class="cat-dialog" id="trikarchive" aria-labelledby="trikarchive-h">
       <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarchive.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarchive-h">Trikarchive</h3><p>School projects from the early years.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
+        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarchive.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarchive-h"><span class="sr-only">Trikarchive</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>archive</span></h3><p>School projects from the early years.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
         <div class="cards">
             <a class="slide" href="https://archive.odtriki.com" target="_blank" rel="noopener">
               <div class="shot"><img src="img/projects/archive.jpg" alt="Preview of Old school projects" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>

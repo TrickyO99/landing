@@ -26,6 +26,16 @@
   .story img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 14px; border: 1px solid var(--hairline); background: var(--surface-200); }
   .story span { font-family: var(--font-display); font-weight: 800; font-size: .98rem; letter-spacing: -.01em; line-height: 1.2; }
   @media (prefers-reduced-motion: no-preference) { .story { transition: translate .2s ease; } .story:hover { translate: 0 -4px; } }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .wm { --trik: var(--brand-strong); --flag: var(--brand); }
+  .wm-t { display: inline-block; height: .76em; width: auto; vertical-align: baseline; margin-right: -.01em; }
+  .wm-t path { fill: var(--trik); }
+  .wm-t .flag { fill: var(--flag); }
+  .wm-k { color: var(--trik); }
+  .tone-forest .wm { --trik: var(--lime); --flag: #FFFFFF; }
+  .tone-brand .wm { --trik: #FFFFFF; --flag: var(--lime); }
+  .tone-lime .wm { --trik: #0C7F3E; --flag: #0B3D2E; }
+  .tone-paper .wm { --trik: var(--brand-strong); --flag: var(--lime); }
 </style>
 <script src="https://odtriki.com/shell/tk.js?v=3" data-name="Trikids" defer></script>
 </head>
@@ -33,7 +43,7 @@
 <main class="wrap">
   <section class="hero">
     <p class="eyebrow">Trikids</p>
-    <h1>Trikistoires.</h1>
+    <h1><span class="sr-only">Trikistoires</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>istoires</span>.</h1>
     <p class="lede">Des contes classiques racontés en français, en vidéos courtes, avec des illustrations dessinées à la main. Une histoire, une étoile.</p>
     <span class="pill">30 histoires</span>
   </section>
