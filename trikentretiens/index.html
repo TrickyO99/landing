@@ -82,6 +82,16 @@ resume-tailor tailor offer.txt</pre>
     <li>Needs Python 3.10+ and Chrome, Chromium or Edge to print the PDFs. MIT licence.</li>
   </ul>
   <p class="dl"><a class="cta" href="resume-tailor.zip" download>Download the tool</a> <span class="note">Source, examples and tests. The README explains the rest.</span></p>
+  <h2>Where the offers come from: igaming-jobs-fr</h2>
+  <p class="lede-sm">A companion project for the job hunt. It gathers the openings of the online gambling operators licensed by the ANJ (the French regulator) in one searchable French-language board, so there is no need to visit each careers site by hand.</p>
+  <ul class="rules" style="margin-bottom:1.5rem">
+    <li><b>Sources.</b> 14 ANJ-licensed operators are listed. 8 are scraped today: bwin/partypoker (Entain), PMU, Betsson, Winamax, FDJ United, PokerStars (Flutter), Betclic and bet365. The other 6 (Circus, NetBet, Vbet, Genybet, Olybet, Feelingbet) are shown as "not monitored", so the gaps stay visible.</li>
+    <li><b>How it reads them.</b> One small adapter per source: public APIs where they exist (SmartRecruiters, Workday, a WordPress AJAX endpoint), Welcome to the Jungle pages for the others, and a headless browser only when nothing else works. Requests are rate-limited and retried politely.</li>
+    <li><b>What it stores.</b> Title, location and country, contract type, description and a category worked out from the title (Support, Tech / Data, Marketing, Legal, Finance and so on). Each run marks offers that disappeared as inactive instead of deleting them.</li>
+    <li><b>Last run (September 2026).</b> 611 active offers across the operators, about 40% in customer support and 26% in tech and data.</li>
+    <li><b>The site.</b> Next.js with a local SQLite file. Filterable list, one page per offer with JobPosting structured data, sitemap and robots.txt. A scrape runs once or in a loop with <code>npm run scrape</code> and <code>npm run scrape:loop</code>.</li>
+  </ul>
+  <p class="note" style="max-width:40rem;opacity:.75;margin:0 0 5rem">Status: built and working locally, not deployed yet. It has no public domain, so there is no link to open.</p>
 </main>
 </body>
 </html>

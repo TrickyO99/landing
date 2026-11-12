@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trikinema | My films and my music, on my own TV</title>
+<meta name="description" content="Trikinema: a home media server and a TV app for my own films (posters, search, subtitles, Letterboxd), and an Apple Music screen for the TV with live lyrics.">
+<link rel="canonical" href="https://odtriki.com/trikinema/">
+<meta property="og:type" content="website"><meta property="og:title" content="Trikinema"><meta property="og:description" content="My own film library on my TV, and Apple Music with live lyrics."><meta property="og:image" content="https://odtriki.com/img/social/og-home.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
+<style>
+  body { margin: 0; background: var(--surface-100); color: var(--ink); font-family: var(--font-sans); }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+  .hero { padding: clamp(3rem, 9vw, 6rem) 0 2rem; }
+  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-strong); margin: 0 0 .75rem; }
+  h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.03em; line-height: .95; font-size: clamp(2.6rem, 9vw, 6rem); margin: 0 0 1.25rem; }
+  .lede { font-size: 1.25rem; max-width: 38rem; opacity: .85; margin: 0 0 1.5rem; }
+  .pill { display: inline-block; background: var(--lime); color: #0B3D2E; font-weight: 700; padding: .5rem 1.1rem; border-radius: 999px; margin-right: .4rem; }
+  h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 .75rem; line-height: 1.05; }
+  h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; font-size: 1.25rem; margin: 0 0 .4rem; }
+  .proj { display: grid; gap: 2rem; grid-template-columns: 1fr; margin: 3.5rem 0 4rem; scroll-margin-top: 5rem; }
+  @media (min-width: 52rem) { .proj { grid-template-columns: 1.05fr 1fr; align-items: start; } .proj.flip .shot { order: 2; } }
+  .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 16px; border: 1px solid var(--hairline); display: block; }
+  .shot figcaption { margin-top: .6rem; font-size: .9rem; opacity: .75; }
+  .proj p { max-width: 34rem; margin: 0 0 1rem; opacity: .9; }
+  .facts { margin: 0 0 1rem; padding-left: 1.2rem; max-width: 34rem; }
+  .facts li { margin: .45rem 0; }
+  .steps { list-style: none; margin: 1.5rem 0 3rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+  .steps li { background: var(--surface-200); border-radius: 18px; padding: 1.4rem; }
+  .steps b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; margin-bottom: .4rem; }
+  .steps p { margin: 0; opacity: .85; }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+  .tags li { background: var(--surface-200); border-radius: 999px; padding: .25rem .8rem; font-size: .85rem; font-weight: 600; }
+  .note { background: var(--surface-200); border-radius: 14px; padding: 1rem 1.2rem; max-width: 40rem; margin: 0 0 4rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .wm { --trik: var(--brand-strong); --flag: var(--brand); }
+  .wm-t { display: inline-block; height: .76em; width: auto; vertical-align: baseline; margin-right: -.01em; }
+  .wm-t path { fill: var(--trik); }
+  .wm-t .flag { fill: var(--flag); }
+  .wm-k { color: var(--trik); }
+</style>
+<script src="https://odtriki.com/shell/tk.js?v=3" data-name="Trikinema" defer></script>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Trikinema</p>
+    <h1><span class="sr-only">Trikinema</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>inema</span>.</h1>
+    <p class="lede">I wanted my films and my music on the big screen, my way. So I built the pieces: a small server on my PC, an app on the TV, one on my phone.</p>
+    <span class="pill">Films</span><span class="pill">Now Playing</span>
+  </section>
+
+  <section class="proj" id="films">
+    <figure class="shot">
+      <img src="/img/projects/trikinema-films.jpg" alt="Mock-up of the Films home screen: a hero on top, a row of posters below" width="960" height="600" loading="lazy">
+      <figcaption>A mock-up, not my real library.</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Project one</p>
+      <h2>Films</h2>
+      <p>My own Plex. The films sit in a folder on my PC. The TV shows them as a proper menu: posters, synopsis, cast, ratings. Press OK and it plays.</p>
+      <ul class="facts">
+        <li><b>A real menu.</b> Home with shelves (continue watching, recently added, top rated, one per genre), a Browse grid with sorting and filters, and a film page for each title.</li>
+        <li><b>Search that finds things.</b> Titles, cast, directors, genres, years. Type on the screen keyboard, or on a real one.</li>
+        <li><b>Subtitles on their own.</b> It finds English and French subtitles for every film and times them to the audio, so they don&rsquo;t drift.</li>
+        <li><b>Linked to Letterboxd.</b> My rating shows next to the crowd&rsquo;s, films I&rsquo;ve seen get a badge, and my watchlist becomes a shelf. Read-only: Letterboxd has no open way to write back, so finished films come out as a file I can import.</li>
+        <li><b>Picks up where I stopped,</b> on the TV or the phone.</li>
+      </ul>
+      <ul class="tags"><li>Python</li><li>Android TV</li><li>Java</li><li>Media3 / ExoPlayer</li><li>TMDB</li><li>ffmpeg</li><li>Letterboxd</li></ul>
+    </div>
+  </section>
+
+  <h2>How the pieces fit</h2>
+  <ol class="steps">
+    <li><b>The server</b><p>A Python program with no dependencies. It scans the folder, reads each file&rsquo;s codecs, fetches the film details from TMDB, and streams the file with seeking.</p></li>
+    <li><b>The TV app</b><p>Finds the server by itself on the Wi-Fi, no address to type. Built on Android&rsquo;s Media3 player.</p></li>
+    <li><b>The phone app</b><p>Same library, same code, laid out for a phone. It plays the film on the phone.</p></li>
+    <li><b>The subtitles</b><p>Downloaded once, timed against the sound of the film, then kept. Nothing to do on movie night.</p></li>
+  </ol>
+  <p class="note"><b>Good to know.</b> Everything stays at home: the server only answers devices on my own network, and the only things that leave are film titles and ids, sent to TMDB and the subtitle site, plus a request for my public Letterboxd feed. The PC has to be on to watch.</p>
+
+  <section class="proj flip" id="nowplaying">
+    <figure class="shot">
+      <img src="/img/projects/trikinema-nowplaying.jpg" alt="Mock-up of the Now Playing screen: cover on the left, large synced lyrics on the right" width="960" height="600" loading="lazy">
+      <figcaption>A mock-up with an invented song.</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">Project two</p>
+      <h2>Now Playing</h2>
+      <p>Google TV has no screen for what&rsquo;s playing on Apple Music. So I made one: the cover, the song, what&rsquo;s next, and the lyrics scrolling in time, in the spirit of Apple&rsquo;s own TV app.</p>
+      <ul class="facts">
+        <li><b>Only Apple Music.</b> The phone app listens to Apple Music&rsquo;s playback and nothing else. No other app, no microphone.</li>
+        <li><b>Live lyrics.</b> The current line is bright, the rest fade out. A Sing-along mode puts them centre stage.</li>
+        <li><b>The remote works both ways.</b> Arrows on the TV remote skip, pause or go back, and the phone obeys.</li>
+        <li><b>It pops up by itself</b> when music starts, and closes shortly after it stops.</li>
+      </ul>
+      <p>The lyrics come from a free lyrics database. Only the song, artist and album names are sent, and there&rsquo;s a switch to turn that off.</p>
+      <ul class="tags"><li>Android</li><li>Java</li><li>MediaSession</li><li>mDNS</li><li>lrclib</li></ul>
+    </div>
+  </section>
+  <p class="note"><b>What it can&rsquo;t do.</b> Apple&rsquo;s karaoke slider, the one that turns the singer down, uses Apple&rsquo;s own audio separation. I can&rsquo;t reach that, so Sing-along shows the lyrics only.</p>
+</main>
+</body>
+</html>
