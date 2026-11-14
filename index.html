@@ -75,7 +75,12 @@
     text-decoration: none;
   }
   nav .brand svg { width: 2.25rem; height: 2.25rem; }
-  nav .links { display: flex; gap: var(--space-6); font-size: 0.95rem; font-weight: 500; }
+  .seg { display: inline-flex; border: 1px solid var(--hairline); border-radius: 999px; overflow: hidden; margin-left: var(--space-4); }
+  .seg button { font: inherit; font-size: .78rem; font-weight: 700; letter-spacing: .04em; color: var(--ink-muted); background: transparent; border: 0; padding: .3rem .7rem; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--brand-strong); color: #fff; }
+  .seg button:focus-visible { outline: 3px solid var(--lime); outline-offset: -2px; }
+  html[lang="fr"] [lang="en"], html[lang="en"] [lang="fr"] { display: none !important; }
+  nav .links { display: flex; align-items: center; gap: var(--space-6); font-size: 0.95rem; font-weight: 500; }
   nav .links a { color: var(--ink-muted); text-decoration: none; padding: var(--space-1) 0; border-bottom: 2px solid transparent; }
   nav .links a:hover { color: var(--ink); border-bottom-color: var(--brand-strong); }
 
@@ -150,19 +155,19 @@
   h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: var(--space-6); }
   .showcase-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4); }
   .showcase-head h2 { margin-bottom: var(--space-6); }
-  .panels { display: grid; gap: var(--space-6); grid-template-columns: repeat(2, 1fr); }
+  .panels { display: grid; gap: var(--space-6); grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 62rem) { .panels { grid-template-columns: repeat(2, 1fr); } .panels > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; } }
   @media (max-width: 40rem) { .panels { grid-template-columns: 1fr; } }
-  .panel { font: inherit; text-align: left; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-2); min-height: clamp(13rem, 24vw, 18rem); padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-lg); position: relative; overflow: hidden; transition: translate .25s cubic-bezier(.2,.9,.2,1); }
-  .panels > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .panel { text-decoration: none; color: inherit; font: inherit; text-align: left; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-2); min-height: clamp(13rem, 24vw, 18rem); padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-lg); position: relative; overflow: hidden; transition: translate .25s cubic-bezier(.2,.9,.2,1); }
   .panel:hover { translate: 0 -6px; }
   .panel:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
-  .panel .pn { font-family: var(--font-display); font-weight: 800; letter-spacing: -.035em; line-height: .95; font-size: clamp(2.4rem, 6.5vw, 4.6rem); }
+  .panel .pn { font-family: var(--font-display); font-weight: 800; letter-spacing: -.035em; line-height: .95; font-size: clamp(2.2rem, 4.4vw, 3rem); white-space: nowrap; }
+  @media (min-width: 62.01rem) { .panel .pn { font-size: clamp(1.9rem, 2.6vw, 2.5rem); } }
   .panel .pt { font-size: 1.05rem; opacity: .85; max-width: 24rem; }
   .panel .pc { display: inline-flex; align-items: center; gap: .5rem; margin-top: var(--space-3); font-weight: 700; font-size: .9rem; }
   .panel .pc svg { width: 1.2rem; height: 1.2rem; transition: translate .2s ease; }
   .panel:hover .pc svg { translate: 6px 0; }
   .plogo { width: clamp(3.4rem, 7vw, 4.75rem); height: auto; border-radius: 22%; margin-bottom: auto; align-self: flex-start; }
-  .dlg-title { display: flex; align-items: center; gap: var(--space-4); }
   .dlogo { width: clamp(3.2rem, 7vw, 4.5rem); height: auto; border-radius: 22%; flex: none; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .wm { --trik: var(--brand-strong); --flag: var(--brand); }
@@ -178,15 +183,6 @@
   .tone-brand { background: var(--brand); color: var(--on-brand); }
   .tone-lime { background: var(--lime); color: #0B3D2E; }
   .tone-paper { background: var(--surface-200); color: var(--ink); }
-  .cat-dialog { width: min(72rem, 94vw); max-height: 90vh; padding: 0; border: 0; border-radius: var(--radius-lg); background: var(--surface-100); color: var(--ink); overflow: auto; }
-  .cat-dialog::backdrop { background: rgba(5, 12, 9, .78); }
-  .dlg-in { padding: clamp(1.25rem, 3vw, 2.5rem); }
-  .dlg-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6); }
-  .dlg-head h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.03em; line-height: 1; font-size: clamp(2.2rem, 6vw, 4rem); margin: 0 0 var(--space-2); }
-  .dlg-head p { margin: 0; color: var(--ink-muted); font-size: 1.05rem; }
-  .dlg-x { font: inherit; font-weight: 700; padding: .55rem 1.2rem; border-radius: var(--radius-pill); border: 1px solid var(--hairline); background: transparent; color: var(--ink); cursor: pointer; }
-  .dlg-x:hover { background: var(--forest); color: var(--on-forest); border-color: var(--forest); }
-  .cat-dialog .cards .slide.slide { opacity: 1; translate: 0 0; }
   .cat-block { padding-block: clamp(1.5rem, 4vw, 2.5rem); border-top: 1px solid var(--hairline); }
   .cat-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin-bottom: var(--space-6); }
   .cat-head h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.03em; line-height: 1; font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; }
@@ -293,10 +289,12 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
-  .legal-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; font-size: .85rem; font-weight: 600; }
-  .legal-links a { color: inherit; opacity: .8; text-underline-offset: 3px; }
+  .legal-links { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; font-size: .85rem; font-weight: 600; margin-top: var(--space-2); }
+  .legal-links a { color: inherit; opacity: .8; text-decoration: none; text-underline-offset: 3px; }
   .legal-links a:hover { opacity: 1; text-decoration: underline; }
 </style>
+<script src="https://odtriki.com/shell/tk.js?v=5" data-nobar defer></script>
+<script>addEventListener("load",function(){var T=window.tkLang;if(!T)return;var bs=document.querySelectorAll(".seg button");function paint(){bs.forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-l")===T.get()))})}paint();T.on(paint);bs.forEach(function(b){b.addEventListener("click",function(){T.set(b.getAttribute("data-l"))})})});</script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -314,7 +312,8 @@
       </a>
       <span class="links">
         <a href="/cv/">CV</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects"><span lang="en">Projects</span><span lang="fr">Projets</span></a>
+        <span class="seg" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="fr">FR</button></span>
       </span>
     </div>
     <i class="progress" aria-hidden="true"></i>
@@ -324,7 +323,7 @@
     <div class="wrap">
       <div>
         <h1 aria-label="Othmane Triki"><span class="ln" aria-hidden="true"><span>Othmane</span></span> <span class="ln" aria-hidden="true"><span>Triki</span></span></h1>
-        <p class="role">Data Analyst at <b>Betclic</b>.<br>Curious about everything, so I build everything.</p>
+        <p class="role"><span lang="en">Data Analyst at <b>Betclic</b>.<br>Curious about everything, so I build everything.</span><span lang="fr">Data Analyst chez <b>Betclic</b>.<br>Curieux de tout, alors je construis tout.</span></p>
         <div class="social-row">
           <a class="btn" href="/cv/">
             <svg viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true"><path d="M6 2h8l6 6v11a3 3 0 01-3 3H6a3 3 0 01-3-3V5a3 3 0 013-3zM13 3.5V9h5.5zM7 12h10v1.8H7zm0 3.5h10v1.8H7z"/></svg>
@@ -351,191 +350,68 @@
     <section class="projects-section" id="projects" aria-labelledby="ph">
       <div class="wrap showcase-head">
         <div>
-          <p class="eyebrow rv">Projects</p>
-          <h2 class="rv" id="ph">What I&rsquo;ve built</h2>
+          <p class="eyebrow rv"><span lang="en">Projects</span><span lang="fr">Projets</span></p>
+          <h2 class="rv" id="ph"><span lang="en">What I&rsquo;ve built</span><span lang="fr">Ce que j&rsquo;ai construit</span></h2>
         </div>
       </div>
       <div class="wrap">
         <div class="panels">
-        <button type="button" class="panel tone-forest rv" data-open="trikinema" aria-haspopup="dialog">
+        <a class="panel tone-forest rv" href="/trikinema/">
           <img class="plogo" src="img/logos/trikinema.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikinema</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>inema</span></span>
-          <span class="pt">Movies, ratings, and one short film.</span>
-          <span class="pc">6 projects <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-brand rv" data-open="trikids" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Movies, ratings, and one short film.</span><span lang="fr">Des films, des notes, et un court métrage.</span></span>
+          <span class="pc"><span lang="en">7 projects</span><span lang="fr">7 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-brand rv" href="/trikids/">
           <img class="plogo" src="img/logos/trikids.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikids</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ids</span></span>
-          <span class="pt">Classic tales for kids, told in French.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-lime rv" data-open="trikarcade" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Classic tales for kids, told in French.</span><span lang="fr">Des contes classiques pour les enfants, racontés en français.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-lime rv" href="/trikarcade/">
           <img class="plogo" src="img/logos/trikarcade.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikarcade</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>arcade</span></span>
-          <span class="pt">Pixels and the chess board.</span>
-          <span class="pc">2 projects <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-paper rv" data-open="trikolitics" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Pixels and the chess board.</span><span lang="fr">Des pixels et un échiquier.</span></span>
+          <span class="pc"><span lang="en">3 projects</span><span lang="fr">3 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-paper rv" href="/trikolitics/">
           <img class="plogo" src="img/logos/trikolitics.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikolitics</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>olitics</span></span>
-          <span class="pt">Voter guides for people who want to know.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-forest rv" data-open="trikoyage" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Voter guides for people who want to know.</span><span lang="fr">Des guides de vote pour ceux qui veulent savoir.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-forest rv" href="/trikoyage/">
           <img class="plogo" src="img/logos/trikoyage.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikoyage</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>oyage</span></span>
-          <span class="pt">Everywhere I’ve been.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-brand rv" data-open="trikitchen" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Everywhere I&rsquo;ve been.</span><span lang="fr">Partout où je suis allé.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-brand rv" href="/trikitchen/">
           <img class="plogo" src="img/logos/trikitchen.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikitchen</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>itchen</span></span>
-          <span class="pt">Recipes and TikToks.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-lime rv" data-open="trikivre" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Recipes and TikToks.</span><span lang="fr">Des recettes et des TikToks.</span></span>
+          <span class="pc"><span lang="en">3 projects</span><span lang="fr">3 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-lime rv" href="/trikivre/">
           <img class="plogo" src="img/logos/trikivre.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikivre</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ivre</span></span>
-          <span class="pt">Where to drink a pint in Bordeaux.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-paper rv" data-open="trikarchive" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">Where to drink a pint in Bordeaux.</span><span lang="fr">Où boire une pinte à Bordeaux.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-paper rv" href="/trikarchive/">
           <img class="plogo" src="img/logos/trikarchive.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikarchive</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>archive</span></span>
-          <span class="pt">School projects from the early years.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <button type="button" class="panel tone-forest rv" data-open="trikentretiens" aria-haspopup="dialog">
+          <span class="pt"><span lang="en">School projects from the early years.</span><span lang="fr">Les projets d&rsquo;école des premières années.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a class="panel tone-forest rv" href="/trikentretiens/">
           <img class="plogo" src="img/logos/trikentretiens.svg?v=2" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span></span>
-          <span class="pt">Job hunting, automated: one offer in, one tailored CV out.</span>
-          <span class="pc">1 project <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
+          <span class="pt"><span lang="en">Job hunting, automated: one offer in, one tailored CV out.</span><span lang="fr">La recherche d&rsquo;emploi, automatisée : une offre en entrée, un CV sur mesure en sortie.</span></span>
+          <span class="pc"><span lang="en">2 projects</span><span lang="fr">2 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
         </div>
       </div>
-    <dialog class="cat-dialog" id="trikinema" aria-labelledby="trikinema-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikinema.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikinema-h"><span class="sr-only">Trikinema</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>inema</span></h3><p>Movies, ratings, and one short film.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://scatterboxd.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/scatterboxd.jpg" alt="Preview of Scatterboxd" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Scatterboxd</h3><p>Visualize how your Letterboxd ratings compare to the crowd’s, one scatter plot at a time.</p></div>
-            </a>
-            <a class="slide" href="https://compare.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/compare.jpg" alt="Preview of Letterboxd Compare" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Letterboxd Compare</h3><p>Find the movies you and a friend both watched or have on your watchlists, and see how your ratings stack up.</p></div>
-            </a>
-            <a class="slide" href="https://streaming.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/streaming.jpg" alt="Preview of Streaming Checker" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Streaming Checker</h3><p>Check which streaming service actually has the film you’re trying to watch.</p></div>
-            </a>
-            <a class="slide" href="/trikinema/#films">
-              <div class="shot"><img src="img/projects/trikinema-films.jpg?v=1" alt="Preview of Films" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Films</h3><p>My own Plex: my films on the TV as a poster menu, with search, automatic subtitles and a Letterboxd link.</p></div>
-            </a>
-            <a class="slide" href="/trikinema/#nowplaying">
-              <div class="shot"><img src="img/projects/trikinema-nowplaying.jpg?v=1" alt="Preview of Now Playing" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Now Playing</h3><p>What Apple Music is playing, on the TV: cover, next songs and live lyrics.</p></div>
-            </a>
-            <a class="slide" href="https://www.youtube.com/watch?v=Fb_zsqkrkWQ" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/romeo.jpg" alt="Preview of Roméo &amp; Jules" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Roméo &amp; Jules</h3><p>A short film written and shot for the Cinéma et Audiovisuel option at Lycée Descartes.</p><span class="ptag">Best Film · Best Screenplay, 2017</span></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikids" aria-labelledby="trikids-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikids.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikids-h"><span class="sr-only">Trikids</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ids</span></h3><p>Classic tales for kids, told in French.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="/trikids/">
-              <div class="shot"><img src="img/projects/trikids.jpg" alt="Preview of Trikistoires" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Trikistoires</h3><p>30 fairy tales and fables as short videos, with hand-drawn illustrations and a French voice. One story, one star.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikarcade" aria-labelledby="trikarcade-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarcade.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarcade-h"><span class="sr-only">Trikarcade</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>arcade</span></h3><p>Pixels and the chess board.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://kinoderrn.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/kino.jpg" alt="Preview of Kino der RN" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Kino der RN</h3><p>A pixel-art arcade game: pick a tweet, survive waves of right-wing troll bots replying to it. Online high-score board.</p></div>
-            </a>
-            <a class="slide" href="https://chess.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/chess.jpg" alt="Preview of Chess" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Chess</h3><p>Live chess.com stats, plus two youth championship titles from Rabat.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikolitics" aria-labelledby="trikolitics-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikolitics.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikolitics-h"><span class="sr-only">Trikolitics</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>olitics</span></h3><p>Voter guides for people who want to know.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://legislativesmaroc2026.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/monvote.jpg" alt="Preview of MonVote.ma" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>MonVote.ma</h3><p>A voter guide quiz matching your positions to Morocco’s political parties.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikoyage" aria-labelledby="trikoyage-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikoyage.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikoyage-h"><span class="sr-only">Trikoyage</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>oyage</span></h3><p>Everywhere I’ve been.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://travel.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/travel.jpg" alt="Preview of Travel map" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Travel map</h3><p>An interactive map of every country and city I’ve traveled to.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikitchen" aria-labelledby="trikitchen-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikitchen.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikitchen-h"><span class="sr-only">Trikitchen</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>itchen</span></h3><p>Recipes and TikToks.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://cook.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/cook.jpg" alt="Preview of Trikitchen" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Trikitchen</h3><p>Recipes and TikToks from @trikitchen_.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikivre" aria-labelledby="trikivre-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikivre.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikivre-h"><span class="sr-only">Trikivre</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>ivre</span></h3><p>Where to drink a pint in Bordeaux.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://beers.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/beers.jpg" alt="Preview of Où boire une pinte" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Où boire une pinte</h3><p>Crowd-sourced map of bars and clubs in Bordeaux, with prices.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikarchive" aria-labelledby="trikarchive-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikarchive.svg?v=3" alt="" width="72" height="72"><div><h3 id="trikarchive-h"><span class="sr-only">Trikarchive</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>archive</span></h3><p>School projects from the early years.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="https://archive.odtriki.com" target="_blank" rel="noopener">
-              <div class="shot"><img src="img/projects/archive.jpg" alt="Preview of Old school projects" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Old school projects</h3><p>~30 coursework exercises from EPITECH’s early years: C, Assembly, Python.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
-    <dialog class="cat-dialog" id="trikentretiens" aria-labelledby="trikentretiens-h">
-      <div class="dlg-in">
-        <header class="dlg-head"><div class="dlg-title"><img class="dlogo" src="img/logos/trikentretiens.svg?v=2" alt="" width="72" height="72"><div><h3 id="trikentretiens-h"><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span></h3><p>Finding the offers, tailoring the CV.</p></div></div><button type="button" class="dlg-x" aria-label="Close">Close</button></header>
-        <div class="cards">
-            <a class="slide" href="/trikentretiens/">
-              <div class="shot"><img src="img/projects/trikentretiens.jpg?v=1" alt="Preview of Trikentretiens" width="960" height="600" loading="lazy" draggable="false"><span class="go"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15L15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-              <div class="sbody"><h3>Trikentretiens</h3><p>Reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.</p></div>
-            </a>
-        </div>
-      </div>
-    </dialog>
     </section>
   </main>
 
@@ -547,7 +423,7 @@
           a Trikorporation brand
         </span>
         <div class="sig">odtriki.com</div>
-        <nav class="legal-links" aria-label="Legal"><a href="/legal/">Mentions légales</a><a href="/privacy/">Confidentialité</a><a href="/terms/">CGU</a></nav>
+        <nav class="legal-links" aria-label="Legal"><a href="/legal/"><span lang="en">Legal notice</span><span lang="fr">Mentions légales</span></a><a href="/privacy/"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></a><a href="/terms/"><span lang="en">Terms</span><span lang="fr">CGU</span></a></nav>
       </div>
       <div class="social-row">
         <a class="btn" href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">LinkedIn</a>
@@ -577,21 +453,6 @@
 
   var fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
 
-  // projects: category panels open a dialog with the projects
-  var dlgs = [].slice.call(d.querySelectorAll('.cat-dialog'));
-  function openCat(id, push) {
-    var dl = d.getElementById(id); if (!dl || dl.open) return;
-    if (typeof dl.showModal === 'function') dl.showModal(); else dl.setAttribute('open', '');
-    if (push) history.replaceState(null, '', '#' + id);
-  }
-  function closeCat(dl) { if (dl.close) dl.close(); else dl.removeAttribute('open'); }
-  d.querySelectorAll('.panel').forEach(function (b) { b.addEventListener('click', function () { openCat(b.getAttribute('data-open'), true); }); });
-  dlgs.forEach(function (dl) {
-    dl.querySelector('.dlg-x').addEventListener('click', function () { closeCat(dl); });
-    dl.addEventListener('click', function (e) { if (e.target === dl) closeCat(dl); });
-    dl.addEventListener('close', function () { if (location.hash === '#' + dl.id) history.replaceState(null, '', location.pathname + location.search); });
-  });
-  if (location.hash.length > 1) openCat(location.hash.slice(1), false);
 
   // hero logo: follows the pointer, click to replay the assemble animation
   var logo = d.querySelector('.hero-logo');

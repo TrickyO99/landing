@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odds scanner | Trikarcade | Trikorporation</title>
+<meta name="description" content="Compares football odds across the French licensed betting sites to study how prices differ. Work in progress.">
+<link rel="canonical" href="https://odtriki.com/trikarcade/odds/">
+<meta name="theme-color" content="#0B3D2E">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trikorporation">
+<meta property="og:title" content="Odds scanner | Trikarcade | Trikorporation"><meta property="og:description" content="Compares football odds across the French licensed betting sites to study how prices differ. Work in progress.">
+<meta property="og:url" content="https://odtriki.com/trikarcade/odds/">
+<meta property="og:image" content="https://odtriki.com/img/social/og-trikarcade-odds.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://odtriki.com/img/social/og-trikarcade-odds.png">
+<link rel="icon" href="/trikarcade/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/trikarcade/favicon.svg">
+<link rel="apple-touch-icon" href="/trikarcade/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-site.css?v=5">
+<script src="https://odtriki.com/shell/tk.js?v=5" data-name="Odds scanner" defer></script>
+</head>
+<body>
+<main class="wrap narrow">
+  <section class="hero">
+    <a class="back" href="/trikarcade/">&larr; <span lang="en">Trikarcade</span><span lang="fr">Trikarcade</span></a>
+    <p class="eyebrow">Trikarcade</p>
+    <h1 class="name">Odds scanner</h1>
+    <p class="lede"><span lang="en">How far do prices differ from one betting site to the next? This tool measures it, on football.</span><span lang="fr">À quel point les prix diffèrent-ils d’un site de paris à l’autre ? Cet outil le mesure, sur le football.</span></p>
+    <span class="pill"><span lang="en">Work in progress</span><span lang="fr">En cours</span></span>
+  </section>
+  <ul class="facts" style="max-width:44rem">
+    <li><span lang="en"><b>Many sites, one view.</b> It reads pre-match 1X2 odds from 14 of the 16 sports-betting sites licensed in France.</span><span lang="fr"><b>Plusieurs sites, une vue.</b> Il lit les cotes 1X2 d’avant-match de 14 des 16 sites de paris sportifs agréés en France.</span></li>
+    <li><span lang="en"><b>Margins removed.</b> Each site’s margin is stripped out, then every price is compared with what the other sites imply.</span><span lang="fr"><b>Marges retirées.</b> La marge de chaque site est retirée, puis chaque cote est comparée à ce qu’impliquent les autres sites.</span></li>
+    <li><span lang="en"><b>Fair weighting.</b> Brands that share one platform often share prices, so they count as a single vote.</span><span lang="fr"><b>Une pondération juste.</b> Les marques qui partagent une même plateforme partagent souvent leurs cotes : elles ne comptent que pour une voix.</span></li>
+    <li><span lang="en"><b>Polite by design.</b> One scan every five minutes, at most one request per second per site, and page views never trigger a scrape.</span><span lang="fr"><b>Poli par conception.</b> Un scan toutes les cinq minutes, au plus une requête par seconde et par site, et l’affichage d’une page ne déclenche jamais de collecte.</span></li>
+  </ul>
+  <ul class="tags"><li>Python</li><li>SQLite</li><li>WebSocket</li></ul>
+  <p class="note"><span lang="en">A personal research tool, behind a password, and a work in progress. Nothing to open online.</span><span lang="fr">Un outil de recherche personnel, protégé par mot de passe, et un projet en cours. Rien à ouvrir en ligne.</span></p>
+</main>
+</body>
+</html>

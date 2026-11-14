@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trikentretiens | Trikentretiens | Trikorporation</title>
+<meta name="description" content="Reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.">
+<link rel="canonical" href="https://odtriki.com/trikentretiens/resume-tailor/">
+<meta name="theme-color" content="#0B3D2E">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trikorporation">
+<meta property="og:title" content="Trikentretiens | Trikentretiens | Trikorporation"><meta property="og:description" content="Reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.">
+<meta property="og:url" content="https://odtriki.com/trikentretiens/resume-tailor/">
+<meta property="og:image" content="https://odtriki.com/img/social/og-trikentretiens-resume-tailor.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://odtriki.com/img/social/og-trikentretiens-resume-tailor.png">
+<link rel="icon" href="/trikentretiens/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/trikentretiens/favicon.svg">
+<link rel="apple-touch-icon" href="/trikentretiens/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-site.css?v=5">
+<script src="https://odtriki.com/shell/tk.js?v=5" data-name="Trikentretiens" defer></script>
+</head>
+<body>
+<main class="wrap narrow">
+  <section class="hero">
+    <a class="back" href="/trikentretiens/">&larr; <span lang="en">Trikentretiens</span><span lang="fr">Trikentretiens</span></a>
+    <p class="eyebrow">Trikentretiens</p>
+    <h1 class="name">Trikentretiens</h1>
+    <p class="lede"><span lang="en">One offer in, one tailored CV out. It reads the job description, picks what matters from my real experience, and lays out a one-page CV and a cover letter for that role.</span><span lang="fr">Une offre en entrée, un CV sur mesure en sortie. Il lit la description du poste, choisit ce qui compte dans mon expérience réelle et compose un CV d’une page et une lettre de motivation pour ce poste.</span></p>
+    <a class="cta" href="/cv/"><span lang="en">See the base CV</span><span lang="fr">Voir le CV de base</span></a> <span class="pill"><span lang="en">30+ offers tailored</span><span lang="fr">30+ offres traitées</span></span>
+  </section>
+  <ol class="steps">
+    <li><b><span lang="en">1. Read the offer</span><span lang="fr">1. Lire l’offre</span></b><p><span lang="en">Role, stack, tone, language. The CV follows the language of the offer.</span><span lang="fr">Poste, outils, ton, langue. Le CV suit la langue de l’offre.</span></p></li>
+    <li><b><span lang="en">2. Pick the facts</span><span lang="fr">2. Choisir les faits</span></b><p><span lang="en">Everything comes from one source CV. Nothing gets invented, only reordered and reworded.</span><span lang="fr">Tout vient d’un seul CV source. Rien n’est inventé, seulement réordonné et reformulé.</span></p></li>
+    <li><b><span lang="en">3. Build the page</span><span lang="fr">3. Composer la page</span></b><p><span lang="en">One A4 page, rendered to PDF, plus a short cover letter in the same folder.</span><span lang="fr">Une page A4, rendue en PDF, plus une courte lettre de motivation dans le même dossier.</span></p></li>
+    <li><b><span lang="en">4. Track it</span><span lang="fr">4. Suivre</span></b><p><span lang="en">Each application and its status goes into a tracker, so nothing gets lost.</span><span lang="fr">Chaque candidature et son statut vont dans un tableau de suivi, pour ne rien perdre.</span></p></li>
+  </ol>
+  <figure class="ex">
+    <img src="example.jpg?v=1" alt="" width="1100" height="1556" loading="lazy">
+    <figcaption><span lang="en">An example of the output, tailored for a Data Analyst offer. Contact details removed.</span><span lang="fr">Un exemple de résultat, adapté à une offre de Data Analyst. Coordonnées retirées.</span></figcaption>
+  </figure>
+  <h2><span lang="en">House rules</span><span lang="fr">Règles de la maison</span></h2>
+  <ul class="rules"><li><span lang="en">No skill on the CV that is not really mine.</span><span lang="fr">Aucune compétence sur le CV qui ne soit vraiment la mienne.</span></li><li><span lang="en">One page, always.</span><span lang="fr">Une page, toujours.</span></li><li><span lang="en">Each offer gets its own folder: CV, letter, source offer.</span><span lang="fr">Chaque offre a son dossier : CV, lettre, offre d’origine.</span></li></ul>
+  <h2><span lang="en">Use it yourself</span><span lang="fr">À utiliser chez vous</span></h2>
+  <p class="lede"><span lang="en">The tool behind this page is open. Give it your CV once, then one offer at a time. You get a one-page CV, a cover letter, and a list of what the offer wants that you can’t show.</span><span lang="fr">L’outil derrière cette page est ouvert. Donnez-lui votre CV une fois, puis une offre à la fois. Vous obtenez un CV d’une page, une lettre de motivation et la liste de ce que l’offre demande et que vous ne pouvez pas démontrer.</span></p>
+  <pre class="code">pip install .
+resume-tailor init my-cv.pdf
+resume-tailor tailor offer.txt</pre>
+  <ul class="rules" style="margin-top:1.5rem"><li><span lang="en">It checks every number, tool and year count against your own profile, and flags what you can’t back up.</span><span lang="fr">Il vérifie chaque chiffre, outil et nombre d’années par rapport à votre profil, et signale ce que vous ne pouvez pas justifier.</span></li><li><span lang="en">It runs on your machine with your own Anthropic API key. Only your profile and the offer text go to the API.</span><span lang="fr">Il tourne sur votre machine avec votre propre clé API Anthropic. Seuls votre profil et le texte de l’offre partent vers l’API.</span></li><li><span lang="en">Needs Python 3.10+ and Chrome, Chromium or Edge to print the PDFs. MIT licence.</span><span lang="fr">Nécessite Python 3.10+ et Chrome, Chromium ou Edge pour imprimer les PDF. Licence MIT.</span></li></ul>
+  <p><a class="cta" href="resume-tailor.zip" download><span lang="en">Download the tool</span><span lang="fr">Télécharger l’outil</span></a></p>
+  <p class="note"><span lang="en">Source, examples and tests. The README explains the rest.</span><span lang="fr">Source, exemples et tests. Le README explique le reste.</span></p>
+</main>
+</body>
+</html>

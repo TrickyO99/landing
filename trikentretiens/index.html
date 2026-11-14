@@ -3,95 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trikentretiens | One offer in, one tailored CV out</title>
-<meta name="description" content="Trikentretiens reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.">
+<title>Trikentretiens | Trikorporation</title>
+<meta name="description" content="Job hunting, automated: one offer in, one tailored CV out. The tools behind my own job hunt: tailoring an honest one-page CV to each offer.">
 <link rel="canonical" href="https://odtriki.com/trikentretiens/">
-<meta property="og:type" content="website"><meta property="og:title" content="Trikentretiens"><meta property="og:description" content="One offer in, one tailored CV out."><meta property="og:image" content="https://odtriki.com/img/social/og-home.png">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0B3D2E">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trikorporation">
+<meta property="og:title" content="Trikentretiens | Trikorporation"><meta property="og:description" content="Job hunting, automated: one offer in, one tailored CV out. The tools behind my own job hunt: tailoring an honest one-page CV to each offer.">
+<meta property="og:url" content="https://odtriki.com/trikentretiens/">
+<meta property="og:image" content="https://odtriki.com/img/social/og-trikentretiens.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://odtriki.com/img/social/og-trikentretiens.png">
+<link rel="icon" href="/trikentretiens/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/trikentretiens/favicon.svg">
+<link rel="apple-touch-icon" href="/trikentretiens/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
-<style>
-  body { margin: 0; background: var(--surface-100); color: var(--ink); font-family: var(--font-sans); }
-  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
-  .hero { padding: clamp(3rem, 9vw, 6rem) 0 2rem; }
-  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-strong); margin: 0 0 .75rem; }
-  h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.03em; line-height: .95; font-size: clamp(2.6rem, 9vw, 6rem); margin: 0 0 1.25rem; }
-  .lede { font-size: 1.25rem; max-width: 36rem; opacity: .85; margin: 0 0 1.5rem; }
-  .pill { display: inline-block; background: var(--lime); color: #0B3D2E; font-weight: 700; padding: .5rem 1.1rem; border-radius: 999px; }
-  .steps { list-style: none; margin: 2rem 0 3rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
-  .steps li { background: var(--surface-200); border-radius: 18px; padding: 1.4rem; }
-  .steps b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; letter-spacing: -.02em; margin-bottom: .4rem; }
-  .steps p { margin: 0; opacity: .85; }
-  h2 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; font-size: 1.6rem; margin: 0 0 .75rem; }
-  .rules { max-width: 40rem; margin: 0 0 5rem; padding-left: 1.2rem; }
-  .rules li { margin: .4rem 0; }
-  .ex { margin: 0 0 3rem; max-width: 34rem; }
-  .ex img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--hairline); box-shadow: none; display: block; }
-  .ex figcaption { margin-top: .6rem; font-size: .9rem; opacity: .75; }
-  .lede-sm { font-size: 1.1rem; max-width: 40rem; opacity: .85; margin: 0 0 1rem; }
-  .code { max-width: 40rem; margin: 0 0 1.5rem; padding: 1rem 1.2rem; background: var(--surface-200); border-radius: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; line-height: 1.6; overflow-x: auto; }
-  .dl { margin: 0 0 5rem; }
-  .dl .note { font-size: .9rem; opacity: .75; }
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .wm { --trik: var(--brand-strong); --flag: var(--brand); }
-  .wm-t { display: inline-block; height: .76em; width: auto; vertical-align: baseline; margin-right: -.01em; }
-  .wm-t path { fill: var(--trik); }
-  .wm-t .flag { fill: var(--flag); }
-  .wm-k { color: var(--trik); }
-  .cta { display: inline-block; background: var(--forest); color: var(--on-forest); font-weight: 700; padding: .5rem 1.1rem; border-radius: 999px; text-decoration: none; margin-right: .5rem; }
-  .cta:hover { background: var(--brand-strong); color: #fff; }
-  @media (prefers-color-scheme: dark) { .cta { background: var(--lime); color: #0B3D2E; } .cta:hover { background: #fff; } }
-</style>
-<script src="https://odtriki.com/shell/tk.js?v=3" data-name="Trikentretiens" defer></script>
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-site.css?v=5">
+<script src="https://odtriki.com/shell/tk.js?v=5" data-name="Trikentretiens" defer></script>
 </head>
 <body>
 <main class="wrap">
-  <section class="hero">
-    <p class="eyebrow">Trikentretiens</p>
-    <h1><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span>.</h1>
-    <p class="lede">One offer in, one tailored CV out. It reads the job description, picks what matters from my real experience, and lays out a one-page CV and a cover letter for that role.</p>
-    <a class="cta" href="/cv/">See the base CV</a> <span class="pill">30+ offers tailored</span>
+  <section class="hero split">
+    <div>
+      <a class="back" href="/#projects">&larr; <span lang="en">All projects</span><span lang="fr">Tous les projets</span></a>
+      <h1><span class="sr-only">Trikentretiens</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>entretiens</span></h1>
+      <p class="lede"><span lang="en">The tools behind my own job hunt: tailoring an honest one-page CV to each offer.</span><span lang="fr">Les outils de ma propre recherche d’emploi : un CV honnête d’une page, adapté à chaque offre.</span></p>
+    </div>
+    <img class="hero-tile" src="/img/logos/trikentretiens.svg?v=3" alt="" width="152" height="152">
   </section>
-  <ol class="steps">
-    <li><b>1. Read the offer</b><p>Role, stack, tone, language. The CV follows the language of the offer.</p></li>
-    <li><b>2. Pick the facts</b><p>Everything comes from one source CV. Nothing gets invented, only reordered and reworded.</p></li>
-    <li><b>3. Build the page</b><p>One A4 page, rendered to PDF, plus a short cover letter in the same folder.</p></li>
-    <li><b>4. Track it</b><p>Each application and its status goes into a tracker, so nothing gets lost.</p></li>
-  </ol>
-  <figure class="ex">
-    <img src="example.jpg?v=1" alt="Example of a tailored one-page CV: Data Analyst, Marketing Analytics and AI" width="1100" height="1556" loading="lazy">
-    <figcaption>An example of the output, tailored for a Data Analyst offer. Contact details removed.</figcaption>
-  </figure>
-  <h2>House rules</h2>
-  <ul class="rules">
-    <li>No skill on the CV that is not really mine.</li>
-    <li>One page, always.</li>
-    <li>Each offer gets its own folder: CV, letter, source offer.</li>
+  <ul class="pcards">
+<li><a class="pcard" href="/trikentretiens/resume-tailor/"><div class="shot"><img src="/img/projects/trikentretiens.jpg?v=1" alt="" width="960" height="600" loading="lazy"></div><h3>Trikentretiens</h3><p><span lang="en">Reads a job offer and builds a one-page CV and cover letter that fit it. Same facts, reordered for the role.</span><span lang="fr">Lit une offre d’emploi et construit un CV d’une page et une lettre de motivation adaptés. Mêmes faits, réordonnés pour le poste.</span></p></a></li>
+<li><a class="pcard" href="/trikentretiens/igaming-jobs/"><div class="shot"><img src="/img/social/og-trikentretiens-igaming-jobs.png" alt="" width="960" height="600" loading="lazy"></div><span class="tagwip"><span lang="en">Work in progress</span><span lang="fr">En cours</span></span><h3>iGaming jobs FR</h3><p><span lang="en">Online gambling job openings, gathered in one French-language board. Work in progress.</span><span lang="fr">Les offres d’emploi du jeu en ligne, réunies dans un seul tableau en français. Projet en cours.</span></p></a></li>
   </ul>
-  <h2>Use it yourself</h2>
-  <p class="lede-sm">The tool behind this page is open. Give it your CV once, then one offer at a time. You get a one-page CV, a cover letter, and a list of what the offer wants that you can't show.</p>
-<pre class="code">pip install .
-resume-tailor init my-cv.pdf
-resume-tailor tailor offer.txt</pre>
-  <ul class="rules" style="margin-bottom:1.5rem">
-    <li>It checks every number, tool and year count against your own profile, and flags what you can't back up.</li>
-    <li>It runs on your machine with your own Anthropic API key. Only your profile and the offer text go to the API.</li>
-    <li>Needs Python 3.10+ and Chrome, Chromium or Edge to print the PDFs. MIT licence.</li>
-  </ul>
-  <p class="dl"><a class="cta" href="resume-tailor.zip" download>Download the tool</a> <span class="note">Source, examples and tests. The README explains the rest.</span></p>
-  <h2>Where the offers come from: igaming-jobs-fr</h2>
-  <p class="lede-sm">A companion project for the job hunt. It gathers the openings of the online gambling operators licensed by the ANJ (the French regulator) in one searchable French-language board, so there is no need to visit each careers site by hand.</p>
-  <ul class="rules" style="margin-bottom:1.5rem">
-    <li><b>Sources.</b> 14 ANJ-licensed operators are listed. 8 are scraped today: bwin/partypoker (Entain), PMU, Betsson, Winamax, FDJ United, PokerStars (Flutter), Betclic and bet365. The other 6 (Circus, NetBet, Vbet, Genybet, Olybet, Feelingbet) are shown as "not monitored", so the gaps stay visible.</li>
-    <li><b>How it reads them.</b> One small adapter per source: public APIs where they exist (SmartRecruiters, Workday, a WordPress AJAX endpoint), Welcome to the Jungle pages for the others, and a headless browser only when nothing else works. Requests are rate-limited and retried politely.</li>
-    <li><b>What it stores.</b> Title, location and country, contract type, description and a category worked out from the title (Support, Tech / Data, Marketing, Legal, Finance and so on). Each run marks offers that disappeared as inactive instead of deleting them.</li>
-    <li><b>Last run (September 2026).</b> 611 active offers across the operators, about 40% in customer support and 26% in tech and data.</li>
-    <li><b>The site.</b> Next.js with a local SQLite file. Filterable list, one page per offer with JobPosting structured data, sitemap and robots.txt. A scrape runs once or in a loop with <code>npm run scrape</code> and <code>npm run scrape:loop</code>.</li>
-  </ul>
-  <p class="note" style="max-width:40rem;opacity:.75;margin:0 0 5rem">Status: built and working locally, not deployed yet. It has no public domain, so there is no link to open.</p>
 </main>
 </body>
 </html>

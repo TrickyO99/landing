@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Downloader | Trikinema | Trikorporation</title>
+<meta name="description" content="Downloads the maximum-resolution poster of every film you liked or rated highly on Letterboxd.">
+<link rel="canonical" href="https://odtriki.com/trikinema/posters/">
+<meta name="theme-color" content="#0B3D2E">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trikorporation">
+<meta property="og:title" content="Poster Downloader | Trikinema | Trikorporation"><meta property="og:description" content="Downloads the maximum-resolution poster of every film you liked or rated highly on Letterboxd.">
+<meta property="og:url" content="https://odtriki.com/trikinema/posters/">
+<meta property="og:image" content="https://odtriki.com/img/social/og-trikinema-posters.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://odtriki.com/img/social/og-trikinema-posters.png">
+<link rel="icon" href="/trikinema/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/trikinema/favicon.svg">
+<link rel="apple-touch-icon" href="/trikinema/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-site.css?v=5">
+<script src="https://odtriki.com/shell/tk.js?v=5" data-name="Poster Downloader" defer></script>
+</head>
+<body>
+<main class="wrap narrow">
+  <section class="hero">
+    <a class="back" href="/trikinema/">&larr; <span lang="en">Trikinema</span><span lang="fr">Trikinema</span></a>
+    <p class="eyebrow">Trikinema</p>
+    <h1 class="name">Poster Downloader</h1>
+    <p class="lede"><span lang="en">Max-resolution posters for the films I love.</span><span lang="fr">Les affiches en résolution maximale des films que j’aime.</span></p>
+  </section>
+  <section class="proj">
+    <div>
+      <p><span lang="en">A small script that turns my Letterboxd taste into a folder of posters, for the films I liked or rated highly.</span><span lang="fr">Un petit script qui transforme mes goûts Letterboxd en dossier d’affiches, pour les films que j’ai aimés ou bien notés.</span></p>
+      <ul class="facts"><li><span lang="en"><b>Maximum resolution.</b> Posters come from TMDB, up to 2000 × 3000 px.</span><span lang="fr"><b>Résolution maximale.</b> Les affiches viennent de TMDB, jusqu’à 2000 × 3000 px.</span></li><li><span lang="en"><b>In the film’s own language</b> where TMDB has that version.</span><span lang="fr"><b>Dans la langue d’origine du film</b> quand TMDB propose cette version.</span></li><li><span lang="en"><b>Your threshold.</b> Every liked film, plus every film rated at or above the star rating you choose.</span><span lang="fr"><b>Votre seuil.</b> Tous les films aimés, plus tous ceux notés au moins à la note choisie.</span></li></ul>
+      <ul class="tags"><li>Node.js</li><li>TMDB</li><li>Letterboxd</li></ul>
+    </div>
+    <div>
+      <h3><span lang="en">Why an export and not scraping</span><span lang="fr">Pourquoi un export et pas du scraping</span></h3>
+      <p><span lang="en">Letterboxd protects its ratings pages with a Cloudflare challenge that a headless browser cannot clear, and retrying it over and over would only hammer the site. Letterboxd’s own data export holds the same information, instantly and completely, so that is the source.</span><span lang="fr">Letterboxd protège ses pages de notes par un défi Cloudflare qu’un navigateur sans interface ne passe pas, et réessayer en boucle ne ferait que harceler le site. L’export de données officiel de Letterboxd contient les mêmes informations, tout de suite et en entier : c’est donc la source.</span></p>
+    </div>
+  </section>
+  <h2><span lang="en">How it works</span><span lang="fr">Comment ça marche</span></h2>
+  <ol class="steps">
+    <li><b><span lang="en">1. Export</span><span lang="fr">1. Exporter</span></b><p><span lang="en">Download your data from Letterboxd settings and unzip it.</span><span lang="fr">Téléchargez vos données depuis les réglages Letterboxd et décompressez-les.</span></p></li>
+    <li><b><span lang="en">2. Run</span><span lang="fr">2. Lancer</span></b><p><span lang="en">One plain Node script, no dependencies. Point it at the export folder and pick a star threshold.</span><span lang="fr">Un simple script Node, sans dépendances. Indiquez le dossier d’export et choisissez un seuil d’étoiles.</span></p></li>
+    <li><b><span lang="en">3. Collect</span><span lang="fr">3. Récupérer</span></b><p><span lang="en">Posters are fetched in parallel and saved to a folder, named by film.</span><span lang="fr">Les affiches sont récupérées en parallèle et enregistrées dans un dossier, nommées par film.</span></p></li>
+  </ol>
+  <p class="note"><span lang="en">A personal tool: it runs on my own computer with my own TMDB key, so there is nothing to open online.</span><span lang="fr">Un outil personnel : il tourne sur mon ordinateur avec ma propre clé TMDB, il n’y a donc rien à ouvrir en ligne.</span></p>
+</main>
+</body>
+</html>

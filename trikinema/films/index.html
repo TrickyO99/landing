@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Films | Trikinema | Trikorporation</title>
+<meta name="description" content="My own Plex: my films on the TV as a poster menu, with search, automatic subtitles and a Letterboxd link.">
+<link rel="canonical" href="https://odtriki.com/trikinema/films/">
+<meta name="theme-color" content="#0B3D2E">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Trikorporation">
+<meta property="og:title" content="Films | Trikinema | Trikorporation"><meta property="og:description" content="My own Plex: my films on the TV as a poster menu, with search, automatic subtitles and a Letterboxd link.">
+<meta property="og:url" content="https://odtriki.com/trikinema/films/">
+<meta property="og:image" content="https://odtriki.com/img/social/og-trikinema-films.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://odtriki.com/img/social/og-trikinema-films.png">
+<link rel="icon" href="/trikinema/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/trikinema/favicon.svg">
+<link rel="apple-touch-icon" href="/trikinema/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700..800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-page.css?v=3">
+<link rel="stylesheet" href="https://odtriki.com/shell/tk-site.css?v=5">
+<script src="https://odtriki.com/shell/tk.js?v=5" data-name="Films" defer></script>
+</head>
+<body>
+<main class="wrap narrow">
+  <section class="hero">
+    <a class="back" href="/trikinema/">&larr; <span lang="en">Trikinema</span><span lang="fr">Trikinema</span></a>
+    <p class="eyebrow">Trikinema</p>
+    <h1 class="name">Films</h1>
+    <p class="lede"><span lang="en">Films on my own TV, from a server on my own PC.</span><span lang="fr">Des films sur ma propre télé, depuis un serveur sur mon propre PC.</span></p>
+  </section>
+  <section class="proj">
+    <figure class="shot-fig">
+      <img src="/img/projects/trikinema-films.jpg" alt="" width="960" height="600" loading="lazy">
+      <figcaption><span lang="en">A mock-up, not my real library.</span><span lang="fr">Une maquette, pas ma vraie bibliothèque.</span></figcaption>
+    </figure>
+    <div>
+      <p><span lang="en">My own Plex. The films sit in a folder on my PC. The TV shows them as a proper menu: posters, synopsis, cast, ratings. Press OK and it plays.</span><span lang="fr">Mon propre Plex. Les films sont dans un dossier sur mon PC. La télé les affiche comme un vrai menu : affiches, synopsis, casting, notes. On appuie sur OK et ça se lance.</span></p>
+      <ul class="facts">
+        <li><span lang="en"><b>A real menu.</b> Home with shelves (continue watching, recently added, top rated, one per genre), a Browse grid with sorting and filters, and a film page for each title.</span><span lang="fr"><b>Un vrai menu.</b> Un accueil en étagères (reprendre, ajoutés récemment, mieux notés, une par genre), une grille avec tri et filtres, et une page par film.</span></li><li><span lang="en"><b>Search that finds things.</b> Titles, cast, directors, genres, years. Type on the screen keyboard, or on a real one.</span><span lang="fr"><b>Une recherche qui trouve.</b> Titres, casting, réalisateurs, genres, années. Au clavier à l’écran, ou sur un vrai.</span></li><li><span lang="en"><b>Subtitles on their own.</b> It finds English and French subtitles for every film and times them to the audio, so they don’t drift.</span><span lang="fr"><b>Des sous-titres tout seuls.</b> Il trouve les sous-titres anglais et français de chaque film et les cale sur le son, sans décalage.</span></li><li><span lang="en"><b>Linked to Letterboxd.</b> My rating shows next to the crowd’s, films I’ve seen get a badge, and my watchlist becomes a shelf. Read-only: Letterboxd has no open way to write back, so finished films come out as a file I can import.</span><span lang="fr"><b>Relié à Letterboxd.</b> Ma note s’affiche à côté de celle du public, les films vus ont un badge et ma watchlist devient une étagère. En lecture seule : Letterboxd n’offre aucun moyen ouvert d’écrire, donc les films terminés ressortent dans un fichier à importer.</span></li><li><span lang="en"><b>Picks up where I stopped,</b> on the TV or the phone.</span><span lang="fr"><b>Reprend où je me suis arrêté,</b> sur la télé ou sur le téléphone.</span></li>
+      </ul>
+      <ul class="tags"><li>Python</li><li>Android TV</li><li>Java</li><li>Media3 / ExoPlayer</li><li>TMDB</li><li>ffmpeg</li><li>Letterboxd</li></ul>
+    </div>
+  </section>
+  <h2><span lang="en">How the pieces fit</span><span lang="fr">Comment tout s’assemble</span></h2>
+  <ol class="steps">
+    <li><b><span lang="en">The server</span><span lang="fr">Le serveur</span></b><p><span lang="en">A Python program with no dependencies. It scans the folder, reads each file’s codecs, fetches the film details from TMDB, and streams the file with seeking.</span><span lang="fr">Un programme Python sans dépendances. Il scanne le dossier, lit les codecs de chaque fichier, récupère les infos du film sur TMDB et diffuse le fichier avec avance rapide.</span></p></li>
+    <li><b><span lang="en">The TV app</span><span lang="fr">L’appli TV</span></b><p><span lang="en">Finds the server by itself on the Wi-Fi, no address to type. Built on Android’s Media3 player.</span><span lang="fr">Trouve le serveur toute seule sur le Wi-Fi, sans adresse à taper. Construite sur le lecteur Media3 d’Android.</span></p></li>
+    <li><b><span lang="en">The phone app</span><span lang="fr">L’appli téléphone</span></b><p><span lang="en">Same library, same code, laid out for a phone. It plays the film on the phone.</span><span lang="fr">Même bibliothèque, même code, adaptée au téléphone. Elle lit le film sur le téléphone.</span></p></li>
+    <li><b><span lang="en">The subtitles</span><span lang="fr">Les sous-titres</span></b><p><span lang="en">Downloaded once, timed against the sound of the film, then kept. Nothing to do on movie night.</span><span lang="fr">Téléchargés une fois, calés sur le son du film, puis conservés. Rien à faire le soir de film.</span></p></li>
+  </ol>
+  <p class="note"><span lang="en"><b>Good to know.</b> Everything stays at home: the server only answers devices on my own network, and the only things that leave are film titles and ids, sent to TMDB and the subtitle site, plus a request for my public Letterboxd feed. The PC has to be on to watch.</span><span lang="fr"><b>Bon à savoir.</b> Tout reste à la maison : le serveur ne répond qu’aux appareils de mon réseau, et seuls sortent des titres et identifiants de films, envoyés à TMDB et au site de sous-titres, plus une requête vers mon flux Letterboxd public. Le PC doit être allumé pour regarder.</span></p>
+</main>
+</body>
+</html>
