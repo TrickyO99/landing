@@ -9,6 +9,9 @@
 
   var script = document.currentScript;
   var name = (script && script.getAttribute('data-name')) || '';
+  var CATS = { trikinema: 'Trikinema', trikids: 'Trikids', trikarcade: 'Trikarcade', trikolitics: 'Trikolitics', trikoyage: 'Trikoyage', trikitchen: 'Trikitchen', trikivre: 'Trikivre', trikarchive: 'Trikarchive', trikentretiens: 'Trikentretiens', trikoach: 'Trikoach' };
+  var cat = (script && script.getAttribute('data-cat')) || '';
+  var catName = CATS[cat] || '';
   var HOME = 'https://odtriki.com';
 
   // ---- language: one choice (EN / FR) shared by every page. Pages mark text as <span lang="en">..</span><span lang="fr">..</span>.
@@ -62,7 +65,9 @@
     '.logo{font-size:1rem}' +
     '.crumb{display:inline-flex;align-items:center;gap:.65rem;font-weight:600;font-size:.9rem;opacity:.8}' +
     '.crumb::before{content:"";width:1px;height:1rem;background:currentColor;opacity:.4}' +
-    '.l{display:flex;align-items:center;gap:.9rem;min-width:0}' +
+    'a.crumb:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}' +
+    '.crumb.c2{opacity:.95}.crumb.c2::before{content:"›";width:auto;height:auto;background:none;opacity:.6}' +
+    '.l{display:flex;align-items:center;gap:.9rem;min-width:0;flex-wrap:wrap}' +
     'nav{display:flex;gap:1.25rem;font-size:.88rem;font-weight:600}' +
     'nav a{opacity:.85;padding:.25rem 0;border-bottom:2px solid transparent;transition:opacity .15s,border-color .15s}' +
     'nav a:hover{opacity:1;border-bottom-color:#C6F432}' +
@@ -96,7 +101,8 @@
   define('tk-bar', BAR_CSS + BAR_LANG_CSS,
     '<div class="w"><div class="in">' +
       '<div class="l"><a class="logo" href="' + HOME + '" aria-label="Trikorporation">' + TILE + '<span class="t">Trikorporation</span></a>' +
-      (name ? '<span class="crumb">' + name.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>' : '') + '</div>' +
+      (catName ? '<a class="crumb" href="' + HOME + '/' + cat + '/">' + catName + '</a>' : '') +
+      (name && name !== catName ? '<span class="crumb' + (catName ? ' c2' : '') + '">' + name.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</span>' : '') + '</div>' +
       '<div class="rt"><nav aria-label="Trikorporation"><a href="' + HOME + '/#projects">' + bi('Projects', 'Projets') + '</a><a href="' + HOME + '/cv/">CV</a></nav>' +
       '<div class="seg" role="group" aria-label="Language" hidden><button type="button" data-l="en">EN</button><button type="button" data-l="fr">FR</button></div></div>' +
     '</div></div>');

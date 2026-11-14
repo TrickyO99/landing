@@ -155,14 +155,13 @@
   h2 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: var(--space-6); }
   .showcase-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-4); }
   .showcase-head h2 { margin-bottom: var(--space-6); }
-  .panels { display: grid; gap: var(--space-6); grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 62rem) { .panels { grid-template-columns: repeat(2, 1fr); } .panels > .panel:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+  .showcase-head .eyebrow { margin-bottom: var(--space-6); }
+  .panels { display: grid; gap: var(--space-6); grid-template-columns: repeat(2, 1fr); }
   @media (max-width: 40rem) { .panels { grid-template-columns: 1fr; } }
   .panel { text-decoration: none; color: inherit; font: inherit; text-align: left; border: 0; cursor: pointer; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-2); min-height: clamp(13rem, 24vw, 18rem); padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius-lg); position: relative; overflow: hidden; transition: translate .25s cubic-bezier(.2,.9,.2,1); }
   .panel:hover { translate: 0 -6px; }
   .panel:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; }
-  .panel .pn { font-family: var(--font-display); font-weight: 800; letter-spacing: -.035em; line-height: .95; font-size: clamp(2.2rem, 4.4vw, 3rem); white-space: nowrap; }
-  @media (min-width: 62.01rem) { .panel .pn { font-size: clamp(1.9rem, 2.6vw, 2.5rem); } }
+  .panel .pn { font-family: var(--font-display); font-weight: 800; letter-spacing: -.035em; line-height: .95; font-size: clamp(2.2rem, 5vw, 3.6rem); white-space: nowrap; }
   .panel .pt { font-size: 1.05rem; opacity: .85; max-width: 24rem; }
   .panel .pc { display: inline-flex; align-items: center; gap: .5rem; margin-top: var(--space-3); font-weight: 700; font-size: .9rem; }
   .panel .pc svg { width: 1.2rem; height: 1.2rem; transition: translate .2s ease; }
@@ -293,7 +292,7 @@
   .legal-links a { color: inherit; opacity: .8; text-decoration: none; text-underline-offset: 3px; }
   .legal-links a:hover { opacity: 1; text-decoration: underline; }
 </style>
-<script src="https://odtriki.com/shell/tk.js?v=5" data-nobar defer></script>
+<script src="https://odtriki.com/shell/tk.js?v=6" data-nobar defer></script>
 <script>addEventListener("load",function(){var T=window.tkLang;if(!T)return;var bs=document.querySelectorAll(".seg button");function paint(){bs.forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-l")===T.get()))})}paint();T.on(paint);bs.forEach(function(b){b.addEventListener("click",function(){T.set(b.getAttribute("data-l"))})})});</script>
 </head>
 <body>
@@ -347,11 +346,10 @@
   </header>
 
   <main>
-    <section class="projects-section" id="projects" aria-labelledby="ph">
+    <section class="projects-section" id="projects" aria-label="Projects">
       <div class="wrap showcase-head">
         <div>
           <p class="eyebrow rv"><span lang="en">Projects</span><span lang="fr">Projets</span></p>
-          <h2 class="rv" id="ph"><span lang="en">What I&rsquo;ve built</span><span lang="fr">Ce que j&rsquo;ai construit</span></h2>
         </div>
       </div>
       <div class="wrap">
@@ -390,7 +388,7 @@
           <img class="plogo" src="img/logos/trikitchen.svg?v=3" alt="" width="76" height="76">
           <span class="pn"><span class="sr-only">Trikitchen</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>itchen</span></span>
           <span class="pt"><span lang="en">Recipes and TikToks.</span><span lang="fr">Des recettes et des TikToks.</span></span>
-          <span class="pc"><span lang="en">3 projects</span><span lang="fr">3 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pc"><span lang="en">2 projects</span><span lang="fr">2 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
         <a class="panel tone-lime rv" href="/trikivre/">
           <img class="plogo" src="img/logos/trikivre.svg?v=3" alt="" width="76" height="76">
@@ -410,6 +408,12 @@
           <span class="pt"><span lang="en">Job hunting, automated: one offer in, one tailored CV out.</span><span lang="fr">La recherche d&rsquo;emploi, automatisée : une offre en entrée, un CV sur mesure en sortie.</span></span>
           <span class="pc"><span lang="en">2 projects</span><span lang="fr">2 projets</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </a>
+<a class="panel tone-brand rv" href="/trikoach/">
+          <img class="plogo" src="img/logos/trikoach.svg?v=1" alt="" width="76" height="76">
+          <span class="pn"><span class="sr-only">Trikoach</span><span class="wm" aria-hidden="true"><svg class="wm-t" aria-hidden="true" viewBox="25 32 71 62"><path d="M30 32h66l-5 18H72l-8 44H46l8-44H25z"/><path class="flag" d="M78 32h18l-4 14z"/></svg><span class="wm-k">rik</span>oach</span></span>
+          <span class="pt"><span lang="en">Training and nutrition, worked out from your numbers.</span><span lang="fr">L&rsquo;entra&icirc;nement et la nutrition, calcul&eacute;s &agrave; partir de vos chiffres.</span></span>
+          <span class="pc"><span lang="en">1 project</span><span lang="fr">1 projet</span> <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
         </div>
       </div>
     </section>
@@ -423,7 +427,7 @@
           a Trikorporation brand
         </span>
         <div class="sig">odtriki.com</div>
-        <nav class="legal-links" aria-label="Legal"><a href="/legal/"><span lang="en">Legal notice</span><span lang="fr">Mentions légales</span></a><a href="/privacy/"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></a><a href="/terms/"><span lang="en">Terms</span><span lang="fr">CGU</span></a></nav>
+        <div class="legal-links" role="navigation" aria-label="Legal"><a href="/legal/"><span lang="en">Legal notice</span><span lang="fr">Mentions légales</span></a><a href="/privacy/"><span lang="en">Privacy</span><span lang="fr">Confidentialité</span></a><a href="/terms/"><span lang="en">Terms</span><span lang="fr">CGU</span></a></div>
       </div>
       <div class="social-row">
         <a class="btn" href="https://www.linkedin.com/in/trikio99/" target="_blank" rel="noopener">LinkedIn</a>

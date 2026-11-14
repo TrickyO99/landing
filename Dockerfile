@@ -14,6 +14,7 @@ COPY trikitchen /usr/share/nginx/html/trikitchen
 COPY trikivre /usr/share/nginx/html/trikivre
 COPY trikarchive /usr/share/nginx/html/trikarchive
 COPY trikentretiens /usr/share/nginx/html/trikentretiens
+COPY trikoach /usr/share/nginx/html/trikoach
 COPY legal /usr/share/nginx/html/legal
 COPY privacy /usr/share/nginx/html/privacy
 COPY terms /usr/share/nginx/html/terms
