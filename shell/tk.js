@@ -9,7 +9,7 @@
 
   var script = document.currentScript;
   var name = (script && script.getAttribute('data-name')) || '';
-  var CATS = { trikinema: 'Trikinema', trikids: 'Trikids', trikarcade: 'Trikarcade', trikolitics: 'Trikolitics', trikoyage: 'Trikoyage', trikitchen: 'Trikitchen', trikivre: 'Trikivre', trikarchive: 'Trikarchive', trikentretiens: 'Trikentretiens', trikoach: 'Trikoach' };
+  var CATS = { trikinema: 'Trikinema', trikids: 'Trikids', trikarcade: 'Trikarcade', trikolitics: 'Trikolitics', trikoyage: 'Trikoyage', trikitchen: 'Trikitchen', trikivre: 'Trikivre', trikarchive: 'Trikarchive', trikinterview: 'Trikinterview', trikoach: 'Trikoach' };
   var cat = (script && script.getAttribute('data-cat')) || '';
   var catName = CATS[cat] || '';
   var HOME = 'https://odtriki.com';
